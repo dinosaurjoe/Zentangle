@@ -25,6 +25,8 @@ class RequestsController < ApplicationController
   end
 
   def destroy
+    @request = Request.find(params[:id])
+    @request.detroy
   end
 
   private
