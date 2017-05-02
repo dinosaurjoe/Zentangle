@@ -1,4 +1,5 @@
 class Request < ApplicationRecord
   belongs_to :user
-  belongs_to :role
+  belongs_to :project
+  validates :message, presence: true
 end
