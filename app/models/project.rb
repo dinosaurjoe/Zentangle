@@ -7,4 +7,5 @@ class Project < ApplicationRecord
   validates :category, presence: true
   validates :subcategory, presence: true
   validates :short_description, presence: true
+# check validations
 end
