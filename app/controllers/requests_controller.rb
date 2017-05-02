@@ -1,4 +1,5 @@
 class RequestsController < ApplicationController
+  before_action :set_project, only: [:create]
   def index
     @request = Request.all
   end
@@ -13,7 +14,6 @@ class RequestsController < ApplicationController
 
   def create
     @request = Request.new(request_params)
-    @project = Project.find(params[:project_id])
     @request.user = current_user
     @request.project = @project
     if @request.save
@@ -31,7 +31,12 @@ class RequestsController < ApplicationController
 
   private
 
+  def set_project
+    @project = Project.find(params[:project_id])
+  end
+
   def request_params
-    params.require(:request).permit(:user_id, :role_id)
+    params.require(:request).permit(:name, :full_description, :category, :subcategory,
+                                    :start_date, :short_description, :user_id)
   end
 end
