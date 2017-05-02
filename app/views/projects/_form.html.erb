@@ -1,0 +1,21 @@
+<%= simple_form_for(@boat) do |f| %>
+
+
+<%= f.text_field :title, placeholder: 'Name', label:false %>
+
+<%= f.text_field :full_description, placeholder: 'Description', label:false %>
+
+<%= f.select :category, Project::CATEGORIES, include_blank:"Select a category" %>
+
+<%= f.select :subcategory, Project::SUBCATEGORIES, include_blank:"Select a subcategory" %>
+<!-- still need a start_date datepicker -->
+
+<%= f.text_field :short_description, placeholder: 'Summarize your Project!', label:false %>
+
+<%= f.text_field :total_budget, placeholder: 'Do you have a budget for your project?', label:false %>
+
+<%= f.input :picture %>
+<!-- still need the roles he wants to have!!! -->
+<%= f.button :submit, 'Create a new Project', class: "btn" %>
+
+<% end %>
