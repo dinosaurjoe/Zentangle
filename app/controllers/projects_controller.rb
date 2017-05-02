@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
-    @project = Project.where({ category: project_params[:category] })
+    @projects = Project.where({ category: project_params[:category] })
   end
 
   def show
