@@ -14,6 +14,12 @@ class UsersController < ApplicationController
     redirect_to @user
   end
 
+  def invite
+    @request = Request.new
+    @request.user = params[:user_id]
+    @request.owner_confirm = true
+  end
+
   private
 
   def user_params
