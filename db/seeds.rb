@@ -15,6 +15,7 @@ User.destroy_all
 password = Faker::Internet.password(8)
 SKILLS = ["acting", "directing", "writing", "editting", "sound"]
 
+
 20.times do
   User.create(
     email: Faker::Internet.email,
@@ -29,14 +30,14 @@ SKILLS = ["acting", "directing", "writing", "editting", "sound"]
     )
 end
 
-CATEGORY = ["Film", "Music", "Dance", ""]
+CATEGORY = ["Film", "Music", "Dance", "Design"]
 
 40.times do
   Project.create(
     title: Faker::TwinPeaks.quote,
     full_description: Faker::Lorem.paragraph(4),
-    category: 0,
-    subcategory: 0,
+    category: CATEGORY.sample,
+    subcategory: "subcategory",
     start_date: Faker::Date.backward(14).to_datetime,
     finish_date: Faker::Date.forward(23).to_datetime,
     short_description: Faker::Lorem.paragraph(1),
