@@ -36,6 +36,7 @@ class RequestsController < ApplicationController
   end
 
   def request_params
-    params.require(:request).permit(:user_id, :role_id)
+    params.require(:request).permit(:name, :full_description, :category, :subcategory,
+                                    :start_date, :short_description, :user_id)
   end
 end
