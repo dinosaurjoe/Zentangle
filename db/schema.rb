@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170501133524) do
+ActiveRecord::Schema.define(version: 20170502132148) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "projects", force: :cascade do |t|
-    t.string   "name"
+    t.string   "title"
     t.text     "full_description"
     t.string   "category"
     t.string   "subcategory"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20170501133524) do
     t.integer  "user_id"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+    t.string   "total_budget"
     t.index ["user_id"], name: "index_projects_on_user_id", using: :btree
   end
 
@@ -38,6 +39,8 @@ ActiveRecord::Schema.define(version: 20170501133524) do
     t.text     "message"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.text     "owner_message"
+    t.text     "user_message"
     t.index ["role_id"], name: "index_requests_on_role_id", using: :btree
     t.index ["user_id"], name: "index_requests_on_user_id", using: :btree
   end
@@ -46,7 +49,7 @@ ActiveRecord::Schema.define(version: 20170501133524) do
     t.integer  "project_id"
     t.text     "description"
     t.string   "requirements"
-    t.string   "offers"
+    t.string   "compensation"
     t.string   "title"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
