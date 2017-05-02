@@ -34,8 +34,8 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
-    @Project = Project.find(params[:id])
-    @Project.destroy
+    @project = Project.find(params[:id])
+    @project.destroy
   end
 
   private

@@ -9,7 +9,10 @@ class RequestsController < ApplicationController
   end
 
   def new
-    @request = Request.new()
+    @request = Request.new
+    @role = Role.find(params[:role_id])
+    @request.role = @role
+    @request.user_confirm = true
   end
 
   def create
