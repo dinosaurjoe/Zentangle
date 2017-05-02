@@ -4,7 +4,7 @@ class RolesController < ApplicationController
   end
 
   def show
-    @role = Role.find(params[:role_id])
+    @role = Role.find(params[:id])
   end
 
   def new
@@ -16,7 +16,7 @@ class RolesController < ApplicationController
 
   def create
     @role = Role.new(role_params)
-    @project = Project.find(params[:role_id])
+    @project = Project.find(params[:id])
     @role.project = @project
     p @role
     if @role.save
@@ -36,7 +36,7 @@ class RolesController < ApplicationController
 
   def update
     @role = Role.find(params[:id])
-    @role.update(boat.params)
+    @role.update(role.params)
     redirect_to @role
   end
 
