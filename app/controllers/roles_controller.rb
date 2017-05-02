@@ -10,7 +10,6 @@ class RolesController < ApplicationController
   def new
     @role = Role.new
     @project = Project.find(params[:id])
-
     @role.project = @project
   end
 
@@ -18,9 +17,9 @@ class RolesController < ApplicationController
     @role = Role.new(role_params)
     @project = Project.find(params[:id])
     @role.project = @project
-    p @role
+
     if @role.save
-      redirect_to @role
+      render :new
     else
       redirect_to new_role_path
   end
@@ -37,7 +36,6 @@ class RolesController < ApplicationController
   def update
     @role = Role.find(params[:id])
     @role.update(role.params)
-    redirect_to @role
   end
 
   private
