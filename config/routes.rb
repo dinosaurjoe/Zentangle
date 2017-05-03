@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :projects
-  resources :roles
-  resources :requests do
+  resources :roles do
+    resources :request, only: :new
+  end
+  resources :requests, except: :new do
     post :decline, on: :member
   end
   get 'dashboard' => 'dashboards#show'
