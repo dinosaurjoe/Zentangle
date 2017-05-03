@@ -51,14 +51,24 @@
 
       <fieldset class="step">
         <legend>Optional</legend>
-        <%= f.text_field :total_budget, placeholder: 'Do you have a budget for your project?', label:false %>
-        <%= f.input :picture, class: "space-auto"%>
+        <div class="col-xs-12 space-top">
+          <p>
+            <%= f.label :total_budget, 'Budget' %><%= f.text_field :total_budget, placeholder: 'Do you have a budget for your project?', label:false %>
+          </p>
+        </div>
+        <div class="col-xs-12 space-top">
+          <p>
+            <%= f.input :picture, class: "space-auto", label: false%>
+          </p>
+        </div>
         <!-- still need a start_date datepicker -->
         <!-- still need the roles he wants to have!!! -->
       </fieldset>
 
       <fieldset class="step">
-        <%= f.button :submit, 'Create a new Project', class: "btn" %>
+        <div class="col-xs-12 space-top">
+          <%= f.button :submit, 'Create a new Project', class: "btn" %>
+        </div>
       </fieldset>
 
     <% end %>
