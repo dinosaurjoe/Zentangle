@@ -22,7 +22,7 @@
       <div class="requested-messages">
         <% if @request.created_by == @role.project.owner %>
           <div class="requested-sent-messsage">
-            <p>@request.owner_message</p>
+            <p><%= "#{@role.project.owner.first_name}: #{@request.owner_message}" %> </p>
           </div>
           <% if @request.user_message.nil? %>
             <div class="requested-send-message">
@@ -31,13 +31,13 @@
             </div>
           <% else %>
             <div class="requested-sent-messsage">
-              <p>@request.user_message</p>
+              <p><%= "#{@role.user.first_name}: #{@request.user_message}" %> </p>
             </div>
           <% end %>
 
         <% else %>
           <div class="requested-sent-messsage">
-            <p><%= @request.user_message %></p>
+            <p><%= "#{@role.user.first_name}: #{@request.user_message}" %> </p>
           </div>
           <% if @request.owner_message.nil? %>
             <div class="requested-send-message">
@@ -45,7 +45,7 @@
               <%= link_to 'send', "", :onclick => "$('#requested-form').submit()" %>
             </div>
           <% else %>
-            <p><%= @request.owner_message %></p>
+            <p><%= "#{@role.project.owner.first_name}: #{@request.owner_message}" %> </p>
           <% end %>
         <% end %>
       </div>
