@@ -15,6 +15,8 @@ class Project < ApplicationRecord
     def categories
       ["Film", "Music", "Dance", "Design"]
     end
-
+    def subcategories
+      ["Documentary", "Illustration", "Motion Design", "Short-film", "Music Video"]
+    end
   end
 end
