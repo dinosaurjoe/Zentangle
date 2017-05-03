@@ -8,6 +8,9 @@ gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'devise'
 gem 'redis'
+gem 'cloudinary'
+gem 'carrierwave', '~> 0.11.2'
+
 
 gem 'faker'
 
