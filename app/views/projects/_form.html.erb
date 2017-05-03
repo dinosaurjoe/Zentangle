@@ -16,12 +16,20 @@
     </ul>
   </div>
   <div id="steps">
-    <%= simple_form_for(@project) do |f| %>
+    <%= simple_form_for @project do |f| %>
 
       <fieldset class="step">
         <legend>Information</legend>
-        <%= f.text_field :title, placeholder: 'Name of your Project', label:false %>
-        <%= f.select :category, Project.categories, include_blank:"Select a category" %>
+        <div class="row text-center">
+        <p>Name of your Project</p>
+          <div class="col-xs-12 col-md-8 col-md-offset-4 space-top">
+            <%= f.text_field :title, placeholder: 'Name of your Project', label:false %>
+          </div>
+          <div class="col-xs-12 col-md-8 col-md-offset-4 space-top">
+            <%= f.select :category, Project.categories, include_blank:"Select a category" %>
+          </div>
+        </div>
+
         <!-- subcategory -->
       </fieldset>
 
