@@ -6,45 +6,58 @@
     </div>
     <div class="requested-project-details">
       <h3><%= @role.project.short_description %></h3>
-      <%= unless current_user == @request.project.owner %>
+      <% unless current_user == @role.project.owner %>
         <button class="btn btn-primary"><%= link_to "learn more", project_path(@role.project) %></button>
       <% end %>
     </div>
-    <%= simple_form_for [@role, @request], :html => {:id=>'requested-form'} do |f| %>
+    <%= simple_form_for [@request], :html => {:id=>'requested-form'} do |f| %>
       <div class="requested-role-details">
-        <h2><%= @role.title %></h2>
-        <p><%= @role.description %></h3>
-        <p><%= @role.requirements %></p>
-        <p><%= @role.compensation %></p>
+        <h2>Role: <%= @role.title %></h2>
+        <p>Description: <%= @role.description %></h3>
+        <p>Requirements: <%= @role.requirements %></p>
+        <p>Compensation: <%= @role.compensation %></p>
       </div>
+
+
       <div class="requested-messages">
-        <% if @request.user_message.nil? %>
+        <% if @request.created_by == @role.project.owner %>
           <div class="requested-sent-messsage">
             <p>@request.owner_message</p>
           </div>
-          <div class="requested-send-message">
-            <%= f.text_field :user_message %>
-            <%= link_to 'send', "", :onclick => "$('#requested-form').submit()" %>
-          </div>
+          <% if @request.user_message.nil? %>
+            <div class="requested-send-message">
+              <%= f.text_field :user_message %>
+              <%= link_to 'send', "", :onclick => "$('#requested-form').submit()" %>
+            </div>
+          <% else %>
+            <div class="requested-sent-messsage">
+              <p>@request.user_message</p>
+            </div>
+          <% end %>
+
         <% else %>
           <div class="requested-sent-messsage">
-            <p>@request.user_message</p>
+            <p><%= @request.user_message %></p>
           </div>
           <% if @request.owner_message.nil? %>
-            <p><%= @request.owner_message %></p>
-          <% else %>
             <div class="requested-send-message">
               <%= f.text_field :owner_message %>
               <%= link_to 'send', "", :onclick => "$('#requested-form').submit()" %>
             </div>
+          <% else %>
+            <p><%= @request.owner_message %></p>
           <% end %>
         <% end %>
       </div>
+
+      <!-- implement message thread table -->
+
+
       <div class="requested-create-or-back">
         <button class="btn btn-primary"><%= link_to "Back", dashboard_path %></button>
         <% unless (@request.user_confirm && @request.owner_confirm) || current_user == @request.created_by %>
           <button class="btn btn-primary"><%= link_to "decline", decline_request_path(@request) %></button>
-          <%= f.button :submit, 'join the project', class: "btn" %>
+          <%= f.button :submit, 'accept', class: "btn" %>
         <% end %>
       </div>
     <% end %>

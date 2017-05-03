@@ -13,7 +13,7 @@ class Request < ApplicationRecord
   def status(current_user)
     @request = self
     @role = @request.role
-    if @request.project.owner == current_user
+    if @role.project.owner == current_user
       owner_message_logic
     elsif @request.user == current_user
       user_message_logic
@@ -43,16 +43,16 @@ class Request < ApplicationRecord
     if @request.created_by == @request.user
       # you requested to join owner's project
       @message = "You requested to join #{@role.project}"
-      @message = "#{@request.project.owner.full_name} declined your request to join #{@role.project}" if @request.owner_confirm == false
+      @message = "#{@role.project.owner.full_name} declined your request to join #{@role.project}" if @request.owner_confirm == false
 
     else
       # owner invited you to join their project
       if @request.user_confirm
         @message = "You joined #{@role.project}!"
       elsif @request.user_confirm == false
-        "#You declined {@request.owner.full_name}'s request for you to join #{@role.project}!"
+        "#You declined {@role.owner.full_name}'s request for you to join #{@role.project}!"
       else
-        @message = "#{@request.owner.full_name} requested you to join #{@role.project}!"
+        @message = "#{@role.owner.full_name} requested you to join #{@role.project}!"
       end
     end
   end
