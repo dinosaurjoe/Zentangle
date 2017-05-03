@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
-    @project = Project.where({ category: project_params[:category] })
+    @projects = Project.where({ category: project_params[:category] })
   end
 
   def show
@@ -14,7 +14,7 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
-    @project.picture = "default.png"  if project_params[:picture].nil?
+    @project.picture = "film.jpg"  if project_params[:picture].nil?
     @project.user = current_user
     if @project.save
       redirect_to dashboard_path
@@ -34,8 +34,8 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
-    @Project = Project.find(params[:id])
-    @Project.destroy
+    @project = Project.find(params[:id])
+    @project.destroy
   end
 
   private

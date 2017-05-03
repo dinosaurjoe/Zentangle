@@ -6,22 +6,35 @@ class RequestsController < ApplicationController
 
   def show
     @request = Request.find(params[:id])
+    @role = @request.role
   end
 
   def new
-    @request = Request.new()
+    @request = Request.new
+    @role = Role.find(params[:role_id])
+    @request.role = @role
+    @request.user_confirm = true
+    @request.create_by = current_user
   end
 
   def create
     @request = Request.new(request_params)
     @request.user = current_user
-    @request.project = @project
     if @request.save
       redirect_to dashboard_path
     else
-      redirect_to new_project_booking_path
+      redirect_to new_role_request(@request)
       # path unclear
     end
+  end
+
+  def decline
+    if current_user == @request.project.owner
+      @request.owner_confirm == false
+    else
+      @request.user_confirm == false
+    end
+
   end
 
   def destroy
@@ -36,6 +49,6 @@ class RequestsController < ApplicationController
   end
 
   def request_params
-    params.require(:request).permit(:user_id, :role_id)
+    params.require(:request).permit(:created_by, :role_id, :project_id)
   end
 end

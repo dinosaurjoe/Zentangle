@@ -31,13 +31,14 @@ SKILLS = ["acting", "directing", "writing", "editting", "sound"]
 end
 
 CATEGORY = ["Film", "Music", "Dance", "Design"]
+SUBCATEGORY = ["Documentary", "Illustration", "Motion Design", "Short-film", "Music Video"]
 
 40.times do
   Project.create(
     title: Faker::TwinPeaks.quote,
     full_description: Faker::Lorem.paragraph(4),
     category: CATEGORY.sample,
-    subcategory: "subcategory",
+    subcategory: SUBCATEGORY.sample,
     start_date: Faker::Date.backward(14).to_datetime,
     finish_date: Faker::Date.forward(23).to_datetime,
     short_description: Faker::Lorem.paragraph(1),
@@ -63,14 +64,17 @@ end
 
 
 40.times do
-  Request.create(
-    user: User.order("RANDOM()").first,
+  user = User.order("RANDOM()").first
+  p Request.create(
+    user: user,
     role: Role.order("RANDOM()").first,
-    user_confirm: false,
-    owner_confirm: true,
+    user_confirm: true,
+    owner_confirm: nil,
     owner_message: "join me",
-    user_message: "how much $$$"
+    user_message: "how much $$$",
+    created_by: user
   )
+
 end
 
 
