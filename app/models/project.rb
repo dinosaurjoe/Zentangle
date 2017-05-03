@@ -7,4 +7,12 @@ class Project < ApplicationRecord
   validates :subcategory, presence: true
   validates :short_description, presence: true
 # check validations
+
+  class << self
+    # Project.categories
+    def categories
+      ["Film", "Music", "Dance", "Design"]
+    end
+
+  end
 end
