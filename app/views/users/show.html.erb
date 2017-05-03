@@ -25,6 +25,7 @@
       <div class="row">
       <% @user.projects.each do |project| %>
         <div class="col-md-4">
+        <%= link_to project_path(project.id) do %>
           <div class="project-picture">
             <%= image_tag project.picture %>
           </div>
@@ -32,6 +33,7 @@
             <h4><%= project.title %></h4>
             <p><%= project.short_description %></p>
           </div>
+          <% end %>
         </div>
         <% end %>
       </div>
