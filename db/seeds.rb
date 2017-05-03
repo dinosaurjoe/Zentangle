@@ -64,16 +64,17 @@ end
 
 
 40.times do
-  user = User.order("RANDOM()").first,
-  Request.create(
+  user = User.order("RANDOM()").first
+  p Request.create(
     user: user,
     role: Role.order("RANDOM()").first,
-    user_confirm: false,
-    owner_confirm: true,
+    user_confirm: true,
+    owner_confirm: nil,
     owner_message: "join me",
     user_message: "how much $$$",
     created_by: user
   )
+
 end
 
 
