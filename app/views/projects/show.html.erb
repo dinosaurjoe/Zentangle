@@ -7,6 +7,9 @@
     </div>
     <div class="col-md-5 panel-side">
       <div class="avatar" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.45) 0%, rgba(0,36,61,0.45) 50%), url( <%= @project.user.profile_picture %> );">avatar test</div>
+      <%= link_to user_path(@project.user.id) do %>
+        <h4><%= @project.user.first_name %> <%= @project.user.last_name %></h4>
+        <% end %>
       <div class="info">
         <div class="title"><h3>About the Project</h3></div>
         <div class="description"><p><%= @project.short_description %></p></div>
@@ -22,7 +25,7 @@
       <div class="info">
         <div class="title"><h3>Collaborators</h3></div>
         <div class="collaborators">
-          <%= @project.user %>
+          <%= @project.user.first_name %>
         </div>
         <div class="title"><h3>Available Positions</h3></div>
         <div class="available-positions"><%= @project.roles %></div>
