@@ -25,6 +25,8 @@
     <%= f.text_field :total_budget, placeholder: 'total budget', label:false %>
 
     <%= f.input :picture %>
+    <%= f.input :picture_cache, as: :hidden %>
+
 
     <%= f.button :submit, 'submit project', class: "btn" %>
       <% end %>

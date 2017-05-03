@@ -6,5 +6,7 @@ class Project < ApplicationRecord
   validates :category, presence: true
   validates :subcategory, presence: true
   validates :short_description, presence: true
+  mount_uploader :picture, PhotoUploader
+
 # check validations
 end

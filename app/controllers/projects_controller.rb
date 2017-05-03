@@ -14,7 +14,7 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
-    @project.picture = "default.png"  if project_params[:picture].nil?
+    @project.picture = "film.jpg"  if project_params[:picture].nil?
     @project.user = current_user
     if @project.save
       redirect_to dashboard_path
