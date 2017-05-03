@@ -1,35 +1,77 @@
-<div class="row">
-  <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-    <div class="project-form">
-    <div class="row">
-      <div class="col-lg-12 project-form-header">
-        <h2>Create a New Project</h2>
-      </div>
-    </div>
-    <%= simple_form_for(@project) do |f| %>
 
-    <div class="form-group form-inline">
+<div id="wrapper-form">
+  <div id="navigation" style="display:none;">
+    <ul>
+      <li class="active">
+        <a href="#">Information</a>
+      </li>
+      <li>
+        <a href="#">Project Details</a>
+      </li>
+      <li>
+        <a href="#">Optional</a>
+      </li>
+      <li>
+        <a href="#">Confirm</a>
+      </li>
+    </ul>
+  </div>
+  <div id="steps" class="text-center">
+    <%= simple_form_for @project do |f| %>
 
-    <%= f.text_field :title, placeholder: 'title', label:false %>
+      <fieldset class="step">
+        <legend>Information</legend>
+        <div class="row text-center">
+          <div class="col-xs-12 space-top">
+            <p>
+            <%= f.label :title, 'Title' %><%= f.text_field :title, placeholder: 'Name of your Project', label: false%>
+            </p>
+          </div>
+          <div class="col-xs-12 space-top">
+            <p>
+              <%= f.label :category, 'Category' %><%= f.select :category, Project.categories, include_blank:"Select a category" %>
+            </p>
+          </div>
+        </div>
+        <!-- subcategory -->
+      </fieldset>
 
-    <%= f.text_field :short_description, placeholder: 'short description', label:false %>
+      <fieldset class="step">
+        <legend>Description</legend>
+          <div class="col-xs-12 space-top">
+            <p>
+            <%= f.label :full_description, 'Description' %><%= f.text_field :full_description, placeholder: 'Descripe your Project', label:false %>
+            </p>
+          </div>
+          <div class="col-xs-12 space-top">
+            <p>
+            <%= f.label :short_description, 'Summarize' %><%= f.text_field :short_description, placeholder: 'Summarize your Project!', label:false %>
+            </p>
+          </div>
+      </fieldset>
 
-    <%= f.input :category, priority: [ "Film" ], collection: ["Film", "Music", "Design"], prompt: 'category', label:false %>
+      <fieldset class="step">
+        <legend>Optional</legend>
+        <div class="col-xs-12 space-top">
+          <p>
+            <%= f.label :total_budget, 'Budget' %><%= f.text_field :total_budget, placeholder: 'Do you have a budget for your project?', label:false %>
+          </p>
+        </div>
+        <div class="col-xs-12 space-top">
+          <p>
+            <%= f.input :picture, class: "space-auto", label: false%>
+          </p>
+        </div>
+        <!-- still need a start_date datepicker -->
+        <!-- still need the roles he wants to have!!! -->
+      </fieldset>
 
-    </div>
+      <fieldset class="step">
+        <div class="col-xs-12 space-top">
+          <%= f.button :submit, 'Create a new Project', class: "btn" %>
+        </div>
+      </fieldset>
 
-    <%= f.text_field :subcategory, placeholder: 'experimental', label:false %>
-
-    <%= f.text_field :full_description, placeholder: 'full description', label:false %>
-
-    <%= f.text_field :total_budget, placeholder: 'total budget', label:false %>
-
-    <%= f.input :picture %>
-    <%= f.input :picture_cache, as: :hidden %>
-
-
-    <%= f.button :submit, 'submit project', class: "btn" %>
-      <% end %>
-    </div>
+    <% end %>
   </div>
 </div>

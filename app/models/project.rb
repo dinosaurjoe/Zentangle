@@ -9,4 +9,12 @@ class Project < ApplicationRecord
   mount_uploader :picture, PhotoUploader
 
 # check validations
+
+  class << self
+    # Project.categories
+    def categories
+      ["Film", "Music", "Dance", "Design"]
+    end
+
+  end
 end
