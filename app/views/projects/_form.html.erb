@@ -15,34 +15,44 @@
       </li>
     </ul>
   </div>
-  <div id="steps">
+  <div id="steps" class="text-center">
     <%= simple_form_for @project do |f| %>
 
       <fieldset class="step">
         <legend>Information</legend>
         <div class="row text-center">
-        <p>Name of your Project</p>
-          <div class="col-xs-12 col-md-8 col-md-offset-4 space-top">
-            <%= f.text_field :title, placeholder: 'Name of your Project', label:false %>
+          <div class="col-xs-12 space-top">
+            <p>
+            <%= f.label :title, 'Title' %><%= f.text_field :title, placeholder: 'Name of your Project', label: false%>
+            </p>
           </div>
-          <div class="col-xs-12 col-md-8 col-md-offset-4 space-top">
-            <%= f.select :category, Project.categories, include_blank:"Select a category" %>
+          <div class="col-xs-12 space-top">
+            <p>
+              <%= f.label :category, 'Category' %><%= f.select :category, Project.categories, include_blank:"Select a category" %>
+            </p>
           </div>
         </div>
-
         <!-- subcategory -->
       </fieldset>
 
       <fieldset class="step">
         <legend>Description</legend>
-        <%= f.text_field :full_description, placeholder: 'Descripe your Project', label:false %>
-        <%= f.text_field :short_description, placeholder: 'Summarize your Project!', label:false %>
+          <div class="col-xs-12 space-top">
+            <p>
+            <%= f.label :full_description, 'Description' %><%= f.text_field :full_description, placeholder: 'Descripe your Project', label:false %>
+            </p>
+          </div>
+          <div class="col-xs-12 space-top">
+            <p>
+            <%= f.label :short_description, 'Summarize' %><%= f.text_field :short_description, placeholder: 'Summarize your Project!', label:false %>
+            </p>
+          </div>
       </fieldset>
 
       <fieldset class="step">
         <legend>Optional</legend>
         <%= f.text_field :total_budget, placeholder: 'Do you have a budget for your project?', label:false %>
-        <%= f.input :picture %>
+        <%= f.input :picture, class: "space-auto"%>
         <!-- still need a start_date datepicker -->
         <!-- still need the roles he wants to have!!! -->
       </fieldset>
