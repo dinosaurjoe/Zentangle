@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+    <div class="project-form">
+    <div class="row">
+      <div class="col-lg-12 project-form-header">
+        <h2>Create a New Project</h2>
+      </div>
+    </div>
+    <%= simple_form_for(@project) do |f| %>
+
+    <div class="form-group form-inline">
+
+    <%= f.text_field :title, placeholder: 'title', label:false %>
+
+    <%= f.text_field :short_description, placeholder: 'short description', label:false %>
+
+    <%= f.input :category, priority: [ "Film" ], collection: ["Film", "Music", "Design"], prompt: 'category', label:false %>
+
+    </div>
+
+    <%= f.text_field :subcategory, placeholder: 'experimental', label:false %>
+
+    <%= f.text_field :full_description, placeholder: 'full description', label:false %>
+
+    <%= f.text_field :total_budget, placeholder: 'total budget', label:false %>
+
+    <%= f.input :picture %>
+
+    <%= f.button :submit, 'submit project', class: "btn" %>
+      <% end %>
+    </div>
+  </div>
+</div>
