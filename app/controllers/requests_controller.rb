@@ -7,7 +7,6 @@ class RequestsController < ApplicationController
   def show
     @request = Request.find(params[:id])
     @role = @request.role
-    show_logic
   end
 
   def new
