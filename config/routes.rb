@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :projects
-  resources :roles do
-    resources :requests
+  resources :roles
+  resources :requests do
+    post :decline, on: :member
   end
+  get 'dashboard' => 'dashboards#show'
   resources :users do
     post :invite, on: :member
   end

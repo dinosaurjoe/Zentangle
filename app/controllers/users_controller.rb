@@ -18,6 +18,7 @@ class UsersController < ApplicationController
     @request = Request.new
     @request.user = params[:user_id]
     @request.owner_confirm = true
+    @request.created_by = current_user
   end
 
   private
