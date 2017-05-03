@@ -7,7 +7,7 @@ $(function() {
   /*
   current position of fieldset / navigation link
   */
-  var current   = 1;
+  var current = 1;
 
   /*
   sum and save the widths of each one of the fieldsets

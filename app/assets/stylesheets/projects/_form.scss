@@ -9,16 +9,17 @@
     border-radius:10px;
     border:2px solid #fff;
     background-color:#f9f9f9;
-    width:600px;
+    width:700px;
+    margin: 30px auto;
     overflow:hidden;
 }
 #steps{
-    width:600px;
+    width:800px;
     overflow:hidden;
 }
 .step{
     float:left;
-    width:600px;
+    width:800px;
 }
 #navigation{
     height:45px;
@@ -106,7 +107,7 @@ span.error{
     text-shadow:1px 1px 1px #fff;
     font-weight:bold;
     float:left;
-    width:590px;
+    width:100%;
     padding:5px 0px 5px 10px;
     margin:10px 0px;
     border-bottom:1px solid #fff;
@@ -190,3 +191,5 @@ span.error{
     color:#666;
     text-shadow:1px 1px 1px #fff;
 }
+
+// Credit goes to Mary Lou Tutorials

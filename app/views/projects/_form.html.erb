@@ -25,13 +25,13 @@
         <!-- subcategory -->
       </fieldset>
 
-      <fieldset>
+      <fieldset class="step">
         <legend>Description</legend>
         <%= f.text_field :full_description, placeholder: 'Descripe your Project', label:false %>
         <%= f.text_field :short_description, placeholder: 'Summarize your Project!', label:false %>
       </fieldset>
 
-      <fieldset>
+      <fieldset class="step">
         <legend>Optional</legend>
         <%= f.text_field :total_budget, placeholder: 'Do you have a budget for your project?', label:false %>
         <%= f.input :picture %>
@@ -39,7 +39,7 @@
         <!-- still need the roles he wants to have!!! -->
       </fieldset>
 
-      <fieldset>
+      <fieldset class="step">
         <%= f.button :submit, 'Create a new Project', class: "btn" %>
       </fieldset>
 
