@@ -24,7 +24,7 @@ class RequestsController < ApplicationController
     if @request.save
       redirect_to dashboard_path
     else
-      redirect_to new_request
+      redirect_to new_role_request(@request)
       # path unclear
     end
   end

@@ -53,6 +53,7 @@ class Request < ApplicationRecord
         "#You declined {@request.owner.full_name}'s request for you to join #{@role.project}!"
       else
         @message = "#{@request.owner.full_name} requested you to join #{@role.project}!"
+      end
     end
   end
 
