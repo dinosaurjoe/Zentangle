@@ -41,15 +41,15 @@
       </fieldset>
 
       <fieldset class="step">
-        <legend>Description</legend>
+        <legend>Project Details</legend>
           <div class="col-xs-12 space-top">
             <p>
-            <%= f.label :full_description, 'Description' %><%= f.text_field :full_description, placeholder: 'Descripe your Project', label:false %>
+            <%= f.label :full_description, 'Description' %><%= f.input :full_description, as: :text, placeholder: 'Descripe your Project', :input_html => { id: 'descr', class: 'test', :cols => 10, :rows => 5 },  label:false %>
             </p>
           </div>
           <div class="col-xs-12 space-top">
             <p>
-            <%= f.label :short_description, 'Summarize' %><%= f.text_field :short_description, placeholder: 'Summarize your Project!', label:false %>
+            <%= f.label :short_description, 'Summarize' %><%= f.input :short_description, placeholder: 'Summarize your Project!', label:false, :input_html => { :maxlength => 15, :size => 10, id: "no-resize" } %>
             </p>
           </div>
       </fieldset>
@@ -58,7 +58,7 @@
         <legend>Optional</legend>
         <div class="col-xs-12 space-top">
           <p>
-            <%= f.label :total_budget, 'Budget' %><%= f.text_field :total_budget, placeholder: 'Do you have a budget for your project?', label:false %>
+            <%= f.label :total_budget, 'Budget' %><%= f.text_field :total_budget, placeholder: '0', label:false %>$
           </p>
         </div>
         <div class="col-xs-12 space-top">

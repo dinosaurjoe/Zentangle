@@ -124,7 +124,7 @@
     border-radius: 3px;
     outline: none;
     padding: 5px;
-    width: 200px;
+    width: 400px;
     margin: auto;
 }
 #steps form input:focus{
@@ -132,6 +132,12 @@
     -webkit-box-shadow:0px 0px 3px #aaa;
     box-shadow:0px 0px 3px #aaa;
     background-color:#FFFEEF;
+}
+
+#descr {
+  min-width: 600px;
+  max-width: 610px;
+  max-height: 800px;
 }
 
 // Credit goes to Mary Lou Tutorials
