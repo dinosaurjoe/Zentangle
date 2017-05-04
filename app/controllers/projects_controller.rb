@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
-    @projects = Project.all
+    @projects = Project.near(project_params[:address], 30).where({ category: project_params[:category] })
 
     if project_params[:category]
       @category = project_params[:category]
@@ -26,7 +26,6 @@ class ProjectsController < ApplicationController
         @team << request.user if request.user_confirm && request.owner_confirm
       end
     end
-    p @team
   end
 
   def new
@@ -70,6 +69,6 @@ class ProjectsController < ApplicationController
 
   def project_params
     params.require(:project).permit(:title, :full_description, :category, :subcategory,
-                                    :short_description, :user_id, :picture)
+                                    :short_description, :user_id, :picture, :address)
   end
 end
