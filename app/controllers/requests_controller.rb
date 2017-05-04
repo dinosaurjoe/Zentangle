@@ -50,6 +50,6 @@ class RequestsController < ApplicationController
   end
 
   def request_params
-    params.require(:request).permit(:created_by, :role_id, :project_id)
+    params.require(:request).permit(:user_confirm, :owner_confirm, :user_message, :owner_message, :created_by, :role_id, :project_id)
   end
 end
