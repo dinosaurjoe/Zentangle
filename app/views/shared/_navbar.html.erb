@@ -17,7 +17,9 @@
 
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
-
+    <div class="navbar-wagon-right hidden-xs hidden-sm">
+    <%= link_to "create a project", new_project_path %>
+    </div>
       <!-- Profile picture and dropdown -->
       <div class="navbar-wagon-item">
         <div class="dropdown">

@@ -56,12 +56,19 @@ class ProjectsController < ApplicationController
   def destroy
     @project = Project.find(params[:id])
     @project.destroy
+    respond_to do |format|
+      format.js do
+      end
+      format.html do
+
+      end
+    end
   end
 
   private
 
   def project_params
     params.require(:project).permit(:title, :full_description, :category, :subcategory,
-                                    :short_description, :user_id)
+                                    :short_description, :user_id, :picture)
   end
 end
