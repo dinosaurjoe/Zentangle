@@ -4,8 +4,8 @@
     <!-- Nav tabs -->
     <div class="responsive">
       <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation" ><a href="#main" aria-controls="#" role="tab" data-toggle="tab">Main</a></li>
-        <li role="presentation" class="active"><a href="#projects" aria-controls="#" role="tab" data-toggle="tab">My Projects</a></li>
+        <li role="presentation" class="active"><a href="#main" aria-controls="#" role="tab" data-toggle="tab">Main</a></li>
+        <li role="presentation" ><a href="#projects" aria-controls="#" role="tab" data-toggle="tab">My Projects</a></li>
         <li role="presentation"><a href="#working" aria-controls="#" role="tab" data-toggle="tab">Working on</a></li>
         <li role="presentation"><a href="#incoming" aria-controls="#" role="tab" data-toggle="tab">Incoming</a></li>
         <li role="presentation"><a href="#outgoing" aria-controls="#" role="tab" data-toggle="tab">Outgoing</a></li>
@@ -17,13 +17,13 @@
   <div class="tab-content">
 
 <!-- EVERYTHING SHOULD BE EDITED IN HERE FOR EACH TAB. ALL HTML CODE GOES IN HERE! -->
-    <div role="tabpanel" class="tab-pane " id="main">
+    <div role="tabpanel" class="tab-pane active " id="main">
       <%= render 'main' %>
     </div>
 
 
 <!-- EVERYTHING SHOULD BE EDITED IN HERE FOR EACH TAB. ALL HTML CODE GOES IN HERE! -->
-    <div role="tabpanel" class="tab-pane active" id="projects">
+    <div role="tabpanel" class="tab-pane" id="projects">
       <%= render 'my_projects' %>
     </div>
 
