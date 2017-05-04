@@ -2,7 +2,28 @@ class DashboardsController < ApplicationController
   def show
     @user = current_user
     @projects = @user.projects
-    @requests = @user.requests
+
+    @incoming_invites = @user.requests.select { |request| request.created_by != @user }
+
+    @outgoing_requests = @user.requests.select { |request| request.created_by == @user }
+
+    @outgoing_invites = []
+
+    @incoming_requests = []
+
+    outgoing_invites_and_incoming_requests
+
+  end
+
+  private
+
+  def outgoing_invites_and_incoming_requests
+    @projects.each do |project|
+      project.requests.each do |request|
+        @outgoing_invites << request if request.created_by == @user
+        @incoming_requests << request if request.created_by != @user
+      end
+    end
   end
 end
 
