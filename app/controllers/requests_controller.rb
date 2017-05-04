@@ -1,5 +1,5 @@
 class RequestsController < ApplicationController
-  before_action :set_role, only: [:create]
+  before_action :set_role, only: []
   def index
     @request = Request.all
   end
@@ -19,12 +19,13 @@ class RequestsController < ApplicationController
 
   def create
     @request = Request.new(request_params)
+    @request.created_by = current_user
     @request.user = current_user
-    p @request.save
-    if @request.save
+    @request.save
+    if @request.save!
       redirect_to dashboard_path
     else
-      redirect_to new_role_request(@request.role)
+      redirect_to new_role_request_path(@request.role)
       # path unclear
     end
   end
