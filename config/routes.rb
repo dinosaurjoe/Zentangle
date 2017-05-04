@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :projects
   resources :roles do
-    resources :request, only: :new
+    resources :requests, only: :new
   end
   resources :requests, except: :new do
     post :decline, on: :member
