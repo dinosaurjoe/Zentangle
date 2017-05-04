@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     @request.user = User.find(params[:id])
     @request.owner_confirm = true
     @request.created_by = current_user
-    @request.role.project = Project.new
+    @request.role.project = Project.where()
 
 
   end
