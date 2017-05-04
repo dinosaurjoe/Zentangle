@@ -37,6 +37,11 @@
               <%= f.label :subcategory, 'Subcategory' %><%= f.select :subcategory, Project.subcategories, include_blank:"Select a subcategory" %>
             </p>
           </div>
+          <div class="col-xs-12 space-top">
+            <p>
+               <%= f.label :address, 'Address' %><%= f.text_field :address, placeholder: 'Where is it located?', label: false%>
+            </p>
+          </div>
         </div>
       </fieldset>
 
