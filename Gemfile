@@ -11,8 +11,9 @@ gem 'redis'
 gem 'cloudinary'
 gem 'carrierwave', '~> 0.11.2'
 gem "geocoder"
-
+gem "gmaps4rails"
 gem 'faker'
+gem "coffee-rails"
 
 gem 'sass-rails'
 gem 'jquery-rails'
@@ -21,6 +22,10 @@ gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
+
+source 'https://rails-assets.org' do
+  gem "rails-assets-underscore"
+end
 
 group :development, :test do
   gem 'binding_of_caller'
