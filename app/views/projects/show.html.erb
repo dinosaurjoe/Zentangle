@@ -25,7 +25,7 @@
           <%= @project.user %>
         </div>
         <div class="title"><h3>Available Positions</h3></div>
-        <div class="available-positions"><%= @project.roles %></div>
+        <div class="available-positions"></div>
         <div class="title"><h3>Fundings</h3></div>
         <div class="funding">test funding</div>
       </div>
@@ -36,48 +36,42 @@
   </div>
 </div>
 
+<div class="container">
+  <div class="divs-for-modal">
 
+    <div class="roles-btns">
+      <% @project.roles.each do |role| %>
+        <!-- Trigger/Open The Modal -->
+        <button class="role-btn" id = <%= role.id %>><%= role.title %></button>
+      <% end %>
+    </div>
 
+    <!-- The Modal -->
+    <div id="roles-modal" class="modal">
 
-<!--
-generate buttons for role
-dynamically alter modal based on button
-pick from available roles via dropdown
-once picked show that role's details
- -->
-<div class="divs-for-modal">
-
-
-</div>
-
-<div class="roles-btns">
-  <% @project.roles.each do |role| %>
-    <!-- Trigger/Open The Modal -->
-    <button class="role-btn"><%= role.title %></button>
-  <% end %>
-</div>
-
-<!-- The Modal -->
-<div id="roles-modal" class="modal">
-
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <div class="roles-modal-list">
-    <% @project.roles.each do |role| %>
-      <div class="role-modal-details" id = <%= role.title %>>
-        <h2>Role: <%= role.title %></h2>
-        <p>Description: <%= role.description %></h3>
-        <p>Requirements: <%= role.requirements %></p>
-        <p>Compensation: <%= role.compensation %></p>
-        <button class="btn btn-primary"> <%= link_to "Request to Join", new_role_request_path(role.id) %> </button>
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="roles-modal-list">
+          <% @project.roles.each do |role| %>
+            <div class="role-modal-details" id = <%= "role-#{role.id}" %>>
+              <h2>Role: <%= role.title %></h2>
+              <p>Description: <%= role.description %></h3>
+              <p>Requirements: <%= role.requirements %></p>
+              <p>Compensation: <%= role.compensation %></p>
+              <button class="btn btn-primary"> <%= link_to "Request to Join", new_role_request_path(role.id) %> </button>
+            </div>
+          <% end %>
+        </div>
       </div>
 
-    <% end %>
     </div>
   </div>
-
 </div>
+
+
+
+
 
 
 
@@ -93,9 +87,9 @@ $(document).ready(function() {
   // Get the <span> element that closes the modal
   var span = $(".close");
 
-  // When the user clicks the button, open the modal
-  btn.click(function() {
-    var btnValForId = '#' + btn.text();
+  // When the user clicks the button, open the modal associated with that role
+  btn.click(function(event) {
+    var btnValForId = "#role-" + event.target.id
     $(btnValForId).siblings().hide();
     modal.css({"display": "block"});
   });
@@ -108,7 +102,7 @@ $(document).ready(function() {
 
   // When the user clicks anywhere outside of the modal, close it
   $(document).click(function(event) {
-      if (event.target == $('.modal')) {
+      if (event.target == modal[0]) {
         console.log('hi');
         modal.css({"display": "none"});
       }

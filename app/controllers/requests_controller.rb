@@ -1,5 +1,5 @@
 class RequestsController < ApplicationController
-  before_action :set_project, only: [:create]
+  before_action :set_role, only: [:create]
   def index
     @request = Request.all
   end
@@ -14,16 +14,17 @@ class RequestsController < ApplicationController
     @role = Role.find(params[:role_id])
     @request.role = @role
     @request.user_confirm = true
-    @request.create_by = current_user
+    @request.created_by = current_user
   end
 
   def create
     @request = Request.new(request_params)
     @request.user = current_user
+    p @request.save
     if @request.save
       redirect_to dashboard_path
     else
-      redirect_to new_role_request(@request)
+      redirect_to new_role_request(@request.role)
       # path unclear
     end
   end
@@ -44,8 +45,8 @@ class RequestsController < ApplicationController
 
   private
 
-  def set_project
-    @project = Project.find(params[:project_id])
+  def set_role
+    @role = Role.find(params[:role_id])
   end
 
   def request_params
