@@ -18,6 +18,14 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+    @available_roles = @project.roles.select { |role| role.status }
+    @team = []
+    @project.roles.each do |role|
+      role.requests.each do |request|
+        @team << request.user if request.user_confirm && request.owner_confirm
+      end
+    end
+    p @team
   end
 
   def new

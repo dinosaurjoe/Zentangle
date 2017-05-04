@@ -30,17 +30,17 @@ SKILLS = ["acting", "directing", "writing", "editting", "sound"]
     )
 end
 
-CATEGORY = ["Film", "Music", "Dance", "Design"]
-SUBCATEGORY = ["Documentary", "Illustration", "Motion Design", "Short-film", "Music Video"]
+category = Project::CATEGORIES.keys.sample.to_s
+subcategory = Project::CATEGORIES[category.to_sym].sample
 
-40.times do
-  categories = Project.categories
-  category = Project.categories.keys.sample
+80.times do
+  category = Project::CATEGORIES.keys.sample.to_s
+  subcategory = Project::CATEGORIES[category.to_sym].sample
   Project.create(
     title: Faker::TwinPeaks.quote,
     full_description: Faker::Lorem.paragraph(4),
-    category: category.to_s,
-    subcategory: categories[category].sample,
+    category: category,
+    subcategory: subcategory,
     start_date: Faker::Date.backward(14).to_datetime,
     finish_date: Faker::Date.forward(23).to_datetime,
     short_description: Faker::Lorem.paragraph(1),
@@ -54,24 +54,25 @@ COMPENSATION = ["pizza", "20 dollars", "free coffee", "1,000 dollars"]
 
 projects = Project.all
 
-50.times do
+500.times do
   Role.create(
     project: projects.sample,
     description: Faker::Lorem.paragraph(2),
     requirements: "2 years of experience",
     compensation: COMPENSATION.sample,
-    title: Faker::TwinPeaks.character
+    title: Faker::TwinPeaks.character,
+    status: [true, false].sample
   )
 end
 
 
-40.times do
+200.times do
   user = User.order("RANDOM()").first
-  p Request.create(
+  Request.create(
     user: user,
     role: Role.order("RANDOM()").first,
-    user_confirm: true,
-    owner_confirm: nil,
+    user_confirm: [true, false, nil].sample,
+    owner_confirm: [true, false, nil].sample,
     owner_message: "join me",
     user_message: "how much $$$",
     created_by: user
