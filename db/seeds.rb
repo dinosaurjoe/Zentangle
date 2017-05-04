@@ -34,11 +34,13 @@ CATEGORY = ["Film", "Music", "Dance", "Design"]
 SUBCATEGORY = ["Documentary", "Illustration", "Motion Design", "Short-film", "Music Video"]
 
 40.times do
+  categories = Project.categories
+  category = Project.categories.keys.sample
   Project.create(
     title: Faker::TwinPeaks.quote,
     full_description: Faker::Lorem.paragraph(4),
-    category: CATEGORY.sample,
-    subcategory: SUBCATEGORY.sample,
+    category: category.to_s,
+    subcategory: categories[category].sample,
     start_date: Faker::Date.backward(14).to_datetime,
     finish_date: Faker::Date.forward(23).to_datetime,
     short_description: Faker::Lorem.paragraph(1),

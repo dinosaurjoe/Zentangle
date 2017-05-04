@@ -1,7 +1,18 @@
 class ProjectsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
-    @projects = Project.where({ category: project_params[:category] })
+    @projects = Project.all
+
+    if project_params[:category]
+      @category = project_params[:category]
+      @projects = @projects.where({ category: @category })
+    end
+    if project_params[:subcategory]
+      @subcategory = project_params[:subcategory]
+      @projects = @projects.where({ subcategory: @subcategory })
+    end
+
+    @subcategories = Project::CATEGORIES[@category.to_sym]
   end
 
   def show

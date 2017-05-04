@@ -4,7 +4,7 @@
       <div class="profile-card">
         <div class="profile-picture">
            <% if @user.profile_picture %>
-            <%= cl_image_tag @user.profile_pciture %>
+            <%= cl_image_tag @user.profile_picture %>
             <% else %>
             <%= image_tag "default-user.png", width: 100%>
             <% end %>
@@ -15,7 +15,7 @@
           <h4>Skills</h4>
           <p><%= @user.skills %></p>
           <h4>Portfolio</h4>
-          <p><%= link_to @user.portfolio_url, "http://#{@user.portfolio_url}" %></p>
+          <p><%= link_to "portfolio", "http://#{@user.portfolio_url}" %></p>
         </div>
       </div>
     </div>
@@ -25,6 +25,7 @@
       <div class="row">
       <% @user.projects.each do |project| %>
         <div class="col-md-4">
+        <%= link_to project_path(project.id) do %>
           <div class="project-picture">
             <%= image_tag project.picture %>
           </div>
@@ -32,6 +33,7 @@
             <h4><%= project.title %></h4>
             <p><%= project.short_description %></p>
           </div>
+          <% end %>
         </div>
         <% end %>
       </div>
