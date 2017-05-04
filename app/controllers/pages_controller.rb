@@ -3,7 +3,7 @@ class PagesController < ApplicationController
 
   def home
     @project = Project.new
-    @projects = Project.all.sample(3)
+    @projects = Project.all
     @role = Role.new
   end
 end
