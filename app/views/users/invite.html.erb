@@ -10,14 +10,20 @@
     <%= simple_form_for [@role, @request] do |f| %>
       <div class="request-project-and-role">
         <!-- add js dropdown for which project and role -->
+        <%= f.text_field :project %>
+        <%= f.text_field :role %>
       </div>
       <div class="request-invite-message">
         <%= f.text_field :owner_message %>
       </div>
       <div class="invite-create-or-back">
-        <button class="btn btn-primary"><%= link_to "Back", user_path(@request.user) %></button>
+        <button class="btn"><%= link_to "Back", user_path(@request.user) %></button>
         <%= f.button :submit, 'submit request', class: "btn" %>
       </div>
       <% end %>
   </div>
 </div>
+
+
+
+
