@@ -6,24 +6,21 @@
     <div class="request-project-details">
       <h3><%= @role.project.short_description %></h3>
     </div>
-    <%= simple_form_for [@role, @request] do |f| %>
-    <div class="request-role-details">
-      <h2><%= @role.title %></h2>
-      <p><%= @role.description %></h3>
-      <p><%= @role.requirements %></p>
-      <p><%= @role.compensation %></p>
-    </div>
-    <div class="request-role-message">
-      <%= f.text_field :user_message %>
-    </div>
-    <div class="request-create-or-back">
-      <button class="btn btn-primary"><%= link_to "Back", project_path(@role.project) %></button>
-      <%= f.button :submit, 'submit request', class: "btn" %>
-    </div>
+    <%= simple_form_for @request do |f| %>
+      <div class="request-role-details">
+        <h2><%= @role.title %></h2>
+        <p><%= @role.description %></h3>
+        <p><%= @role.requirements %></p>
+        <p><%= @role.compensation %></p>
+      </div>
+      <div class="request-role-message">
+        <%= f.text_field :user_message %>
+      </div>
+      <div class="request-create-or-back">
+        <button class="btn btn-primary"><%= link_to "Back", project_path(@role.project) %></button>
+        <%= f.button :submit, 'submit request', class: "btn" %>
+      </div>
     <%end %>
   </div>
 </div>
 
-
-
-<!-- add js to let user pick which role they are applying for and show details for that role -->

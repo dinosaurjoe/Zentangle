@@ -5,6 +5,7 @@ class ProjectsController < ApplicationController
 
     if project_params[:category]
       @category = project_params[:category]
+      @categories = Project::CATEGORIES.keys.map(&:to_s)
       @projects = @projects.where({ category: @category })
     end
     if project_params[:subcategory]
@@ -18,6 +19,14 @@ class ProjectsController < ApplicationController
   def show
     @project = Project.find(params[:id])
     @project_coordinates = { lat: @flat.latitude, lng: @flat.longitude }
+    @available_roles = @project.roles.select { |role| role.status }
+    @team = []
+    @project.roles.each do |role|
+      role.requests.each do |request|
+        @team << request.user if request.user_confirm && request.owner_confirm
+      end
+    end
+    p @team
   end
 
   def new
@@ -48,12 +57,19 @@ class ProjectsController < ApplicationController
   def destroy
     @project = Project.find(params[:id])
     @project.destroy
+    respond_to do |format|
+      format.js do
+      end
+      format.html do
+
+      end
+    end
   end
 
   private
 
   def project_params
     params.require(:project).permit(:title, :full_description, :category, :subcategory,
-                                    :short_description, :user_id)
+                                    :short_description, :user_id, :picture)
   end
 end

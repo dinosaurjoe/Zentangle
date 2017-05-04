@@ -19,25 +19,5 @@
         </div>
       </div>
     </div>
-      <div class="col md-offset-1 col-md-6">
-        <div class="active-projects-card">
-          <h1>Projects</h1>
-          <div class="row">
-          <% @user.projects.each do |project| %>
-            <div class="col-md-4">
-              <%= link_to project_path(project.id) do %>
-                <div class="project-picture">
-                  <%= image_tag project.picture %>
-                </div>
-                <div class="project-info">
-                  <h4><%= project.title %></h4>
-                  <p><%= project.short_description %></p>
-                </div>
-              <% end %>
-            </div>
-          <% end %>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
