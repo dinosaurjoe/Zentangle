@@ -25,12 +25,23 @@
       <div class="info">
         <div class="title"><h3>Collaborators</h3></div>
         <div class="collaborators">
-          <%= @project.user.first_name %>
+          <% @team.each do |member| %>
+            <%= link_to user_path(member) do  %>
+              <%= image_tag(member.profile_picture) %>
+            <% end %>
+          <% end %>
         </div>
-        <div class="title"><h3>Available Positions</h3></div>
-        <div class="available-positions"></div>
-        <div class="title"><h3>Fundings</h3></div>
-        <div class="funding">test funding</div>
+        <div class="title"><h3>Available Roles</h3></div>
+        <div class="available-roles">
+          <div class="roles-btns">
+            <% @available_roles.each do |role| %>
+              <!-- Trigger/Open The Modal -->
+              <button class="role-btn" id = <%= role.id %>><%= role.title %></button>
+            <% end %>
+          </div>
+        </div>
+        <div class="title"><h3>Budget</h3></div>
+        <div class="funding"><%= @project.total_budget %></div>
       </div>
     </div>
     <div class="col-md-8 lower-right">
@@ -41,13 +52,6 @@
 
 <div class="container">
   <div class="divs-for-modal">
-
-    <div class="roles-btns">
-      <% @project.roles.each do |role| %>
-        <!-- Trigger/Open The Modal -->
-        <button class="role-btn" id = <%= role.id %>><%= role.title %></button>
-      <% end %>
-    </div>
 
     <!-- The Modal -->
     <div id="roles-modal" class="modal">
@@ -81,38 +85,33 @@
 
 <% content_for(:after_js) do %>
   <script>
-// Get the modal
-$(document).ready(function() {
-  var modal = $('#roles-modal');
+    // Get the modal
+    $(document).ready(function() {
+      var modal = $('#roles-modal');
+      // Get the button that opens the modal
+      var btn = $(".role-btn");
+      // Get the <span> element that closes the modal
+      var span = $(".close");
+      // When the user clicks the button, open the modal associated with that role
 
-  // Get the button that opens the modal
-  var btn = $(".role-btn");
-  // Get the <span> element that closes the modal
-  var span = $(".close");
+      btn.click(function(event) {
+        var btnValForId = "#role-" + event.target.id;
+        $(btnValForId).siblings().hide();
+        modal.css({"display": "block"});
+      });
 
-  // When the user clicks the button, open the modal associated with that role
-  btn.click(function(event) {
-    var btnValForId = "#role-" + event.target.id
-    $(btnValForId).siblings().hide();
-    modal.css({"display": "block"});
-  });
-
-  // When the user clicks on <span> (x), close the modal
-  span.click(function() {
-    console.log("hi")
-    modal.css({"display": "none"});
-  });
-
-  // When the user clicks anywhere outside of the modal, close it
-  $(document).click(function(event) {
-      if (event.target == modal[0]) {
-        console.log('hi');
+      // When the user clicks on <span> (x), close the modal
+      span.click(function() {
         modal.css({"display": "none"});
-      }
-  });
+      });
 
-
-});
+      // When the user clicks anywhere outside of the modal, close it
+      $(document).click(function(event) {
+        if (event.target == modal[0]) {
+          modal.css({"display": "none"});
+        }
+      });
+    });
 
   </script>
 <% end %>
