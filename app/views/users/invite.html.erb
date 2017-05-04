@@ -1,22 +1,29 @@
 <div class="container">
   <div class="invite-user">
     <div class="invite-user-header">
-      <h1>Invite <%= @request.user.name %> to Join your Project</h1>
+      <h1>Invite <%= @request.user.first_name %> to Join your Project</h1>
     </div>
     <div class="request-user-details">
-      <p><%= @request.user.name %></p>
+      <p><%= @request.user.first_name %></p>
       <p><%= @request.user.skills %></p>
     </div>
-    <% simple_form_for [@role, @request] do |f| %>
+    <%= simple_form_for [@role, @request] do |f| %>
       <div class="request-project-and-role">
         <!-- add js dropdown for which project and role -->
+        <%= f.text_field :project %>
+        <%= f.text_field :role %>
       </div>
       <div class="request-invite-message">
         <%= f.text_field :owner_message %>
       </div>
       <div class="invite-create-or-back">
-        <button class="btn btn-primary"><%= link_to "Back", project_path(@role.project) %></button>
+        <button class="btn"><%= link_to "Back", user_path(@request.user) %></button>
         <%= f.button :submit, 'submit request', class: "btn" %>
       </div>
+      <% end %>
   </div>
 </div>
+
+
+
+
