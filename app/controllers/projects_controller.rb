@@ -17,6 +17,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+    @project_coordinates = { lat: @flat.latitude, lng: @flat.longitude }
   end
 
   def new
