@@ -22,6 +22,7 @@ class RolesController < ApplicationController
       render :new
     else
       redirect_to new_role_path
+    end
   end
 
   def destroy
