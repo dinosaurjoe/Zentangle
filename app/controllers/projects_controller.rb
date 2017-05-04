@@ -5,6 +5,7 @@ class ProjectsController < ApplicationController
 
     if project_params[:category]
       @category = project_params[:category]
+      @categories = Project::CATEGORIES.keys.map(&:to_s)
       @projects = @projects.where({ category: @category })
     end
     if project_params[:subcategory]
