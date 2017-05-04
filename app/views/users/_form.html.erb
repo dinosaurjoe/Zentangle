@@ -8,8 +8,7 @@
       </div>
       <%= simple_form_for(@user) do |f| %>
 
-        <%= f.input :profile_img %>
-        <%= f.input :profile_img_cache, as: :hidden %>
+        <%= f.input :profile_picture %>
 
         <%= f.text_field :first_name, placeholder: 'first name', label:false%>
 
