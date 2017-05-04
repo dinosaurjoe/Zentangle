@@ -16,7 +16,8 @@ class UsersController < ApplicationController
 
   def invite
     @request = Request.new
-    @request.user = params[:user_id]
+    # @request.user = params[:user_id]
+    @request.user = User.find(params[:id])
     @request.owner_confirm = true
     @request.created_by = current_user
   end
