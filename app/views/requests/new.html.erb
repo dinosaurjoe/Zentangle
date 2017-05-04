@@ -15,6 +15,8 @@
       </div>
       <div class="request-role-message">
         <%= f.text_field :user_message %>
+        <%= f.input :role_id, as: :hidden %>
+        <%= f.input :user_confirm, as: :hidden %>
       </div>
       <div class="request-create-or-back">
         <button class="btn btn-primary"><%= link_to "Back", project_path(@role.project) %></button>
