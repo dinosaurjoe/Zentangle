@@ -42,7 +42,8 @@ class ProjectsController < ApplicationController
     @project = Project.new(project_params)
     @project.picture = "film.jpg"  if project_params[:picture].nil?
     @project.user = current_user
-    if @project.save
+    @project.subcategory = params[:subcategory]
+    if @project.save!
       redirect_to dashboard_path
     else
       render 'new'
@@ -66,7 +67,6 @@ class ProjectsController < ApplicationController
       format.js do
       end
       format.html do
-
       end
     end
   end

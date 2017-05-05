@@ -19,9 +19,11 @@ class DashboardsController < ApplicationController
 
   def outgoing_invites_and_incoming_requests
     @projects.each do |project|
-      project.requests.each do |request|
-        @outgoing_invites << request if request.created_by == @user
-        @incoming_requests << request if request.created_by != @user
+      project.roles.each do |role|
+        role.requests.each do |request|
+          @outgoing_invites << request if request.created_by == @user
+          @incoming_requests << request if request.created_by != @user
+        end
       end
     end
   end

@@ -40,7 +40,6 @@
                 <div class="inline-label" id="<%= key %>" style="display:none">
                   <p><label for="subcategory" ><%= key %> </label></p>
                   <select name="subcategory" id="<%= key %>" style="display:none" class="form-control">
-                  <option value="0">Select a subcategory</option>
                   <%= Project.cat_hash[key].each do |sub| %>
                   <option value="<%= sub %>"><%= sub %></option>
                   <% end %>
@@ -55,6 +54,7 @@
                <%= f.label :address, 'Address' %><%= f.text_field :address, placeholder: 'Where is it located?', label: false%>
             </p>
           </div>
+
         </div>
       </fieldset>
 
