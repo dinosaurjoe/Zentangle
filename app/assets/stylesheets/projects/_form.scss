@@ -135,7 +135,7 @@
     outline: none;
     padding: 5px;
     width: 400px;
-    margin: auto;
+    // margin: auto;
 }
 #steps form input:focus{
     -moz-box-shadow:0px 0px 3px #aaa;
@@ -165,4 +165,8 @@
 .simple_form div.select {
   margin-bottom: 0;
 }
-
+.inline-label {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}

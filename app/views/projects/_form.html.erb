@@ -28,23 +28,24 @@
             </p>
           </div>
           <div class="col-xs-12 space-top">
-            <p>
-              <%= f.label :category, 'Category' %>
-              <span>shit</span> <%= f.input :category, collection: Project.categories, label: false, include_blank: "Select a category", :input_html => { id: 'normal', :onchange => "changeSelect(this)" } %>
-            </p>
+            <div class="inline-label">
+              <p><%= f.label :category, 'Category' %></p>
+              <%= f.input :category, collection: Project.categories, label: false, include_blank: "Select a category", :input_html => { id: 'normal', :onchange => "changeSelect(this)" } %>
+            </div>
           </div>
           <div class="col-xs-12 space-top">
             <p class="addSubs">
-              <div id="subcats">
+              <div id="subcats" >
                 <% Project.cat_hash.keys.each do |key| %>
-                <select name="subcategory" id="<%= key %>" style="display:none">
-                <p>shit</p>
-                <%= f.label :subcategory, 'subCategory' %>
-                <option value="0">Select a subcategory</option>
-                <%= Project.cat_hash[key].each do |sub| %>
-                <option value="<%= sub %>"><%= sub %></option>
-                <% end %>
-                </select>
+                <div class="inline-label" id="<%= key %>" style="display:none">
+                  <p><label for="subcategory" ><%= key %> </label></p>
+                  <select name="subcategory" id="<%= key %>" style="display:none" class="form-control">
+                  <option value="0">Select a subcategory</option>
+                  <%= Project.cat_hash[key].each do |sub| %>
+                  <option value="<%= sub %>"><%= sub %></option>
+                  <% end %>
+                  </select>
+                </div>
                 <% end %>
               </div>
             </p>
@@ -101,6 +102,14 @@
 function changeSelect( selectNo ){
   console.log(selectNo.value);
   var sels = document.getElementById("subcats").getElementsByTagName('SELECT');
+  var labs = document.getElementById("subcats").getElementsByTagName('DIV');
+
+  for( var j=0; j<labs.length; j++ ){
+    labs[j].style.display = "none";
+    if ( labs[j].id===(selectNo.value) ){
+      labs[j].style.display = '';
+    }
+  }
   for( var j=0; j<sels.length; j++ ){
     sels[j].style.display = "none";
     if ( sels[j].id===(selectNo.value) ){
