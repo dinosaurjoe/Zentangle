@@ -1,7 +1,9 @@
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.45) 0%, rgba(0,36,61,0.45) 50%), url('<%= asset_path('banner.jpg') %>')">
   <div class="banner-content">
-    <h1>what's your <strong class="home-bold">talent?</strong></h1>
-    <h2>find a project, get connected.</h2>
+    <div class="banner-title">
+      <h1>what's your <strong class="home-bold">talent?</strong></h1>
+      <h2>find a project, get connected.</h2>
+    </div>
     <div class="search-bar">
       <div class="form-inline">
           <%= simple_form_for [@project], url: projects_path, method: :get do |f| %>
