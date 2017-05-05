@@ -30,13 +30,23 @@
           <div class="col-xs-12 space-top">
             <p>
               <%= f.label :category, 'Category' %>
-              <%= f.select :category, Project.categories, include_blank:"Select a category" %>
+              <span>shit</span> <%= f.input :category, collection: Project.categories, label: false, include_blank: "Select a category", :input_html => { id: 'normal', :onchange => "changeSelect(this)" } %>
             </p>
           </div>
           <div class="col-xs-12 space-top">
-            <p>
-              <%= f.label :subcategory, 'Subcategory' %>
-              <%= f.select :subcategory, Project.subcategories, include_blank:"Select a subcategory" %>
+            <p class="addSubs">
+              <div id="subcats">
+                <% Project.cat_hash.keys.each do |key| %>
+                <select name="subcategory" id="<%= key %>" style="display:none">
+                <p>shit</p>
+                <%= f.label :subcategory, 'subCategory' %>
+                <option value="0">Select a subcategory</option>
+                <%= Project.cat_hash[key].each do |sub| %>
+                <option value="<%= sub %>"><%= sub %></option>
+                <% end %>
+                </select>
+                <% end %>
+              </div>
             </p>
           </div>
           <div class="col-xs-12 space-top">
@@ -51,7 +61,7 @@
         <legend>Project Details</legend>
           <div class="col-xs-12 space-top">
             <p>
-            <%= f.label :full_description, 'Description' %><%= f.input :full_description, as: :text, placeholder: 'Descripe your Project', :input_html => { id: 'descr', class: 'test', :cols => 10, :rows => 5 },  label:false %>
+            <%= f.label :full_description, 'Description' %><%= f.input :full_description, as: :text, placeholder: 'Descripe your Project', :input_html => { id: 'descr', class: 'test', :cols => 10, :rows => 5 }, label:false %>
             </p>
           </div>
           <div class="col-xs-12 space-top">
@@ -86,3 +96,17 @@
     <% end %>
   </div>
 </div>
+
+<script>
+function changeSelect( selectNo ){
+  console.log(selectNo.value);
+  var sels = document.getElementById("subcats").getElementsByTagName('SELECT');
+  for( var j=0; j<sels.length; j++ ){
+    sels[j].style.display = "none";
+    if ( sels[j].id===(selectNo.value) ){
+      sels[j].style.display = '';
+    }
+  }
+}
+</script>
+

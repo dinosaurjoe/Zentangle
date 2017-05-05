@@ -115,7 +115,17 @@
     border-top:1px solid #d9d9d9;
 }
 #steps form input:not([type=radio]),
-#steps form textarea,
+#steps form textarea {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    outline: none;
+    padding: 5px;
+    width: 400px;
+    margin: auto;
+}
 #steps form select{
     background: #ffffff;
     border: 1px solid #ddd;
@@ -133,14 +143,7 @@
     box-shadow:0px 0px 3px #aaa;
     background-color:#FFFEEF;
 }
-
-#descr {
-  min-width: 600px;
-  max-width: 610px;
-  max-height: 800px;
-}
-
-// Credit goes to Mary Lou Tutorials
+// Credit goes to Mary Lou Tutorials thnak you
 
 #steps form p label{
     width: 100px;
@@ -151,3 +154,15 @@
     text-shadow:1px 1px 1px #fff;
     font-weight:bold;
 }
+
+// .simple_form label {
+//   float: left;
+//   width: 100px;
+//   text-align: right;
+//   margin: 2px 10px;
+// }
+
+.simple_form div.select {
+  margin-bottom: 0;
+}
+
