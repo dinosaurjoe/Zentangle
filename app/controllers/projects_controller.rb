@@ -14,6 +14,11 @@ class ProjectsController < ApplicationController
       @projects = @projects.where({ subcategory: @subcategory })
     end
 
+    if project_params[:role]
+      @role = project_params[:role]
+      @projects = @projects.where({ role: @role })
+    end
+
     @subcategories = Project::CATEGORIES[@category.to_sym]
   end
 

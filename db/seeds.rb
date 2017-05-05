@@ -37,7 +37,7 @@ subcategory = Project::CATEGORIES[category.to_sym].sample
   category = Project::CATEGORIES.keys.sample.to_s
   subcategory = Project::CATEGORIES[category.to_sym].sample
   Project.create(
-    title: Faker::TwinPeaks.quote,
+    title: Faker::Book.title,
     full_description: Faker::Lorem.paragraph(4),
     category: category,
     subcategory: subcategory,

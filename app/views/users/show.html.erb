@@ -16,6 +16,9 @@
           <p><%= @user.skills %></p>
           <h4>Portfolio</h4>
           <p><%= link_to "my portfolio", "http://#{@user.portfolio_url}" %></p>
+<!--           <% if @user != current_user %>
+          <%= link_to "invite #{@user.first_name}", invite_user_path(@user) %>
+          <% end %> -->
         </div>
       </div>
     </div>
