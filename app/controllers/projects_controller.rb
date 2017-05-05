@@ -18,7 +18,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
-    @project_coordinates = { lat: @flat.latitude, lng: @flat.longitude }
+    @project_coordinates = { lat: @project.latitude, lng: @project.longitude }
     @available_roles = @project.roles.select { |role| role.status }
     @team = []
     @project.roles.each do |role|
