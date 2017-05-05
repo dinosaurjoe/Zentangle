@@ -33,6 +33,8 @@ end
 category = Project::CATEGORIES.keys.sample.to_s
 subcategory = Project::CATEGORIES[category.to_sym].sample
 
+address = ["Spreekanal, 10179 Berlin", "Alexanderplatz, 10178 Berlin", "Kollwitzplatz, Kollwitzstraße 1, 10405 Berlin", "Zionskirchplatz, Zionskirchstraße, 10119 Berlin"]
+
 80.times do
   category = Project::CATEGORIES.keys.sample.to_s
   subcategory = Project::CATEGORIES[category.to_sym].sample
@@ -41,6 +43,7 @@ subcategory = Project::CATEGORIES[category.to_sym].sample
     full_description: Faker::Lorem.paragraph(4),
     category: category,
     subcategory: subcategory,
+    address: address.sample,
     start_date: Faker::Date.backward(14).to_datetime,
     finish_date: Faker::Date.forward(23).to_datetime,
     short_description: Faker::Lorem.paragraph(1),
