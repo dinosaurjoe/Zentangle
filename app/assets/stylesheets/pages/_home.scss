@@ -5,8 +5,55 @@
 a {
   text-decoration: none;
 
+
 }
 
 a:hover {
   text-decoration: none;
+}
+
+
+
+.search-bar input {
+  border-radius: 0;
+  border: solid $sunset-orange 2px;
+  color: $sunset-orange;
+  margin-left: 10px;
+
+}
+
+.search-bar label {
+  color: $sunset-orange;
+}
+
+
+.search-bar .btn {
+  border-radius: 0;
+  background-color: $sunset-orange;
+  color: white;
+  border: none;
+
+}
+
+.search-bar .btn:hover {
+  border: none;
+  box-shadow: none;
+}
+
+#project_category {
+  border-radius: 0 !important;
+  color: $sunset-orange;
+  border: solid $sunset-orange 2px;
+}
+
+#project-title  {
+  color: $sunset-orange;
+}
+
+.wrapper h2 {
+  font-weight: 100;
+  font-size: 70px;
+  color: $sunset-orange;
+  font-style: italic;
+  text-transform: uppercase;
 }
