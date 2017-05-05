@@ -1,0 +1,154 @@
+.index-banner {
+  color: white;
+  text-align: center;
+  height: calc(50vh - 60px);
+  background-size: cover;
+  justify-content: center;
+  padding-top: 70px;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  // display: flex;
+
+
+
+}
+
+.index-banner h1 {
+  text-align: center;
+  font-size: 100px;
+  font-weight: 100;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-style: italic;
+  margin-top: 0;
+}
+
+// .banner-content h1 {
+//   font-size: 90px;
+//   font-weight: 100;
+//   letter-spacing: 4px;
+//   text-transform: uppercase;
+//   font-style: italic;
+// }
+
+.index-category {
+  background-color: white;
+  border: 1px solid $sunset-orange;
+  padding: 5px 30px;
+  color: $sunset-orange;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin-right: 10px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.index-category:hover {
+  background-color: $sunset-orange;
+}
+
+.index-category:hover a {
+  color: white;
+}
+
+
+.index-category a {
+  color: $sunset-orange;
+  margin: 0 6px;
+}
+
+
+.index-subcategory {
+  background-color: $sunset-orange;
+  padding: 5px 30px;
+  color: $sunset-orange;
+  text-decoration: none;
+  margin-right: 10px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  border: 1px solid white;
+}
+
+
+.index-subcategory:hover {
+  background-color: white;
+  border: 1px solid $sunset-orange;
+
+}
+
+.index-subcategory:hover a {
+  color: $sunset-orange
+}
+
+.index-subcategory a {
+  color: white;
+  font-size: 13px;
+  margin: 0 6px;
+}
+
+
+.index-card {
+  min-height: 450px;
+  color: white;
+  position: relative;
+  // border: solid $sunset-orange 2px;
+  outline: solid $sunset-orange 2px;
+  outline-offset: -15px;
+  color: $payne-grey;
+  font-weight: 300;
+}
+
+
+.index-card-img {
+  height: 200px;
+  background-size: cover !important;
+
+}
+
+.index-card-content {
+  padding: 0 35px 40px 35px;
+}
+
+.index-card-title {
+  text-transform: capitalize;
+  color: $sunset-orange;
+  text-size: 18px;
+  font-weight: 200;
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 15px 0 0 0;
+}
+
+.index-card-category {
+  position: absolute;
+  color: white;
+  padding: 1.5px 1.5px;
+  background-color: $sunset-orange;
+  top: 15px;
+  right: 15px;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.index-card-subcategory {
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-size: 14px;
+  margin: 10px 0 0 0;
+}
+
+.index-card-content p {
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.6px;
+  margin: 15px 0 0 0;
+}
+
+.index-card:hover .card-img {
+  opacity: 0.6;
+}
+
+
