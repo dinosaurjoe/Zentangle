@@ -58,7 +58,7 @@ class Project < ApplicationRecord
     def categories
       CATEGORIES.keys
     end
-    def subcategories
+    def cat_hash
       CATEGORIES
     end
   end

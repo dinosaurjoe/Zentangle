@@ -15,12 +15,19 @@ $(document).ready(function() {
 function onPlaceChanged() {
   var place = this.getPlace();
   var components = getAddressComponents(place);
+  if (components.address == null) {
+  $('#project_address').trigger('blur').val(components.city + ', ' + components.country_code);
+  }
+  else {
 
   $('#project_address').trigger('blur').val(components.address);
-  $('#flat_zip_code').val(components.zip_code);
-  $('#flat_city').val(components.city);
+
+  }
+  console.log(components);
+  $('#project_zip_code').val(components.zip_code);
+  $('#project_city').val(components.city);
   if (components.country_code) {
-    $('#flat_country').val(components.country_code);
+    $('#project_country').val(components.country_code);
   }
 }
 
