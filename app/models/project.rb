@@ -56,10 +56,10 @@ class Project < ApplicationRecord
   class << self
     # Project.categories
     def categories
-      ["Film", "Music", "Dance", "Design"]
+      CATEGORIES.keys
     end
     def subcategories
-      ["Documentary", "Illustration", "Motion Design", "Short-film", "Music Video"]
+      CATEGORIES
     end
   end
 

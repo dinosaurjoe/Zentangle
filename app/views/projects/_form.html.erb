@@ -29,12 +29,19 @@
           </div>
           <div class="col-xs-12 space-top">
             <p>
-              <%= f.label :category, 'Category' %><%= f.select :category, Project.categories, include_blank:"Select a category" %>
+              <%= f.label :category, 'Category' %>
+              <%= f.select :category, Project.categories, include_blank:"Select a category" %>
             </p>
           </div>
           <div class="col-xs-12 space-top">
             <p>
-              <%= f.label :subcategory, 'Subcategory' %><%= f.select :subcategory, Project.subcategories, include_blank:"Select a subcategory" %>
+              <%= f.label :subcategory, 'Subcategory' %>
+              <%= f.select :subcategory, Project.subcategories, include_blank:"Select a subcategory" %>
+            </p>
+          </div>
+          <div class="col-xs-12 space-top">
+            <p>
+               <%= f.label :address, 'Address' %><%= f.text_field :address, placeholder: 'Where is it located?', label: false%>
             </p>
           </div>
         </div>
@@ -79,6 +86,3 @@
     <% end %>
   </div>
 </div>
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script type="text/javascript" src="jquery.charactercounter.js"></script>
