@@ -7,8 +7,10 @@
           <%= simple_form_for [@project], url: projects_path, method: :get do |f| %>
           <%= f.input :category, priority: [ "Film" ], collection: Project::CATEGORIES.keys, required: false, prompt: 'category', label:false, class: "home-category"  %>
           <%= f.input :title, required: false, placeholder: "role", label:false %>
-          <%= f.input :address, required: false, label:false, placeholder: "Location" %>
-          <%= f.button :submit, 'search',  class: "btn btn-primary"  %>
+
+          <%= f.input :address, required: false, placeholder: "Location", label:false %>
+          <%= f.button :submit, 'search',  class: "btn"  %>
+
         <% end %>
       </div>
     </div>
