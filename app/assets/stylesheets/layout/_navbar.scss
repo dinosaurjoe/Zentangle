@@ -4,7 +4,7 @@
   background-color: white;
   transition: all 0.3s ease;
   display: flex;
-  height: 70px;
+  height: 60px;
   padding: 0px 30px;
   align-items: center;
   justify-content: space-between;
@@ -13,12 +13,12 @@
 
 .navbar-wagon a {
   text-decoration: none;
-  color: $payne-grey;
+  color: $new-grey;
   padding-right: 15px;
 }
 
 .navbar-wagon a:hover {
-  color: $sea-serpent;
+  color: $new-blue;
 }
 /* Optional class to fix the navbar on top */
 .navbar-wagon-fixed {
@@ -92,7 +92,7 @@
 }
 .navbar-wagon-search-btn {
   line-height: 40px;
-  color: $payne-grey;
+  color: $new-grey;
   border: none;
   background: transparent;
   position: absolute;
@@ -103,11 +103,11 @@
 }
 .navbar-wagon-search-input {
   flex: 0 1 300px;
-  background-color: $platinum;
+  background-color: $new-grey;
   transition: all 0.15s ease;
   line-height: 40px;
   font-weight: lighter;
-  color: $payne-grey;
+  color: $new-grey;
   border: none;
   border-radius: 4px;
   padding: 0 20px 0 10px;
@@ -128,7 +128,7 @@
 .navbar-wagon-dropdown-menu li > a {
   transition: color 0.3s ease;
   font-weight: lighter !important;
-  color: $payne-grey !important;
+  color: $new-grey !important;
   font-size: 15px !important;
   line-height: 22px !important;
   padding: 10px 20px;

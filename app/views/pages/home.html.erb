@@ -1,6 +1,7 @@
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.45) 0%, rgba(0,36,61,0.45) 50%), url('<%= asset_path('banner.jpg') %>')">
   <div class="banner-content">
-    <h1>what's your <strong>talent?</strong></h1>
+    <h1>what's your <strong class="home-bold">talent?</strong></h1>
+    <h2>find a project, get connected.</h2>
     <div class="search-bar">
       <div class="form-inline">
           <%= simple_form_for [@project], url: projects_path, method: :get do |f| %>
@@ -21,11 +22,16 @@
       <% @projects.each do |project| %>
         <div class="col-xs-12 col-sm-6 col-md-4">
           <%= link_to project_path(project.id) do%>
-            <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.4) 0%, rgba(0,36,61,0.4) 30%), url( <%= project.picture %>);">
-                <h3><%= project.title %></h3>
-                <h4><%= project.category %></h4>
+          <div class="card">
+            <div class="card-img" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.4) 0%, rgba(0,36,61,0.4) 30%), url( <%= project.picture %>);">
+            </div>
+              <div class="card-content">
+                <h3 class="card-title"><%= project.title %></h3>
+                <h4 class="card-category"><%= project.category %></h4>
                 <h5><%= project.subcategory %></h5>
                 <p><%= project.short_description %></p>
+              </div>
+
             </div>
           <% end %>
         </div>
