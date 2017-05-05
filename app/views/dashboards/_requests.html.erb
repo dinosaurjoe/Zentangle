@@ -7,11 +7,11 @@
         <div class="request-card">
           <div class="col-xs-12 col-sm-6 col-md-4">
             <%= link_to request_path(request) do %>
-              <div class="user-requests-div" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.4) 0%, rgba(0,36,61,0.4) 30%), url( <%= project.picture %>);">
+              <div class="user-requests-div" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.4) 0%, rgba(0,36,61,0.4) 30%), url( <%= request.role.project.picture %>);">
                 <div class="user-requests-content">
                   <h3><%= request.role.title %></h3>
-                  <h5><%= request.project.title %></h5>
-                  <div class=<%= request_status %>><%= request_status %></div>
+                  <h5><%= request.role.project.title %></h5>
+                  <div class=<%= request_status(request) %>><%= request_status(request) %></div>
                 </div>
               </div>
 
@@ -26,11 +26,11 @@
         <div class="request-card">
           <div class="col-xs-12 col-sm-6 col-md-4">
             <%= link_to request_path(request) do %>
-              <div class="user-requests-div" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.4) 0%, rgba(0,36,61,0.4) 30%), url( <%= project.picture %>);">
+              <div class="user-requests-div" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.4) 0%, rgba(0,36,61,0.4) 30%), url( <%= request.role.project.picture %>);">
                 <div class="user-requests-content">
                   <h3><%= request.role.title %></h3>
-                  <h5><%= request.project.title %></h5>
-                  <div class=<%= request_status %>><%= request_status %></div>
+                  <h5><%= request.role.project.title %></h5>
+                  <div class=<%= request_status(request) %>><%= request_status(request) %></div>
                 </div>
               </div>
 

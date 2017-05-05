@@ -1,7 +1,7 @@
 <div class="container">
   <div class="requested-body">
     <div class="requested-header">
-      <h1><%= @request.status(current_user) %></h1>
+      <h1><%= @request.role.project.title %></h1>
 
     </div>
     <div class="requested-project-details">
@@ -37,7 +37,7 @@
 
         <% else %>
           <div class="requested-sent-messsage">
-            <p><%= "#{@role.user.first_name}: #{@request.user_message}" %> </p>
+            <p><%= "#{@role.project.user.first_name}: #{@request.user_message}" %> </p>
           </div>
           <% if @request.owner_message.nil? %>
             <div class="requested-send-message">
@@ -56,7 +56,7 @@
       <div class="requested-create-or-back">
         <button class="btn btn-primary"><%= link_to "Back", dashboard_path %></button>
         <% unless (@request.user_confirm && @request.owner_confirm) || current_user == @request.created_by %>
-          <button class="btn btn-primary"><%= link_to "decline", decline_request_path(@request) %></button>
+          <%= f.button :submit, 'decline', class: "btn" %>
           <%= f.button :submit, 'accept', class: "btn" %>
         <% end %>
       </div>
