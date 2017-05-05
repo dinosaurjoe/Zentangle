@@ -14,9 +14,9 @@ class Request < ApplicationRecord
     @request = self
     @role = @request.role
     if @role.project.owner == current_user
-      owner_message_logic
+      owner_status_logic
     elsif @request.user == current_user
-      user_message_logic
+      user_status_logic
     end
   end
 

@@ -41,7 +41,14 @@ class RequestsController < ApplicationController
 
   def destroy
     @request = Request.find(params[:id])
-    @request.detroy
+    @request.destroy
+  end
+
+  def update
+    @request = Request.find(params[:id])
+    params[:commit] =="accept" ? @request.owner_confirm = true : @request.owner_confirm = false
+    @request.destroy if params[:commit] == "decline"
+    redirect_to dashboard_path
   end
 
   private

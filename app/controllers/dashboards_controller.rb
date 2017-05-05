@@ -35,5 +35,7 @@ class DashboardsController < ApplicationController
       return "declined"
     end
   end
+
+  helper_method :request_status
 end
 
