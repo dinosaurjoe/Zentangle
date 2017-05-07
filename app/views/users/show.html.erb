@@ -1,16 +1,16 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-offset-1 col-md-3">
+    <div class="col-md-3">
       <div class="profile-card">
-        <div class="profile-picture">
+        <div class="profile-picture text-center">
            <% if @user.profile_picture %>
-            <%= cl_image_tag @user.profile_picture %>
+            <%= cl_image_tag @user.profile_picture%>
             <% else %>
             <%= image_tag "default-user.png", width: 100%>
             <% end %>
         </div>
-        <div class="profile-info">
-          <h2><%= @user.first_name %> <%= @user.last_name %></h2>
+        <div class="card-content">
+          <h2 class="username"><%= @user.first_name %> <%= @user.last_name %></h2>
           <p><%= @user.bio %></p>
           <h4>Skills</h4>
           <p><%= @user.skills %></p>
@@ -22,9 +22,9 @@
         </div>
       </div>
     </div>
-      <div class="col md-offset-1 col-md-6">
-        <div class="active-projects-card">
-          <h1>Projects</h1>
+      <div class="col md-offset-1 col-md-8">
+        <div class="active-projects">
+          <h1 class="project-title">Projects</h1>
           <div class="row">
           <% @user.projects.each do |project| %>
             <div class="col-md-6">
@@ -35,8 +35,8 @@
                 <div class="card-content">
                   <h4 class="card-title"><%= project.title %></h4>
                   <h4 class="card-category"><%= project.category %></h4>
-                  <h5 class="card-subcategory"><%= project.subcategory %></h5>
-                  <p><%= project.short_description %></p>
+                  <h5 class="card-subcategory subcategory"><%= project.subcategory %></h5>
+                  <p class="project-description"><%= project.short_description %></p>
                 </div>
               <% end %>
               </div>
