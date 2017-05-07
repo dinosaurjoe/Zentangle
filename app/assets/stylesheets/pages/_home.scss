@@ -16,14 +16,14 @@ a:hover {
 
 .search-bar input {
   border-radius: 0;
-  border: solid $sunset-orange 2px;
-  color: $sunset-orange;
+  border: solid $new-blue 2px;
+  color: $new-blue;
   margin-left: 10px;
 
 }
 
 .search-bar label {
-  color: $sunset-orange;
+  color: $new-blue;
 }
 
 
@@ -36,14 +36,16 @@ a:hover {
 }
 
 .search-bar .btn:hover {
-  border: none;
   box-shadow: none;
+  color: $sunset-orange;
+  background-color: white;
+  border: none;
 }
 
 #project_category {
   border-radius: 0 !important;
-  color: $sunset-orange;
-  border: solid $sunset-orange 2px;
+  color: $new-blue;
+  border: solid $new-blue 2px;
 }
 
 #project-title  {
