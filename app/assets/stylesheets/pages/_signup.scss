@@ -1,0 +1,50 @@
+.signup-form h2 {
+  font-weight: 100;
+  font-size: 65px;
+  color: $sunset-orange;
+  font-style: italic;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 35px;
+
+}
+
+.signup-form {
+  border: solid $sunset-orange 2px;
+  padding: 25px;
+}
+
+.help-block {
+  size: 14px;
+}
+.signup-form input {
+  border: solid $new-blue 2px;
+  color: $new-blue;
+  border-radius: 0;
+}
+
+.form-actions .btn {
+  background-color: $sunset-orange;
+  color: white;
+  border: solid $sunset-orange 2px;
+
+}
+
+.form-actions .btn:hover {
+  background-color: white;
+  color: $sunset-orange;
+  border: solid $sunset-orange 2px;
+}
+
+.signin a {
+  text-transform: uppercase;
+  color: $new-blue;
+  font-weight: 300;
+  font-style: italic;
+  text-decoration: none;
+}
+
+
+.signin {
+  margin-top: 20px;
+}
