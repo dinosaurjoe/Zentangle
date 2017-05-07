@@ -27,16 +27,19 @@
           <h1>Projects</h1>
           <div class="row">
           <% @user.projects.each do |project| %>
-            <div class="col-md-4">
+            <div class="col-md-6">
               <%= link_to project_path(project.id) do %>
-                <div class="project-picture">
-                  <%= image_tag project.picture %>
+              <div class="card">
+                <div class="card-img" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.4) 0%, rgba(0,36,61,0.4) 30%), url( <%= project.picture %>);">
                 </div>
-                <div class="project-info">
-                  <h4><%= project.title %></h4>
+                <div class="card-content">
+                  <h4 class="card-title"><%= project.title %></h4>
+                  <h4 class="card-category"><%= project.category %></h4>
+                  <h5 class="card-subcategory"><%= project.subcategory %></h5>
                   <p><%= project.short_description %></p>
                 </div>
               <% end %>
+              </div>
             </div>
           <% end %>
         </div>
