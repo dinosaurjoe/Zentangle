@@ -7,6 +7,7 @@ class RequestsController < ApplicationController
   def show
     @request = Request.find(params[:id])
     @role = @request.role
+    @request.status(current_user)
   end
 
   def new
