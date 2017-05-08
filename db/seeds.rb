@@ -47,7 +47,7 @@ Project.create(
     start_date: Faker::Date.backward(14).to_datetime,
     finish_date: Faker::Date.forward(23).to_datetime,
     short_description: "A documentary short-film about a young transgender actress and her theatre group in Guanajuato, Mexico.",
-    picture: "https://ksr-ugc.imgix.net/assets/016/205/161/dc52b24cf918b327820fe59cd9286b66_original.png?w=680&fit=max&v=1491844850&auto=format&lossless=true&s=e9f5719089c4b5dd161ccb69fe2958e0",
+    remote_picture_url: "https://ksr-ugc.imgix.net/assets/016/205/161/dc52b24cf918b327820fe59cd9286b66_original.png?w=680&fit=max&v=1491844850&auto=format&lossless=true&s=e9f5719089c4b5dd161ccb69fe2958e0",
     owner: User.all.sample,
     total_budget: "$20,000"
   )
@@ -61,7 +61,7 @@ Project.create(
     start_date: Faker::Date.backward(14).to_datetime,
     finish_date: Faker::Date.forward(23).to_datetime,
     short_description: "A feature film in which artists from the Gulf Coast use dance, spoken word, and visual art to tell stories of environmental justice.",
-    picture: "https://ksr-ugc.imgix.net/assets/016/118/731/1e64c31529f786fee57fb6b78125b995_original.jpg?w=680&fit=max&v=1491248233&auto=format&q=92&s=38783ac2eadede486bb5f2348ed7674b",
+    remote_picture_url: "https://ksr-ugc.imgix.net/assets/016/118/731/1e64c31529f786fee57fb6b78125b995_original.jpg?w=680&fit=max&v=1491248233&auto=format&q=92&s=38783ac2eadede486bb5f2348ed7674b",
     owner: User.all.sample,
     total_budget: "$50,000"
   )
@@ -75,7 +75,7 @@ Project.create(
     start_date: Faker::Date.backward(14).to_datetime,
     finish_date: Faker::Date.forward(23).to_datetime,
     short_description: "Six monthly satirical urban fantasy novelettes about a fixer of supernatural problems.",
-    picture: "https://ksr-ugc.imgix.net/assets/016/063/697/187f0c894fa55e864f0bdfea333c5706_original.png?w=680&fit=max&v=1490870733&auto=format&lossless=true&s=241882d4b02654f5c98012859b9a8b00",
+    remote_picture_url: "https://ksr-ugc.imgix.net/assets/016/063/697/187f0c894fa55e864f0bdfea333c5706_original.png?w=680&fit=max&v=1490870733&auto=format&lossless=true&s=241882d4b02654f5c98012859b9a8b00",
     owner: User.all.sample,
     total_budget: "$1,000"
   )
@@ -89,7 +89,7 @@ Project.create(
     start_date: Faker::Date.backward(14).to_datetime,
     finish_date: Faker::Date.forward(23).to_datetime,
     short_description: "Molissa performed at the first Florence Dance Festival in 1989 and is this summer coming back for its 28th edition, both are showing artistic longevity and grace.",
-    picture: "https://ksr-ugc.imgix.net/assets/016/481/464/84ac7de1832e19a38cb480e70672cd7f_original.jpg?w=680&fit=max&v=1493666758&auto=format&q=92&s=5aa629f3e0622619194178a49a28a02e",
+    remote_picture_url: "https://ksr-ugc.imgix.net/assets/016/481/464/84ac7de1832e19a38cb480e70672cd7f_original.jpg?w=680&fit=max&v=1493666758&auto=format&q=92&s=5aa629f3e0622619194178a49a28a02e",
     owner: User.all.sample,
     total_budget: "$3,000"
   )
@@ -104,7 +104,7 @@ Project.create(
     start_date: Faker::Date.backward(14).to_datetime,
     finish_date: Faker::Date.forward(23).to_datetime,
     short_description: "A weighted blanket engineered to be 10 percent of your body weight to naturally reduce stress and increase relaxation.",
-    picture: "https://ksr-ugc.imgix.net/assets/016/316/565/cff9e7bdc4eb8fefbfb5c0e47e179a43_original.png?w=680&fit=max&v=1492614995&auto=format&lossless=true&s=0cbd8b4a2669c9b24a015a34fa1a3260",
+    remote_picture_url: "https://ksr-ugc.imgix.net/assets/016/316/565/cff9e7bdc4eb8fefbfb5c0e47e179a43_original.png?w=680&fit=max&v=1492614995&auto=format&lossless=true&s=0cbd8b4a2669c9b24a015a34fa1a3260",
     owner: User.all.sample,
     total_budget: "$20,000"
   )
@@ -118,7 +118,7 @@ Project.create(
     start_date: Faker::Date.backward(14).to_datetime,
     finish_date: Faker::Date.forward(23).to_datetime,
     short_description: "An autographed collection of prints from Magic: The Gathering illustrator Johannes Voss.",
-    picture: "https://ksr-ugc.imgix.net/assets/016/232/905/a9a82a9694a07f6fb9c7b01e59d8f72f_original.jpg?w=1024&h=576&fit=fill&bg=000000&v=1492012411&auto=format&q=92&s=87fc2ba11671c136bf6abf0834860676",
+    remote_picture_url: "https://ksr-ugc.imgix.net/assets/016/232/905/a9a82a9694a07f6fb9c7b01e59d8f72f_original.jpg?w=1024&h=576&fit=fill&bg=000000&v=1492012411&auto=format&q=92&s=87fc2ba11671c136bf6abf0834860676",
     owner: User.all.sample,
     total_budget: "$5,000"
   )
@@ -133,7 +133,7 @@ Project.create(
     start_date: Faker::Date.backward(14).to_datetime,
     finish_date: Faker::Date.forward(23).to_datetime,
     short_description: "19x27 Curiosity: The conquest of space series poster.",
-    picture: "https://ksr-ugc.imgix.net/assets/016/378/245/8746113bdae37b9b6ec3aa7c8837c61c_original.png?w=680&fit=max&v=1493051688&auto=format&lossless=true&s=3838c5638a73704c54bbe178531c0549",
+    remote_picture_url: "https://ksr-ugc.imgix.net/assets/016/378/245/8746113bdae37b9b6ec3aa7c8837c61c_original.png?w=680&fit=max&v=1493051688&auto=format&lossless=true&s=3838c5638a73704c54bbe178531c0549",
     owner: User.all.sample,
     total_budget: "$10,000"
   )
@@ -147,7 +147,7 @@ Project.create(
     start_date: Faker::Date.backward(14).to_datetime,
     finish_date: Faker::Date.forward(23).to_datetime,
     short_description: "Love Is A Dirty Word is a solo written and performed by Giovanni Adams. Directed by Becca Wolff.",
-    picture: "https://ksr-ugc.imgix.net/assets/016/514/773/2318d1e4d5733cc509f7f2f98a768f56_original.jpg?w=680&fit=max&v=1493834292&auto=format&q=92&s=4f5cc6df7d29b55afe94a9fdb37b7328",
+    remote_picture_url: "https://ksr-ugc.imgix.net/assets/016/514/773/2318d1e4d5733cc509f7f2f98a768f56_original.jpg?w=680&fit=max&v=1493834292&auto=format&q=92&s=4f5cc6df7d29b55afe94a9fdb37b7328",
     owner: User.all.sample,
     total_budget: "$5,000"
   )
@@ -163,7 +163,7 @@ If this campaign gets 10 backers from the same state, I will create a series of 
     start_date: Faker::Date.backward(14).to_datetime,
     finish_date: Faker::Date.forward(23).to_datetime,
     short_description: "What are those awesome patterns? TOPO MAPS! Topographic Maps from around the US creating the coolest patterns since tie-dye",
-    picture: "https://ksr-ugc.imgix.net/assets/016/401/019/a35613ffa71924e02b66c1b186cdc95b_original.jpg?w=680&fit=max&v=1493165247&auto=format&q=92&s=c0e3c1e2c030e40a11300bbc2e8f8c54",
+    remote_picture_url: "https://ksr-ugc.imgix.net/assets/016/401/019/a35613ffa71924e02b66c1b186cdc95b_original.jpg?w=680&fit=max&v=1493165247&auto=format&q=92&s=c0e3c1e2c030e40a11300bbc2e8f8c54",
     owner: User.all.sample,
     total_budget: "$10,000"
   )
@@ -176,7 +176,7 @@ Project.create(
     start_date: Faker::Date.backward(14).to_datetime,
     finish_date: Faker::Date.forward(23).to_datetime,
     short_description: "Vanessa, is the story of a woman with a mark, who chooses a forbidden lifestyle obtaining pleasure, witnessing it in others.",
-    picture: "https://ksr-ugc.imgix.net/assets/016/064/532/6e1be095526593c84819a04266c907c9_original.jpg?w=680&fit=max&v=1490876711&auto=format&q=92&s=92b546e9318dace6825e66f2280bb7a2",
+    remote_picture_url: "https://ksr-ugc.imgix.net/assets/016/064/532/6e1be095526593c84819a04266c907c9_original.jpg?w=680&fit=max&v=1490876711&auto=format&q=92&s=92b546e9318dace6825e66f2280bb7a2",
     owner: User.all.sample,
     total_budget: "$30,000"
   )
@@ -190,7 +190,7 @@ Project.create(
     start_date: Faker::Date.backward(14).to_datetime,
     finish_date: Faker::Date.forward(23).to_datetime,
     short_description: "It's true, VH-80 is the world's first bilateral LDM. Let us show you what that means, what changes, and how awesome it really is.",
-    picture: "https://ksr-ugc.imgix.net/assets/015/921/024/926c699c919787601d4fac16269900db_original.png?w=680&fit=max&v=1489929489&auto=format&lossless=true&s=02c653752d09f974046553c992d47fa0",
+    remote_picture_url: "https://ksr-ugc.imgix.net/assets/015/921/024/926c699c919787601d4fac16269900db_original.png?w=680&fit=max&v=1489929489&auto=format&lossless=true&s=02c653752d09f974046553c992d47fa0",
     owner: User.all.sample,
     total_budget: "20,000"
   )
@@ -204,7 +204,7 @@ Project.create(
     start_date: Faker::Date.backward(14).to_datetime,
     finish_date: Faker::Date.forward(23).to_datetime,
     short_description: "Paul Nicklen and the SeaLegacy team are traveling to Svalbard, Norway, to document the effects of disappearing sea ice on polar bears.",
-    picture: "https://ksr-ugc.imgix.net/assets/016/519/023/afbe09236f0380ac2bd686be0c109050_original.jpg?w=680&fit=max&v=1493851430&auto=format&q=92&s=81f2b4a6fdb3bb984db44adda4652498",
+    remote_picture_url: "https://ksr-ugc.imgix.net/assets/016/519/023/afbe09236f0380ac2bd686be0c109050_original.jpg?w=680&fit=max&v=1493851430&auto=format&q=92&s=81f2b4a6fdb3bb984db44adda4652498",
     owner: User.all.sample,
     total_budget: "$60,000"
   )
@@ -221,7 +221,7 @@ Here are two pieces, which will be on the record, that I performed live at the T
     start_date: Faker::Date.backward(14).to_datetime,
     finish_date: Faker::Date.forward(23).to_datetime,
     short_description: "John draws inspiration from neuroscience to compose all original music for the piano and other keyboards.",
-    picture: "https://ksr-ugc.imgix.net/assets/016/096/227/c9fb997136460417244951e16a60e454_original.jpg?w=680&fit=max&v=1491079857&auto=format&q=92&s=377804bcc67a3e1e14644b13e721bc3b",
+    remote_picture_url: "https://ksr-ugc.imgix.net/assets/016/096/227/c9fb997136460417244951e16a60e454_original.jpg?w=680&fit=max&v=1491079857&auto=format&q=92&s=377804bcc67a3e1e14644b13e721bc3b",
     owner: User.all.sample,
     total_budget: "$5,000"
   )
@@ -236,7 +236,7 @@ Project.create(
     start_date: Faker::Date.backward(14).to_datetime,
     finish_date: Faker::Date.forward(23).to_datetime,
     short_description: "80 locations, landscapes, NPCs, and events ripped from history, and ways to use them to spice up your game.",
-    picture: "https://ksr-ugc.imgix.net/assets/016/401/083/d51c02aec7c7c8fd4a6a85d01bcef25d_original.png?w=680&fit=max&v=1493165667&auto=format&lossless=true&s=ae3118ca4e5eb6f3b28f6172980a101a",
+    remote_picture_url: "https://ksr-ugc.imgix.net/assets/016/401/083/d51c02aec7c7c8fd4a6a85d01bcef25d_original.png?w=680&fit=max&v=1493165667&auto=format&lossless=true&s=ae3118ca4e5eb6f3b28f6172980a101a",
     owner: User.all.sample,
     total_budget: "$14,000"
   )
@@ -250,7 +250,7 @@ Project.create(
     start_date: Faker::Date.backward(14).to_datetime,
     finish_date: Faker::Date.forward(23).to_datetime,
     short_description: "",
-    picture: "https://ksr-ugc.imgix.net/assets/016/158/061/6c6287c44bd0fa5a83374f56812abd46_original.jpg?w=680&fit=max&v=1491486318&auto=format&q=92&s=8e1530e101d991720fa3c9e63c3e3c67",
+    remote_picture_url: "https://ksr-ugc.imgix.net/assets/016/158/061/6c6287c44bd0fa5a83374f56812abd46_original.jpg?w=680&fit=max&v=1491486318&auto=format&q=92&s=8e1530e101d991720fa3c9e63c3e3c67",
     owner: User.all.sample,
     total_budget: "$1,000"
   )
@@ -264,7 +264,7 @@ Project.create(
     start_date: Faker::Date.backward(14).to_datetime,
     finish_date: Faker::Date.forward(23).to_datetime,
     short_description: "Gear Supply Co. is launching a new line of affordable, hand wired guitar pedals",
-    picture: "https://ksr-ugc.imgix.net/assets/016/570/611/32be15bd46af15b4db368b49ad6df52b_original.png?w=680&fit=max&v=1494191152&auto=format&lossless=true&s=046f59869a86b99cf10d4c9d913ae6a5",
+    remote_picture_url: "https://ksr-ugc.imgix.net/assets/016/570/611/32be15bd46af15b4db368b49ad6df52b_original.png?w=680&fit=max&v=1494191152&auto=format&lossless=true&s=046f59869a86b99cf10d4c9d913ae6a5",
     owner: User.all.sample,
     total_budget: "15,000"
   )
@@ -278,7 +278,7 @@ Project.create(
     start_date: Faker::Date.backward(14).to_datetime,
     finish_date: Faker::Date.forward(23).to_datetime,
     short_description: "Two dance companies come together on a mission to find a studio space to call home. Where possibilities become reality.",
-    picture: "https://cdn.pixabay.com/photo/2016/03/10/21/14/dance-1249292_1280.jpg",
+    remote_picture_url: "https://cdn.pixabay.com/photo/2016/03/10/21/14/dance-1249292_1280.jpg",
     owner: User.all.sample,
     total_budget: "$13,000"
   )
@@ -292,7 +292,7 @@ Project.create(
     start_date: Faker::Date.backward(14).to_datetime,
     finish_date: Faker::Date.forward(23).to_datetime,
     short_description: "A Trip to the Moon by Georges Méliès, was the first science fiction film, ever. With your help it will be a coloring book…pretty soon.",
-    picture: "https://ksr-ugc.imgix.net/assets/015/580/493/3d0b5226c4d920507088f1e98b3af45b_original.png?w=680&fit=max&v=1487642252&auto=format&lossless=true&s=84d23d78229ecf67f19415b2eb446aa2",
+    remote_picture_url: "https://ksr-ugc.imgix.net/assets/015/580/493/3d0b5226c4d920507088f1e98b3af45b_original.png?w=680&fit=max&v=1487642252&auto=format&lossless=true&s=84d23d78229ecf67f19415b2eb446aa2",
     owner: User.all.sample,
     total_budget: "$20,000"
   )
@@ -306,7 +306,7 @@ Project.create(
     start_date: Faker::Date.backward(14).to_datetime,
     finish_date: Faker::Date.forward(23).to_datetime,
     short_description: "Loud Harp's Third Full Length Album | Available everywhere June 09, 2017.",
-    picture: "https://ksr-ugc.imgix.net/assets/015/610/119/199775de03ef6be802591ce56772060f_original.jpg?w=680&fit=max&v=1487828948&auto=format&q=92&s=8036a4c554352f4f6a241a8ca8523776",
+    remote_picture_url: "https://ksr-ugc.imgix.net/assets/015/610/119/199775de03ef6be802591ce56772060f_original.jpg?w=680&fit=max&v=1487828948&auto=format&q=92&s=8036a4c554352f4f6a241a8ca8523776",
     owner: User.all.sample,
     total_budget: "$17,500"
   )
@@ -320,7 +320,7 @@ Project.create(
     start_date: Faker::Date.backward(14).to_datetime,
     finish_date: Faker::Date.forward(23).to_datetime,
     short_description: "A film about a lesbian couple in Peru calling upon Andean magic to fight against discrimination, produced by Berlinale participant D.S.",
-    picture: "https://ksr-ugc.imgix.net/assets/013/690/796/0f6132f147b78032af0b12f91b2c3a70_original.jpg?w=1552&h=873&fit=fill&bg=000000&v=1475766504&auto=format&q=92&s=fab0a96e2a41aeb71a9c6c67d0840b0c",
+    remote_picture_url: "https://ksr-ugc.imgix.net/assets/013/690/796/0f6132f147b78032af0b12f91b2c3a70_original.jpg?w=1552&h=873&fit=fill&bg=000000&v=1475766504&auto=format&q=92&s=fab0a96e2a41aeb71a9c6c67d0840b0c",
     owner: User.all.sample,
     total_budget: "$20,000"
   )
@@ -334,7 +334,7 @@ Project.create(
     start_date: Faker::Date.backward(14).to_datetime,
     finish_date: Faker::Date.forward(23).to_datetime,
     short_description: "Robot Core is a robot controller that connects to the Raspberry Pi, allowing you to easily control motors, servos, and read sensors.",
-    picture: "https://ksr-ugc.imgix.net/assets/014/821/824/fdd29344fda8be7f80c46075842042bf_original.JPG?w=700&fit=max&v=1481248256&auto=format&q=92&s=a895d4c33c7ab2f03293a645339b5caf",
+    remote_picture_url: "https://ksr-ugc.imgix.net/assets/014/821/824/fdd29344fda8be7f80c46075842042bf_original.JPG?w=700&fit=max&v=1481248256&auto=format&q=92&s=a895d4c33c7ab2f03293a645339b5caf",
     owner: User.all.sample,
     total_budget: "$13,000"
   )
@@ -348,7 +348,7 @@ Project.create(
     start_date: Faker::Date.backward(14).to_datetime,
     finish_date: Faker::Date.forward(23).to_datetime,
     short_description: "Art installation with reality show performances about political ideology, celebrity-obsessed media, and an Iranian-American activist.",
-    picture: "https://ksr-ugc.imgix.net/assets/013/755/782/9ae2b2c17625d3e7b5a10077e39346d5_original.jpg?w=1552&h=873&fit=fill&bg=000000&v=1473988421&auto=format&q=92&s=331409da86f815c7f72929b7218097e1",
+    remote_picture_url: "https://ksr-ugc.imgix.net/assets/013/755/782/9ae2b2c17625d3e7b5a10077e39346d5_original.jpg?w=1552&h=873&fit=fill&bg=000000&v=1473988421&auto=format&q=92&s=331409da86f815c7f72929b7218097e1",
     owner: User.all.sample,
     total_budget: "$7,000"
   )
@@ -362,7 +362,7 @@ Project.create(
     start_date: Faker::Date.backward(14).to_datetime,
     finish_date: Faker::Date.forward(23).to_datetime,
     short_description: "'Vacillation - Adolescence' is a short dance film about teenage love.",
-    picture: "https://ksr-ugc.imgix.net/assets/003/775/929/314c481354d012aa67852eea7128c053_original.jpg?w=680&fit=max&v=1431418793&auto=format&q=92&s=832da987e7c9422848130e269bfd3449",
+    remote_picture_url: "https://ksr-ugc.imgix.net/assets/003/775/929/314c481354d012aa67852eea7128c053_original.jpg?w=680&fit=max&v=1431418793&auto=format&q=92&s=832da987e7c9422848130e269bfd3449",
     owner: User.all.sample,
     total_budget: "$2,000"
   )
