@@ -15,6 +15,9 @@ gem "gmaps4rails"
 gem 'faker'
 gem "coffee-rails"
 
+gem 'turbolinks', '~> 5.0.0'
+gem 'emoji'
+
 gem 'sass-rails'
 gem 'jquery-rails'
 gem 'uglifier'
