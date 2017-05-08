@@ -15,8 +15,11 @@
         <%= link_to user_path(@project.user.id) do %>
           <h4><%= @project.user.first_name %> <%= @project.user.last_name %></h4>
           <% end %>
+
         <div class="project-info">
+
           <div class="project-title"><h3>About the Project</h3></div>
+          <div class="project-category"><h5><strong><%= @project.category %></strong> <%= @project.subcategory %></h5></div>
           <div class="short-description"><p><%= @project.short_description %></p></div>
         </div>
 
