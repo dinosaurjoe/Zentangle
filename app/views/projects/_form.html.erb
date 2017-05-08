@@ -66,12 +66,12 @@
         <legend>Project Details</legend>
           <div class="col-xs-12 space-top">
             <p>
-            <%= f.label :full_description, 'Description' %><%= f.input :full_description, as: :text, placeholder: 'Descripe your Project', :input_html => { id: 'descr', class: 'test', :cols => 10, :rows => 5 }, label:false %>
+            <%= f.label :full_description, 'Description' %><%= f.input :full_description, as: :text, placeholder: 'Descripe your Project', :input_html => { :minLength => 1000, :maxlength => 3000, id: 'descr', class: 'test', :cols => 10, :rows => 5 }, label:false %>
             </p>
           </div>
           <div class="col-xs-12 space-top">
             <p>
-            <%= f.label :short_description, 'Summarize' %><%= f.input :short_description, placeholder: 'Summarize your Project!', label:false, :input_html => { :maxlength => 50, :size => 10, id: "no-resize" } %>
+            <%= f.label :short_description, 'Summarize' %><%= f.input :short_description, placeholder: 'Summarize your Project!', label:false, :input_html => { :minLength => 100, :maxlength => 150, :size => 10, id: "no-resize" } %>
             </p>
           </div>
       </fieldset>
