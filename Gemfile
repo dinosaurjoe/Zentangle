@@ -18,6 +18,9 @@ gem 'pg_search'
 gem "algoliasearch-rails"
 
 
+gem 'turbolinks', '~> 5.0.0'
+gem 'emoji'
+
 gem 'sass-rails'
 gem 'jquery-rails'
 gem 'uglifier'

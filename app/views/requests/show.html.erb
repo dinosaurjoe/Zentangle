@@ -33,7 +33,7 @@
           <div class="requested-sent-messsage">
             <p><%= "#{@role.project.owner.first_name}: #{@request.owner_message}" %> </p>
           </div>
-          <% if @request.user_message.nil? %>
+<!--           <% if @request.user_message.nil? %>
             <div class="requested-send-message">
               <%= f.text_field :user_message %>
               <%= link_to 'send', "", :onclick => "$('#requested-form').submit()" %>
@@ -42,13 +42,13 @@
             <div class="requested-sent-messsage">
               <p><%= "#{@role.user.first_name}: #{@request.user_message}" %> </p>
             </div>
-          <% end %>
+          <% end %> -->
 
         <% else %>
           <div class="requested-sent-messsage">
             <p><%= "#{@request.created_by.first_name}: #{@request.user_message}" %> </p>
           </div>
-          <% if @request.owner_message.nil? %>
+<!--           <% if @request.owner_message.nil? %>
             <% if @request.role.project.owner == current_user %>
               <div class="requested-send-message">
                 <%= f.text_field :owner_message %>
@@ -58,12 +58,18 @@
 
           <% else %>
             <p><%= "#{@role.project.owner.first_name}: #{@request.owner_message}" %> </p>
-          <% end %>
+          <% end %> -->
         <% end %>
       </div>
 
       <!-- implement message thread table -->
-
+      <div class="message-button">
+        <% if @request.user == current_user %>
+          <%= link_to 'send a message', new_personal_message_path(receiver_id: @request.role.project.owner.id) %>
+        <% else %>
+          <%= link_to 'send a message', new_personal_message_path(receiver_id: @request.user.id) %>
+        <% end %>
+      </div>
 
       <div class="requested-create-or-back">
         <button class="btn btn-primary"><%= link_to "Back", dashboard_path %></button>

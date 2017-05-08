@@ -17,6 +17,7 @@ a:hover {
   border: solid $new-blue 2px;
   color: $new-blue;
   margin-left: 10px;
+  height: 40px;
 
 }
 
@@ -42,8 +43,8 @@ a:hover {
 
 #project_category {
   border-radius: 0 !important;
-  color: $new-blue;
-  border: solid $new-blue 2px;
+  color: #999999;
+  border: solid white 2px;
 }
 
 #project-title  {
@@ -102,3 +103,7 @@ a:hover {
 }
   .aa-suggestion:hover, .aa-suggestion.aa-cursor {
     background-color: rgba(241, 241, 241, 0.35); }
+select {
+  border-radius: 0;
+  border: none;
+}
