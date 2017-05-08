@@ -14,6 +14,8 @@ gem "geocoder"
 gem "gmaps4rails"
 gem 'faker'
 gem "coffee-rails"
+gem 'pg_search'
+
 
 gem 'sass-rails'
 gem 'jquery-rails'

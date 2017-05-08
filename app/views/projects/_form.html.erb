@@ -27,6 +27,16 @@
               <%= f.label :title, 'Title' %><%= f.text_field :title, placeholder: 'Name of your Project', label:false%>
               </p>
             </div>
+          </div>
+          <div class="col-xs-12 space-top">
+            <p class="addSubs">
+              <div id="subcats" >
+                <% Project.cat_hash.keys.each do |key| %>
+                <div class="inline-label" id="<%= key %>" style="display:none">
+                  <p><label for="subcategory" >Subcategory </label></p>
+                  <select name="subcategory" id="<%= key %>" style="display:none" class="form-control">
+                  <%= Project.cat_hash[key].each do |sub| %>
+                  <option value="<%= sub %>"><%= sub %></option>
             <div class="col-xs-12 space-top">
               <div class="inline-label">
                 <p><%= f.label :category, 'Category' %></p>
@@ -81,11 +91,13 @@
           <legend>Optional</legend>
           <div class="col-xs-12 space-top">
             <p>
+              <%= f.label :full_description, 'Description' %><%= f.input :full_description, as: :text, placeholder: 'Descripe your Project', :input_html => { :minLength => 1000, :maxlength => 3000, id: 'descr', class: 'test', :cols => 10, :rows => 5 }, label:false %>
               <%= f.label :total_budget, 'Budget' %><%= f.text_field :total_budget, placeholder: '0', label:false %>$
             </p>
           </div>
           <div class="col-xs-12 space-top">
             <p>
+              <%= f.label :short_description, 'Summarize' %><%= f.input :short_description, placeholder: 'Summarize your Project!', label:false, :input_html => { :minLength => 100, :maxlength => 150, :size => 10, id: "no-resize" } %>
               <%= f.input :picture, class: "space-auto", label: false%>
             </p>
           </div>
