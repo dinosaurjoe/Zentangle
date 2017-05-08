@@ -198,6 +198,8 @@ textarea::-webkit-input-placeholder {
   border-radius: 0 !important;
   border: solid $new-blue 2px;
   color: $new-blue;
+  background-color: white;
+  box-shadow: none;
 }
 
 #normal {
