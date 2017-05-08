@@ -8,7 +8,7 @@
       <div class="form-inline">
           <%= simple_form_for [@project], url: projects_path, method: :get do |f| %>
           <%= f.input :category, priority: [ "Film" ], collection: Project::CATEGORIES.keys, required: false, prompt: 'category', label:false, class: "home-category"  %>
-          <%= f.autocomplete_field :role, autocomplete_role_title_pages_path %>
+          <%= f.autocomplete_field :roles, autocomplete_role_title_pages_path %>
           <%= f.input :address, required: false, placeholder: "Location", label:false %>
           <%= f.button :submit, 'search',  class: "btn"  %>
         <% end %>

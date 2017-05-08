@@ -1,4 +1,9 @@
 class Role < ApplicationRecord
+  include PgSearch
+  pg_search_scope :search_by_role,
+                  against: [ :title ]
+
+
   belongs_to :project
   has_many :requests
   validates :title, presence: true
