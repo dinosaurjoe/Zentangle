@@ -105,6 +105,7 @@
 
       btn.click(function(event) {
         var btnValForId = "#role-" + event.target.id;
+        $(btnValForId).show();
         $(btnValForId).siblings().hide();
         modal.css({"display": "block"});
       });
