@@ -6,10 +6,19 @@
   margin: 0;
   text-align: center;
   color: white;
+  font-weight: 100;
+  border: none;
+  text-transform: uppercase;
+  font-style: italic;
+  letter-spacing: 1px;
+  font-size: 18px;
+  padding: 10px 0px;
+  word-spacing: 1.2px;
+
 }
 .alert-info {
-  background: $green;
+  background: $new-blue;
 }
 .alert-warning {
-  background: $red;
+  background: $sunset-orange;
 }
