@@ -8,7 +8,6 @@
       <div class="form-inline">
           <%= simple_form_for [@project], url: projects_path, method: :get do |f| %>
           <%= f.input :category, priority: [ "Film" ], collection: Project::CATEGORIES.keys, required: false, prompt: 'category', label:false, class: "home-category"  %>
-          <%= f.autocomplete_field :roles, autocomplete_role_title_pages_path %>
           <%= f.input :address, required: false, placeholder: "Location", label:false %>
           <%= f.button :submit, 'search',  class: "btn"  %>
         <% end %>
@@ -31,7 +30,7 @@
                 <h3 class="card-title"><%= project.title %></h3>
                 <h4 class="card-category"><%= project.category %></h4>
                 <h5 class="card-subcategory"><%= project.subcategory %></h5>
-                <p><%= cutoff_text(project.short_description) %></p>
+                <p><%= project.short_description %></p>
               </div>
             </div>
           <% end %>
