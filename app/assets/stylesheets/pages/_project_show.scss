@@ -65,9 +65,11 @@
   margin-bottom: 10px;
 }
 
-.lower-left {
-  border-right: $sunset-orange 2px solid;
+.lower-right {
+  border-left: $sunset-orange 2px solid;
 }
+
+
 
 .project-full-info {
   margin-top: 60px;
@@ -76,6 +78,7 @@
   letter-spacing: 1px;
   font-weight: 300;
   line-height: 24px;
+
 }
 
 .lower-right {

@@ -1,104 +1,106 @@
+<div class="container">
+  <div id="wrapper-form">
+    <div id="navigation" style="display:none;">
+      <ul>
+        <li class="active">
+          <a href="#">Information</a>
+        </li>
+        <li>
+          <a href="#">Project Details</a>
+        </li>
+        <li>
+          <a href="#">Optional</a>
+        </li>
+        <li>
+          <a href="#">Confirm</a>
+        </li>
+      </ul>
+    </div>
+    <div id="steps" class="text-center">
+      <%= simple_form_for @project do |f| %>
 
-<div id="wrapper-form">
-  <div id="navigation" style="display:none;">
-    <ul>
-      <li class="active">
-        <a href="#">Information</a>
-      </li>
-      <li>
-        <a href="#">Project Details</a>
-      </li>
-      <li>
-        <a href="#">Optional</a>
-      </li>
-      <li>
-        <a href="#">Confirm</a>
-      </li>
-    </ul>
-  </div>
-  <div id="steps" class="text-center">
-    <%= simple_form_for @project do |f| %>
-
-      <fieldset class="step">
-        <legend>Information</legend>
-        <div class="row text-center">
-          <div class="col-xs-12 space-top">
-            <p>
-            <%= f.label :title, 'Title' %><%= f.text_field :title, placeholder: 'Name of your Project', label: false%>
-            </p>
-          </div>
-          <div class="col-xs-12 space-top">
-            <div class="inline-label">
-              <p><%= f.label :category, 'Category' %></p>
-              <%= f.input :category, collection: Project.categories, label: false, include_blank: "Select a category", :input_html => { id: 'normal', :onchange => "changeSelect(this)" } %>
+        <fieldset class="step">
+          <legend>Information</legend>
+          <div class="row text-center">
+            <div class="col-xs-12 space-top">
+              <p>
+              <%= f.label :title, 'Title' %><%= f.text_field :title, placeholder: 'Name of your Project', label:false%>
+              </p>
+            </div>
+            <div class="col-xs-12 space-top">
+              <div class="inline-label">
+                <p><%= f.label :category, 'Category' %></p>
+                <%= f.input :category, collection: Project.categories, label: false, include_blank: "Select a category", :input_html => { id: 'normal', :onchange => "changeSelect(this)" } %>
+              </div>
+            </div>
+            <div class="col-xs-12 space-top">
+              <p class="addSubs">
+                <div id="subcats" >
+                  <% Project.cat_hash.keys.each do |key| %>
+                  <div class="inline-label" id="<%= key %>" style="display:none">
+                    <p><label for="subcategory" ><%= key %> </label></p>
+                    <select name="subcategory" id="<%= key %>" style="display:none" class="form-control">
+                    <%= Project.cat_hash[key].each do |sub| %>
+                    <option value="<%= sub %>"><%= sub %></option>
+                    <% end %>
+                    </select>
+                  </div>
+                  <% end %>
+                </div>
+              </p>
+            </div>
+            <div class="col-xs-12 space-top">
+              <p>
+                 <%= f.label :address, 'Address' %><%= f.text_field :address, placeholder: 'Where is it located?', label: false%>
+              </p>
+            </div>
+            <div class="col-xs-12 space-top">
+              <p>
+                 <%= f.label :roles, 'Roles' %><%= f.text_field :roles, placeholder: 'Where is it role?', label: false%>
+              </p>
             </div>
           </div>
+        </fieldset>
+
+        <fieldset class="step">
+          <legend>Project Details</legend>
+            <div class="col-xs-12 space-top">
+            <p>
+            <%= f.label :short_description, 'Summary' %><%= f.input :short_description, label:false, :input_html => { :maxlength => 50, :size => 10, id: "no-resize" } %>
+            </p>
+              <p>
+              <%= f.label :full_description, 'Description' %><%= f.input :full_description, as: :text, :input_html => { id: 'descr', class: 'test', :cols => 10, :rows => 5 }, label:false %>
+              </p>
+            </div>
+            <div class="col-xs-12 space-top">
+
+            </div>
+        </fieldset>
+
+        <fieldset class="step">
+          <legend>Optional</legend>
           <div class="col-xs-12 space-top">
-            <p class="addSubs">
-              <div id="subcats" >
-                <% Project.cat_hash.keys.each do |key| %>
-                <div class="inline-label" id="<%= key %>" style="display:none">
-                  <p><label for="subcategory" ><%= key %> </label></p>
-                  <select name="subcategory" id="<%= key %>" style="display:none" class="form-control">
-                  <%= Project.cat_hash[key].each do |sub| %>
-                  <option value="<%= sub %>"><%= sub %></option>
-                  <% end %>
-                  </select>
-                </div>
-                <% end %>
-              </div>
+            <p>
+              <%= f.label :total_budget, 'Budget' %><%= f.text_field :total_budget, placeholder: '0', label:false %>$
             </p>
           </div>
           <div class="col-xs-12 space-top">
             <p>
-               <%= f.label :address, 'Address' %><%= f.text_field :address, placeholder: 'Where is it located?', label: false%>
+              <%= f.input :picture, class: "space-auto", label: false%>
             </p>
           </div>
+          <!-- still need a start_date datepicker -->
+          <!-- still need the roles he wants to have!!! -->
+        </fieldset>
+
+        <fieldset class="step">
           <div class="col-xs-12 space-top">
-            <p>
-               <%= f.label :roles, 'Roles' %><%= f.text_field :roles, placeholder: 'Where is it role?', label: false%>
-            </p>
+            <%= f.button :submit, 'submit', class: "btn" %>
           </div>
-        </div>
-      </fieldset>
+        </fieldset>
 
-      <fieldset class="step">
-        <legend>Project Details</legend>
-          <div class="col-xs-12 space-top">
-            <p>
-            <%= f.label :full_description, 'Description' %><%= f.input :full_description, as: :text, placeholder: 'Descripe your Project', :input_html => { id: 'descr', class: 'test', :cols => 10, :rows => 5 }, label:false %>
-            </p>
-          </div>
-          <div class="col-xs-12 space-top">
-            <p>
-            <%= f.label :short_description, 'Summarize' %><%= f.input :short_description, placeholder: 'Summarize your Project!', label:false, :input_html => { :maxlength => 50, :size => 10, id: "no-resize" } %>
-            </p>
-          </div>
-      </fieldset>
-
-      <fieldset class="step">
-        <legend>Optional</legend>
-        <div class="col-xs-12 space-top">
-          <p>
-            <%= f.label :total_budget, 'Budget' %><%= f.text_field :total_budget, placeholder: '0', label:false %>$
-          </p>
-        </div>
-        <div class="col-xs-12 space-top">
-          <p>
-            <%= f.input :picture, class: "space-auto", label: false%>
-          </p>
-        </div>
-        <!-- still need a start_date datepicker -->
-        <!-- still need the roles he wants to have!!! -->
-      </fieldset>
-
-      <fieldset class="step">
-        <div class="col-xs-12 space-top">
-          <%= f.button :submit, 'submit', class: "btn" %>
-        </div>
-      </fieldset>
-
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
 
