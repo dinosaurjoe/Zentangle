@@ -373,13 +373,14 @@ COMPENSATION = ["pizza", "20 dollars", "free coffee", "1,000 dollars"]
 
 projects = Project.all
 
+ROLES = ["Lead Designer", "Illustrator", "Editor", "Director", "Writer", "Art Director", "Producer", "Junior Art Director", "Assistant Producer", "Production Assistant", "Technical Director", "Engineer"]
 500.times do
   Role.create(
     project: projects.sample,
     description: Faker::Lorem.paragraph(2),
     requirements: "2 years of experience",
     compensation: COMPENSATION.sample,
-    title: Faker::TwinPeaks.character,
+    title: ROLES.sample,
     status: [true, false].sample
   )
 end
