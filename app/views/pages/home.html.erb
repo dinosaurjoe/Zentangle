@@ -7,8 +7,8 @@
     <div class="search-bar">
       <div class="form-inline aa-input-container">
           <%= simple_form_for [@project], url: projects_path, method: :get do |f| %>
-          <%= f.input :category, priority: [ "Film" ], collection: Project::CATEGORIES.keys, required: false, prompt: 'category', label:false, class: "home-category"  %>
-          <%= f.association :roles, as: :string, required: false, placeholder: "Role", label: false, input_html: { class: "aa-input-search"} %>
+          <%= f.input :category, collection: Project::CATEGORIES.keys, required: false, prompt: 'category', label:false, class: "home-category"  %>
+          <%= f.association :roles, as: :string, placeholder: "Role", label: false, input_html: { class: "aa-input-search"} %>
           <%= f.input :address, required: false, placeholder: "Location", label: false %>
           <%= f.button :submit, 'search',  class: "btn"  %>
         <% end %>

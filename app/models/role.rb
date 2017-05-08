@@ -5,9 +5,9 @@ class Role < ApplicationRecord
     attributeForDistinct "title"
   end
 
-  include PgSearch
-  pg_search_scope :search_by_role,
-                  against: [ :title ]
+  # include PgSearch
+  # pg_search_scope :search_by_role,
+  #                 against: [ :title ]
 
   belongs_to :project
   has_many :requests

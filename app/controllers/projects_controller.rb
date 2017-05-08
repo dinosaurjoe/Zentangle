@@ -2,7 +2,10 @@ class ProjectsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @projects = Project.near(project_params[:address], 30).where({ category: project_params[:category] })
+
+    @projects = Project.near(params[:address], 30)
+    .where({ category: params[:category] })
+    .joins(:roles).where(roles: { title: params[:title] })
 
     if project_params[:category]
       @category = project_params[:category]
@@ -77,4 +80,5 @@ class ProjectsController < ApplicationController
     params.require(:project).permit(:title, :full_description, :category, :subcategory,
                                     :short_description, :user_id, :picture, :address, :total_budget)
   end
+
 end

@@ -1,5 +1,14 @@
 class Project < ApplicationRecord
 
+  include PgSearch
+  pg_search_scope :project_search,
+    against: [ :category ],
+    associated_against: {
+      roles: [ :title ]
+    }
+
+  has_many :roles
+
   CATEGORIES = {
     art: [
       "ceramics", "conceptual art", "digital art", "illustration", "installations",
