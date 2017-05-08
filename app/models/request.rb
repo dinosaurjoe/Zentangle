@@ -1,5 +1,7 @@
 class Request < ApplicationRecord
-  belongs_to :user
+  belongs_to :created_by, :class_name => "User"
+  belongs_to :user, :class_name => "User"
+  # belongs_to :user
   belongs_to :role
 
   # validates :user_confirm, presence: true #nil is pending, false is declined
