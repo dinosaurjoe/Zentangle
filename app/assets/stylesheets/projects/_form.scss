@@ -167,7 +167,7 @@ textarea::-webkit-input-placeholder {
 #steps form p label{
     width: 100px;
     text-align:right;
-    margin-right:15px;
+    margin-right:25px;
     line-height:26px;
     color: $new-blue;
     text-shadow: none;
@@ -208,3 +208,65 @@ textarea::-webkit-input-placeholder {
   box-shadow: none;
 }
 
+#art.form-control {
+  outline: solid $new-blue 2px;
+  border-radius: 0;
+  box-shadow: none;
+  color: $new-blue;
+}
+
+#design.form-control {
+  outline: solid $new-blue 2px;
+  border-radius: 0;
+  box-shadow: none;
+  color: $new-blue;
+}
+
+#fashion.form-control {
+  outline: solid $new-blue 2px;
+  border-radius: 0;
+  box-shadow: none;
+  color: $new-blue;
+}
+
+#film.form-control {
+  outline: solid $new-blue 2px;
+  border-radius: 0;
+  box-shadow: none;
+  color: $new-blue;
+}
+
+#journalism.form-control {
+  outline: solid $new-blue 2px;
+  border-radius: 0;
+  box-shadow: none;
+  color: $new-blue;
+}
+
+#music.form-control {
+  outline: solid $new-blue 2px;
+  border-radius: 0;
+  box-shadow: none;
+  color: $new-blue;
+}
+
+#photography.form-control {
+  outline: solid $new-blue 2px;
+  border-radius: 0;
+  box-shadow: none;
+  color: $new-blue;
+}
+
+#technology.form-control {
+  outline: solid $new-blue 2px;
+  border-radius: 0;
+  box-shadow: none;
+  color: $new-blue;
+}
+
+#theater.form-control {
+  outline: solid $new-blue 2px;
+  border-radius: 0;
+  box-shadow: none;
+  color: $new-blue;
+}
