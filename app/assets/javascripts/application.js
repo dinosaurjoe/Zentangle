@@ -3,3 +3,5 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require_tree .
+//= require jquery-ui
+//= require autocomplete-rails

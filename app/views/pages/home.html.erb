@@ -6,13 +6,11 @@
     </div>
     <div class="search-bar">
       <div class="form-inline">
-          <%= simple_form_for [@project], url: projects_path, method: :get do |f| %>
+          <%= simple_form_for [@project, @role], url: projects_path, method: :get do |f| %>
           <%= f.input :category, priority: [ "Film" ], collection: Project::CATEGORIES.keys, required: false, prompt: 'category', label:false, class: "home-category"  %>
-          <%= f.input :title, required: false, placeholder: "role", label:false %>
-
+          <%= f.autocomplete_field :role, autocomplete_role_title_pages_path %>
           <%= f.input :address, required: false, placeholder: "Location", label:false %>
           <%= f.button :submit, 'search',  class: "btn"  %>
-
         <% end %>
       </div>
     </div>
@@ -35,7 +33,6 @@
                 <h5 class="card-subcategory"><%= project.subcategory %></h5>
                 <p><%= project.short_description %></p>
               </div>
-
             </div>
           <% end %>
         </div>
