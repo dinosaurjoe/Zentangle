@@ -373,18 +373,34 @@ COMPENSATION = ["pizza", "20 dollars", "free coffee", "1,000 dollars"]
 
 projects = Project.all
 
-ROLES = ["Lead Designer", "Illustrator", "Editor", "Director", "Writer", "Art Director", "Producer", "Junior Art Director", "Assistant Producer", "Production Assistant", "Technical Director", "Engineer"]
-500.times do
+ROLES = ["Lead Designer", "Illustrator", "Editor", "Director", "Writer",
+         "Art Director", "Producer", "Junior Art Director",
+         "Assistant Producer", "Production Assistant",
+         "Technical Director", "Engineer"]
+EXPERIENCE_YEARS = (1..5).to_a
+count = 0
+115.times do
+
   Role.create(
-    project: projects.sample,
+    project: projects[count],
     description: Faker::Lorem.paragraph(2),
-    requirements: "2 years of experience",
+    requirements: "#{EXPERIENCE_YEARS.sample} years of experience",
     compensation: COMPENSATION.sample,
     title: ROLES.sample,
     status: [true, false].sample
   )
+   count = (count + 1) % 22
 end
 
+
+rolestodelete = Role.all
+
+25.times do
+  rolestodelete = Role.all
+
+   samrole =  rolestodelete.sample
+   samrole.destroy unless samrole.project.roles.length < 2
+end
 
 200.times do
   user = User.order("RANDOM()").first
