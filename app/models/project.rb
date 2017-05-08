@@ -43,6 +43,7 @@ class Project < ApplicationRecord
   belongs_to :user
   alias_attribute :owner, :user
   has_many :roles
+  has_many :requests, through: :roles
   validates :title, presence: true
   validates :category, presence: true
   validates :subcategory, presence: true

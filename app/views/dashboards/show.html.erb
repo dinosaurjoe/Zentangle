@@ -35,12 +35,12 @@
 
 <!-- EVERYTHING SHOULD BE EDITED IN HERE FOR EACH TAB. ALL HTML CODE GOES IN HERE!-->
     <div role="tabpanel" class="tab-pane" id="incoming">
-      <%= render 'requests', requests: @incoming_requests, invites: @incoming_invites %>
+      <%= render 'requests', requests: @user.incoming_requests, invites: @user.incoming_invites %>
     </div>
 
       <!-- EVERYTHING SHOULD BE EDITED IN HERE FOR EACH TAB. ALL HTML CODE GOES IN HERE!-->
     <div role="tabpanel" class="tab-pane" id="outgoing">
-      <%= render 'requests', requests: @outgoing_requests, invites: @outgoing_invites %>
+      <%= render 'requests', requests: @user.outgoing_requests, invites: @user.outgoing_invites %>
     </div>
 
   </div>
