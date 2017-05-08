@@ -38,7 +38,7 @@
               <div id="subcats" >
                 <% Project.cat_hash.keys.each do |key| %>
                 <div class="inline-label" id="<%= key %>" style="display:none">
-                  <p><label for="subcategory" ><%= key %> </label></p>
+                  <p><label for="subcategory" >Subcategory </label></p>
                   <select name="subcategory" id="<%= key %>" style="display:none" class="form-control">
                   <%= Project.cat_hash[key].each do |sub| %>
                   <option value="<%= sub %>"><%= sub %></option>
