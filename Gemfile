@@ -15,6 +15,7 @@ gem "gmaps4rails"
 gem 'faker'
 gem "coffee-rails"
 gem 'pg_search'
+gem "algoliasearch-rails"
 
 
 gem 'sass-rails'

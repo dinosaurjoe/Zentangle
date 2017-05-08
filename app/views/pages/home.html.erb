@@ -5,10 +5,11 @@
       <h2>find a project, get connected, make it happen.</h2>
     </div>
     <div class="search-bar">
-      <div class="form-inline">
+      <div class="form-inline aa-input-container">
           <%= simple_form_for [@project], url: projects_path, method: :get do |f| %>
           <%= f.input :category, priority: [ "Film" ], collection: Project::CATEGORIES.keys, required: false, prompt: 'category', label:false, class: "home-category"  %>
-          <%= f.input :address, required: false, placeholder: "Location", label:false %>
+          <%= f.association :roles, as: :string, required: false, placeholder: "Role", label: false, input_html: { class: "aa-input-search"} %>
+          <%= f.input :address, required: false, placeholder: "Location", label: false %>
           <%= f.button :submit, 'search',  class: "btn"  %>
         <% end %>
       </div>
@@ -39,3 +40,26 @@
     </div>
   </div>
 </div>
+
+
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
+<script>
+  var client = algoliasearch("8ECOR4OKYP", "265f77efadba84f52617a6870bfa7c68");
+  var index = client.initIndex('Role');
+  //initialize autocomplete on search input (ID selector must match)
+  autocomplete('#project_role_ids',
+  { hint: false }, {
+      source: autocomplete.sources.hits(index, {hitsPerPage: 5}),
+      //value to be displayed in input control after user's suggestion selection
+      displayKey: 'title',
+      //hash of templates used when rendering dataset
+      templates: {
+          //'suggestion' templating function used to render a single suggestion
+          suggestion: function(suggestion) {
+            return '<span>' +
+              suggestion._highlightResult.title.value + '</span>';
+          }
+      }
+  });
+</script>
