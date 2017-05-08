@@ -1,4 +1,10 @@
 class Role < ApplicationRecord
+  include AlgoliaSearch
+  algoliasearch do
+    attribute :title
+    attributeForDistinct "title"
+  end
+
   include PgSearch
   pg_search_scope :search_by_role,
                   against: [ :title ]
