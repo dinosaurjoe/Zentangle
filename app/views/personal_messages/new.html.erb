@@ -1,10 +1,22 @@
-<h1>New message to <%= @receiver.full_name %></h1>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="request-to-join-header text-center">
+        <h1>New message to</h1>
+        <h2><%= @receiver.full_name %></h2>
+      </div>
+    </div>
+  </div>
 
-<%= form_for @personal_message do |f| %>
-  <%= hidden_field_tag 'receiver_id', @receiver.id %>
-
-  <%= f.label :body %>
-  <%= f.text_area :body %>
-
-  <%= f.submit "send" %>
-<% end %>
+  <div class="row">
+    <div class="col-xs-12 col-md-6 ">
+      <div class="msg-box text-center">
+      <%= form_for @personal_message do |f| %>
+        <%= hidden_field_tag 'receiver_id', @receiver.id %>
+        <%= f.text_area :body, label:false, placeholder "Write your message" %>
+      </div>
+      <div class="send text-center">
+        <%= f.submit "send", class: "send-msg-btn" %>
+        <% end %>
+      </div>
+</div>

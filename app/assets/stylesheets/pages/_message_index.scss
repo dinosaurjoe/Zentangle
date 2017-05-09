@@ -1,0 +1,48 @@
+#conversations {
+  margin-top: 22px;
+}
+
+.conversation-list h3 {
+  font-family: $header-font;
+  font-weight: 100;
+  color: $new-blue;
+  font-size: 20px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.conversation-list p {
+  color: $payne-grey;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 18px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.view-msg-btn {
+  border-radius: 0;
+  background-color: $new-blue;
+  color: white;
+  text-decoration: none;
+  border: solid $new-blue 2px;
+  text-transform: uppercase;
+  font-weight: 300;
+  letter-spacing: 1px;
+  font-size: 12px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.view-msg-btn:hover {
+  background-color: white;
+  border: solid $new-blue 2px;
+  color: $new-blue;
+}
+
+.msg-row {
+  vertical-align: middle;
+}
+
