@@ -367,6 +367,146 @@ Project.create(
     total_budget: "$2,000"
   )
 
+Project.create(
+    title: "THE DELTA ENDURING TAROT",
+    full_description: "There is a savage beauty in the depths of the swamp. For each drop of blood spilled into those dark waters, the delta rises. She thrives. She continues to resist the encroaching gulf. So too is the way of her people, who despite endless struggle, continue to find love and wonder in the ruins of the natural world.",
+    category: "art",
+    subcategory: "illustration",
+    address: address.sample,
+    start_date: Faker::Date.backward(14).to_datetime,
+    finish_date: Faker::Date.forward(23).to_datetime,
+    short_description: "A modern 82-card color illustrated tarot deck centering on the natural beauty and struggles of life in the Mississippi Delta.",
+    remote_picture_url: "https://ksr-ugc.imgix.net/assets/016/487/822/bd72e66c4a71a315a9860e1a2afb575b_original.jpg?w=680&fit=max&v=1493695657&auto=format&q=92&s=bbbaffae2b473ccc0c333551e75e6879",
+    owner: User.all.sample,
+    total_budget: "$6,000"
+  )
+
+Project.create(
+    title: "The Circuit: Urbiessa",
+    full_description: "The purpose of this Kickstarter is to finance the very first episode of 'The Circuit' anthology. Help us make an incredible episode, and maybe more! It's up to you!",
+    category: "film",
+    subcategory: "science fiction",
+    address: address.sample,
+    start_date: Faker::Date.backward(14).to_datetime,
+    finish_date: Faker::Date.forward(23).to_datetime,
+    short_description: "A film quality Sci-fi Anthology series, where fans, celebrities, and professional filmmakers work together.",
+    remote_picture_url: "https://ksr-ugc.imgix.net/assets/016/310/749/6ae7ff79ff4f80e98682925be3cf73b0_original.jpg?w=680&fit=max&v=1492575349&auto=format&q=92&s=6b35baca432ba81663600c03f03d3a8c",
+    owner: User.all.sample,
+    total_budget: "$75,000"
+  )
+
+Project.create(
+    title: "Duty Free: A Documentary Film",
+    full_description: "After working every day of her adult life, my mom - a single mom - was fired from her job at age 75. To help her deal with the pain of this loss, I encouraged her to write out a list of all the things she could never do while on the clock, and one by one, we ticked the items off her bucket list. Throughout these adventures, my mom really lived -- she took a hip hop class with a 'Hamilton' dancer; she finally got to visit her sister's grave in the UK; she reunited with her daughter and the granddaughter she hadn't seen in a decade. But without an income, the realities of unemployment loomed.",
+    category: "film",
+    subcategory: "documentary",
+    address: address.sample,
+    start_date: Faker::Date.backward(14).to_datetime,
+    finish_date: Faker::Date.forward(23).to_datetime,
+    short_description: "After being abruptly fired, my struggling 75 year old mom and I go on her bucket list journey to find meaning in a life without work.",
+    remote_picture_url: "https://ksr-ugc.imgix.net/assets/016/330/245/8ce2a5179b335b9e4f489398d0266dc3_original.jpg?w=680&fit=max&v=1492697632&auto=format&q=92&s=673e970acd520afedf1ed7e0d4a37d02",
+    owner: User.all.sample,
+    total_budget: "$23,000"
+  )
+
+Project.create(
+    title: "Meant to be Broken - Feature Film",
+    full_description: "Harvey has led a cautious and conscientious life until he gets fired and finds out he has one month to live. Throwing caution to the wind, he finally steps into the bar he passes every day on the way to work. There he meets Luke and confesses he's never broken any rules. Luke responds 'Do you want to?,' and so the quest begins. Along the way they accidentally kidnap a woman who joins them on their adventure, but she might prove to be more trouble than they are looking for. 'Meant to be Broken' is a crazy journey of law breaking and discovery that culminates in Miami where competing forces catch up to the unlikely trio.",
+    category: "film",
+    subcategory: "comedy",
+    address: address.sample,
+    start_date: Faker::Date.backward(14).to_datetime,
+    finish_date: Faker::Date.forward(23).to_datetime,
+    short_description: "'Meant to Be Broken' is a feature length dark comedy that follows 3 unlikely companions on a road trip crime spree down the East Coast.",
+    remote_picture_url: "https://ksr-ugc.imgix.net/assets/016/523/460/6db4abe045466fc62186bdef78c761f4_original.jpg?w=680&fit=max&v=1493878649&auto=format&q=92&s=195bb4a612c2af791f8851895460e2e6",
+    owner: User.all.sample,
+    total_budget: "$6,200"
+  )
+
+Project.create(
+    title: "Night Run",
+    full_description: "The year was 1985, Daniel McCormack was like any other man, dreaming of sports cars and a brighter future with his girlfriend, Jennifer. One night Daniel stops an assault on several civilians by the notorious Kano Gang who have been overpowering the city of Santa Mira. Unfortunately, Daniel’s bravery is short lived as he is murdered by Johnny, the gang’s leader. A year later, on a thunderous October night, Daniel rises from his grave seeking revenge on the men who took his life, his future and his dreams.",
+    category: "film",
+    subcategory: "action",
+    address: address.sample,
+    start_date: Faker::Date.backward(14).to_datetime,
+    finish_date: Faker::Date.forward(23).to_datetime,
+    short_description: "An action film set in 1985, filled with explosions, synth music, and a man who will stop at nothing to get his revenge.",
+    remote_picture_url: "https://ksr-ugc.imgix.net/assets/016/411/532/f22c28f40166b5232ce21f86fd326adc_original.jpg?w=680&fit=max&v=1493224424&auto=format&q=92&s=9707257028e7ac59109cbe75f738fee9",
+    owner: User.all.sample,
+    total_budget: "$20,000"
+  )
+
+Project.create(
+    title: "Sembene Across Africa",
+    full_description: "Europeans dominated African culture until African independence in the late 1950s and early 1960s. They ran the schools, newspapers, TV and movie theaters. African language was outlawed in many places; in French West Africa, the birthplace of Ousmane Sembene, Africans were evenb forbidden to use cameras.
+      Many Africans lost their connection with their cultures, but Sembene, an unlikely Senegalese hero, was determined to give African stories back to the African people. Sembene was kicked out of school at age 13 and worked for nearly 25 years as a manual laborer. He taught himself how to write at the age of 30, and soon was writing novels that inspired the battle for African independence.",
+    category: "film",
+    subcategory: "documentary",
+    address: address.sample,
+    start_date: Faker::Date.backward(14).to_datetime,
+    finish_date: Faker::Date.forward(23).to_datetime,
+    short_description: "Join the largest community screening in history, featuring a film about 'the father of African cinema,' shown in every African nation.",
+    remote_picture_url: "https://ksr-ugc.imgix.net/assets/016/462/864/bcdfa44c85b3ef1ffe22f4cab4278fda_original.jpg?w=680&fit=max&v=1493559775&auto=format&q=92&s=560af71426da774ac4e66542f4fec41d",
+    owner: User.all.sample,
+    total_budget: "$14,500"
+  )
+
+Project.create(
+    title: "PANS - a film about Found Girls and Lost Boys",
+    full_description: "Set in a quiet beach town in grunge-saturated 1994, Pans puts a feminist twist on the classic, Peter Pan. Wynne Darling, 15, is physically broken, socially displaced, and emotionally torn between her newly separated parents.
+      With nowhere to turn, Wynne hooks up with a new crowd led by bad boy skateboarder, Pete, and his riot grrrl sister, Belle. Surrounded by 'lost boys' and with the help of found friendship, Wynne learns what it means to grow up of her own free will...",
+    category: "film",
+    subcategory: "narrative film",
+    address: address.sample,
+    start_date: Faker::Date.backward(14).to_datetime,
+    finish_date: Faker::Date.forward(23).to_datetime,
+    short_description: "Set in a quiet beach town in grunge-saturated 1994, Pans puts a feminist twist on the classic Peter Pan.",
+    remote_picture_url: "https://ksr-ugc.imgix.net/assets/016/384/675/91b99f791f6925bc29d11d26499ac3e9_original.jpg?w=680&fit=max&v=1493083120&auto=format&q=92&s=756a07dcee33c807a4067ac1c05f18dc",
+    owner: User.all.sample,
+    total_budget: "$50,000"
+  )
+
+Project.create(
+    title: "V - A Short Film commissioned by Film London",
+    full_description: "V is a confrontational and challenging coming-of-age drama that uses vampire mythology and horror genre tropes to explore femininity and sexual abuse. Think: Fish Tank meets Let the Right One In. The film slowly reveals how Minnie, a punchy word-a-second teenage girl, became a vampire as a result of being groomed online. Her vampirism is a physical embodiment of the damage caused.",
+    category: "film",
+    subcategory: "short",
+    address: address.sample,
+    start_date: Faker::Date.backward(14).to_datetime,
+    finish_date: Faker::Date.forward(23).to_datetime,
+    short_description: "V is a confrontational coming-of-age drama that uses vampire mythology to explore themes of femininity, isolation and sexual abuse.",
+    remote_picture_url: "https://ksr-ugc.imgix.net/assets/016/463/044/b27f1f064831d084bbb2f467ad675b0f_original.png?w=680&fit=max&v=1493561075&auto=format&lossless=true&s=2133d8de7e7c407920e687ea9562bc7a",
+    owner: User.all.sample,
+    total_budget: "$3,000"
+  )
+Project.create(
+    title: "BETTER EATING | Targeted vegan educational videos",
+    full_description: "Better Eating International is a 501(c)(3) nonprofit organization that is inspiring compassion and sparing animals from miserable lives and cruel deaths through smart, personalized educational videos. Our inclusive and empowering model will help create a future where animals are valued as unique individuals and no longer exploited for human gain. With a diverse and talented team armed with the latest technologies, we'll give people the knowledge and tools they’ll need to live more ethically.",
+    category: "film",
+    subcategory: "animation",
+    address: address.sample,
+    start_date: Faker::Date.backward(14).to_datetime,
+    finish_date: Faker::Date.forward(23).to_datetime,
+    short_description: "Creating smart and inclusive animated videos to expose animal abuse, inspire compassion, and empower millions to explore vegan eating",
+    remote_picture_url: "https://ksr-ugc.imgix.net/assets/016/227/143/0f05f81dad388a7fe1e1cd87ec83690f_original.png?w=680&fit=max&v=1491971620&auto=format&lossless=true&s=56ee3ea5adc789214b34fa75b566cb3d",
+    owner: User.all.sample,
+    total_budget: "$95,000"
+  )
+Project.create(
+    title: "FOODIES short film",
+    full_description: "Foodies is a gonzo and artful horror-comedy film about young love, killer Kombucha, and mind-expanding science. When awkward loser Avery can't get his on-again off-again lover Sarah to commit, he decides to bio-hack his way back onto the dating scene. With the help of some genetically-altered health drinks, he sets out to pursue his romantic fantasies, utilizing yolked jocks to act as shared-consciousness avatars to score babes. It isn't long though before he finds the meat market is much more terrifying than he remembered...",
+    category: "film",
+    subcategory: "horror",
+    address: address.sample,
+    start_date: Faker::Date.backward(14).to_datetime,
+    finish_date: Faker::Date.forward(23).to_datetime,
+    short_description: "We are shooting a short horror-comedy film using vintage camera equipment and old-school DIY filmmaking techniques.",
+    remote_picture_url: "https://ksr-ugc.imgix.net/assets/016/435/830/8f6e2d4e566a01d85de1c0e5e1f92b60_original.JPG?w=680&fit=max&v=1493345613&auto=format&q=92&s=c1380c99f4b8ecb100125384d84e6ab3",
+    owner: User.all.sample,
+    total_budget: "$1,475"
+  )
+
 
 
 COMPENSATION = ["pizza", "20 dollars", "free coffee", "1,000 dollars"]
