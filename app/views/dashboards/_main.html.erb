@@ -17,6 +17,7 @@
           <h4>Portfolio</h4>
           <p><%= link_to "my portfolio", "http://#{@user.portfolio_url}" %></p>
         </div>
+        <%= link_to "edit", edit_user_path(@user) %>
       </div>
     </div>
   </div>

@@ -10,6 +10,8 @@
 
         <%= f.input :profile_picture %>
 
+        <%= f.input :profile_picture_cache, as: :hidden %>
+
         <%= f.text_field :first_name, placeholder: 'first name', label:false%>
 
         <%= f.text_field :last_name, placecholder: 'last name', label:false %>
@@ -20,6 +22,11 @@
 
         <%= f.text_field :portfolio_url, placeholder: 'portfolio url', label:false %>
 
+        <%= f.simple_fields_for @piece do |p| %>
+          <%= p.input :cloudinary_path, class: "cloudinary_path" %>
+          <%= p.input :cloudinary_path_cache, as: :hidden %>
+        <% end %>
+
         <%= f.button :submit, "update profile", class: "btn" %>
       <% end %>
 
@@ -27,3 +34,24 @@
     </div>
   </div>
 </div>
+
+
+
+<% content_for(:after_js) do %>
+  <script>
+    // Get the modal
+    $(document).ready(function() {
+      $('').click(function(event) {
+        console.log($(event.target).parent());
+        if ($(event.target).parent().is("li")) {
+          $(event.target).parent().siblings().removeClass('active');
+          $(event.target).parent().addClass('active');
+        }
+        // $(btnValForId).show();
+        // $(btnValForId).siblings().hide();
+      });
+    });
+
+  </script>
+<% end %>
+
