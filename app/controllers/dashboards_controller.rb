@@ -1,4 +1,5 @@
 class DashboardsController < ApplicationController
+  skip_after_action :verify_authorized
   def show
     @user = current_user
     @projects = @user.projects

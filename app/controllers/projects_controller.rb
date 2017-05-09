@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
+  before_action :set_project, only: [:show, :edit, :update, :destroy]
 
   def index
     @projects = Project.near(project_params[:address], 30).where({ category: project_params[:category] })
@@ -23,7 +24,6 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @project = Project.find(params[:id])
     @project_coordinates = { lat: @project.latitude, lng: @project.longitude }
     @available_roles = @project.roles.select { |role| role.status }
     @team = []
@@ -35,7 +35,8 @@ class ProjectsController < ApplicationController
   end
 
   def new
-    @project = Project.new
+    @project = current_user.projects.new
+    authorize @project
   end
 
   def create
@@ -43,6 +44,7 @@ class ProjectsController < ApplicationController
     @project.picture = "film.jpg"  if project_params[:picture].nil?
     @project.user = current_user
     @project.subcategory = params[:subcategory]
+    authorize @project
     if @project.save!
       redirect_to dashboard_path
     else
@@ -51,17 +53,14 @@ class ProjectsController < ApplicationController
   end
 
   def edit
-    @project = Project.find(params[:id])
   end
 
   def update
-    @project = Project.find(params[:id])
     @project.update(project_params)
     redirect_to project_path(@project)
   end
 
   def destroy
-    @project = Project.find(params[:id])
     @project.destroy
     respond_to do |format|
       format.js do
@@ -72,6 +71,11 @@ class ProjectsController < ApplicationController
   end
 
   private
+
+  def set_project
+    @project = Project.find(params[:id])
+    authorize @project
+  end
 
   def project_params
     params.require(:project).permit(:title, :full_description, :category, :subcategory,

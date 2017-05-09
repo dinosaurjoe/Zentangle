@@ -1,6 +1,8 @@
 class RequestsController < ApplicationController
   before_action :set_role, only: []
+  before_action :set_request, only: [:show, :edit, :update, :destroy]
   def index
+    authorize @request
     @request = Request.all
   end
 
@@ -16,12 +18,14 @@ class RequestsController < ApplicationController
     @request.role = @role
     @request.user_confirm = true
     @request.created_by = current_user
+    authorize @request
   end
 
   def create
     @request = Request.new(request_params)
     @request.created_by = current_user
     @request.user = current_user
+    authorize @request
     @request.save
     if @request.save!
       redirect_to dashboard_path
@@ -32,6 +36,7 @@ class RequestsController < ApplicationController
   end
 
   def decline
+    authorize @request
     if current_user == @request.project.owner
       @request.owner_confirm == false
     else
@@ -56,6 +61,11 @@ class RequestsController < ApplicationController
 
   def set_role
     @role = Role.find(params[:role_id])
+  end
+
+  def set_request
+    @request = Request.find(params[:id])
+    authorize @request
   end
 
   def request_params
