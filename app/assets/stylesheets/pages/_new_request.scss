@@ -1,0 +1,85 @@
+.request-to-join-header h1{
+  font-weight: 100;
+  color: $sunset-orange;
+  font-style: italic;
+  font-family: $header-font;
+  text-transform: uppercase;
+  font-size: 60px;
+  letter-spacing: 1px;
+}
+
+.request-project-details h2 {
+  font-weight: 100;
+  color: $new-blue;
+  font-style: italic;
+  font-family: $header-font;
+  text-transform: uppercase;
+  font-size: 40px;
+  letter-spacing: 1px;
+}
+
+.request-project-details h3 {
+  font-weight: 100;
+  color: $sunset-orange;
+  font-family: $header-font;
+  text-transform: uppercase;
+  font-size: 25px;
+  margin-top: 30px;
+  margin-bottom: 5px;
+}
+
+.request-project-details p {
+  color: $payne-grey;
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-weight: 300;
+  line-height: 24px;
+}
+
+.right-col h3 {
+  font-weight: 100;
+  color: $sunset-orange;
+  font-family: $header-font;
+  text-transform: uppercase;
+  font-size: 25px;
+  margin-top: 30px;
+  margin-bottom: 5px;
+}
+
+.right-col p {
+  color: $payne-grey;
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-weight: 300;
+  line-height: 24px;
+}
+
+#request_user_message{
+  border: solid 2px $sunset-orange;
+  width: 250px;
+  height: 150px;
+  padding: 10px;
+  font-weight: 300;
+  letter-spacing: 0.8px;
+}
+
+.request-btn {
+  border-radius: 0;
+  background-color: $sunset-orange;
+  color: white;
+  text-decoration: none;
+  margin-top: 10px;
+  border: solid $sunset-orange 2px;
+  text-transform: uppercase;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+
+.request-btn:hover {
+  background-color: white;
+  border: solid $sunset-orange 2px;
+  color: $sunset-orange;
+}
+
+

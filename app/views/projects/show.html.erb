@@ -78,15 +78,27 @@
         <div class="modal-content">
           <span class="close">&times;</span>
           <div class="roles-modal-list">
+          <div class="row">
             <% @project.roles.each do |role| %>
               <div class="role-modal-details" id = <%= "role-#{role.id}" %>>
-                <h2>Role: <%= role.title %></h2>
-                <p>Description: <%= role.description %></h3>
-                <p>Requirements: <%= role.requirements %></p>
-                <p>Compensation: <%= role.compensation %></p>
-                <button class="btn btn-primary"> <%= link_to "Request to Join", new_role_request_path(role.id) %> </button>
+                <div class="col-md-12 text-center">
+                  <h2 class="popup-title"><%= role.title %></h2>
+                </div>
+                <div class="col-xs-12 col-md-7 popup-description">
+                  <p>Description: <%= role.description %></h3>
+                </div>
+                <div class="col-xs-12 col-md-4 col-md-offset-1 popup-requirements">
+                <h3>Requirements:</h3>
+                <p><%= role.requirements %></p>
+                <h3>Compensation:</h3>
+                <p><%= role.compensation %></p>
+                </div>
+                <div class="col-md-12 text-center">
+                <button class="btn popup-btn"> <%= link_to "Request to Join", new_role_request_path(role.id) %> </button>
+                </div>
               </div>
             <% end %>
+            </div>
           </div>
         </div>
 
