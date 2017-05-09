@@ -7,16 +7,27 @@
   font-style: italic;
   margin-top: 0;
   color: $sunset-orange;
+  margin-bottom: 30px;
 }
 
+.collaborator-img {
+  height: 150px;
+}
+
+.collaborators img {
+  height: 100px;
+  margin-right: 6px;
+  margin-bottom: 6px;
+}
 .project-card {
   min-height: 300px;
   position: relative;
   // border: solid $sunset-orange 2px;
   outline: solid $sunset-orange 2px;
-  outline-offset: -15px;
+  // outline-offset: -15px;
   color: $payne-grey;
   font-weight: 300;
+  padding-left: 0;
 }
 
 .project-card h4{
