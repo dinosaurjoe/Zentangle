@@ -1,15 +1,34 @@
-<h1>Chatting with <%= @conversation.with(current_user).full_name %></h1>
-
-<div id="conversation-main">
-  <div id="conversation-body">
-    <%= render @conversation.personal_messages %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="request-to-join-header text-center">
+        <h1>Chatting with</h1>
+        <h2><%= @conversation.with(current_user).full_name %></h2>
+      </div>
+    </div>
   </div>
 
-  <%= form_for @personal_message do |f| %>
-    <%= hidden_field_tag 'conversation_id', @conversation.id %>
-    <%= f.label :body %>
-    <%= f.text_area :body %>
+  <div class="row">
+    <div class="col-xs-12 col-md-6 ">
+      <div class="msg-box text-center">
+        <%= form_for @personal_message do |f| %>
+          <%= hidden_field_tag 'conversation_id', @conversation.id %>
 
-    <%= f.submit "send"%>
-  <% end %>
+          <%= f.text_area :body, label:false, placeholder: "Write your message" %>
+      </div>
+      <div class="send text-center">
+        <%= f.submit "send", class: "send-msg-btn" %>
+        <% end %>
+      </div>
+
+
+    </div>
+    <div class="col-xs-12 col-md-6 ">
+      <div id="conversation-main">
+        <div id="conversation-body">
+          <%= render @conversation.personal_messages %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
