@@ -1,0 +1,106 @@
+.request-card {
+  min-height: 380px;
+  color: white;
+  position: relative;
+  // border: solid $sunset-orange 2px;
+  outline: solid $sunset-orange 2px;
+  outline-offset: -15px;
+  color: $payne-grey;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+.request-card-img {
+  height: 200px;
+  background-size: cover !important;
+
+}
+
+.request-card-content {
+  padding: 0 35px 40px 35px;
+}
+
+.request-card-title {
+  text-transform: capitalize;
+  color: $new-blue;
+  font-size: 18px;
+  font-weight: 200;
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 15px 0 0 0;
+  line-height: 22px;
+}
+
+.request-card-category {
+  position: absolute;
+  color: white;
+  padding: 1.5px 1.5px;
+  background-color: $sunset-orange;
+  top: 15px;
+  right: 15px;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+
+
+.request-card-content p {
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.6px;
+  margin: 15px 0 0 0;
+}
+
+.request-card:hover .card-img {
+  opacity: 0.6;
+}
+
+.pending p {
+  color: white;
+  text-align: center;
+  padding: 4px;
+  text-transform: uppercase;
+  background-color: $yellow;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+//or joined
+.accepted p {
+  color: white;
+  text-align: center;
+  padding: 4px;
+  text-transform: uppercase;
+  background-color: $new-blue;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+
+.declined {
+  color: white;
+  text-align: center;
+  padding: 4px;
+  text-transform: uppercase;
+  background-color: $sunset-orange;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+.request-card-subcategory  {
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-size: 14px;
+  margin: 10px 0 0 0;
+  color: white;
+  background-color: $sunset-orange;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 12px;
+  margin: 0;
+  padding: 1.5px 10px;
+}
+

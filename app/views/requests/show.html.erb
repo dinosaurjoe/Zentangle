@@ -1,83 +1,107 @@
 <div class="container">
   <div class="requested-body">
-    <div class="requested-header">
-      <h3><%= @request.message %></h3>
-      <h1><%= @request.role.project.title %></h1>
-
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="request-to-join-header text-center">
+          <!-- <h1>You requested to join</h1> -->
+          <h1><%= @request.message %></h1>
+          <!--  -->
+        </div>
+      </div>
     </div>
-    <div class="requested-project-details">
-      <h3><%= @role.project.short_description %></h3>
-      <% unless current_user == @role.project.owner %>
-        <button class="btn btn-primary"><%= link_to "learn more", project_path(@role.project) %></button>
-      <% end %>
-    </div>
-    <div class="requested-user-details">
-      <% unless current_user == @request.user %>
+    <div class="row">
+      <div class="col-xs-12 col-md-5 col-md-offset-1">
+        <div class="request-project-details">
+         <h2><%= @request.role.project.title %></h2>
+         <h3>about the project</h3>
+         <p><%= @role.project.short_description %></p>
+         <% unless current_user == @role.project.owner %>
+         <button class="btn popup-btn"><%= link_to "learn more", project_path(@role.project) %></button>
+         <% end %>
+       </div>
+       <div class="request-project-details">
+        <% unless current_user == @request.user %>
         <h2>Collaborator: <%= @request.user.full_name %></h2>
-        <p>Bio: <%= @request.user.bio %></h3>
-        <p>Skills: <%= @request.user.skills %></p>
-        <button class="btn btn-primary"><%= link_to "learn more", user_path(@request.user) %></button>
-      <% end %>
-    </div>
-    <%= simple_form_for [@request], :html => {:id=>'requested-form'} do |f| %>
-      <div class="requested-role-details">
-        <h2>Role: <%= @role.title %></h2>
-        <p>Description: <%= @role.description %></h3>
-        <p>Requirements: <%= @role.requirements %></p>
-        <p>Compensation: <%= @role.compensation %></p>
+        <h3>Bio</h3>
+        <p><%= @request.user.bio %></p>
+        <h3>Skills</h3>
+          <p><%= @request.user.skills %></p>
+          <button class="btn popup-btn"><%= link_to "learn more", user_path(@request.user) %></button>
+          <% end %>
+        </div>
       </div>
 
-
-      <div class="requested-messages">
-        <% if @request.created_by == @role.project.owner %>
-          <div class="requested-sent-messsage">
+    <div class="col-xs-12 col-md-5 col-md-offset-1">
+      <%= simple_form_for [@request], :html => {:id=>'requested-form'} do |f| %>
+      <div class="request-project-details">
+        <h2>Role: <%= @role.title %></h2>
+        <h3>Description</h3>
+        <p><%= @role.description %></p>
+        <h3>Requirements</h3>
+          <p><%= @role.requirements %></p>
+          <h3>Compensation:</h3>
+          <p><%= @role.compensation %></p>
+        </div>
+        <div class="requested-messages">
+          <% if @request.created_by == @role.project.owner %>
+          <div class="request-project-details">
+          <h3>Message</h3>
             <p><%= "#{@role.project.owner.first_name}: #{@request.owner_message}" %> </p>
           </div>
-<!--           <% if @request.user_message.nil? %>
-            <div class="requested-send-message">
-              <%= f.text_field :user_message %>
-              <%= link_to 'send', "", :onclick => "$('#requested-form').submit()" %>
-            </div>
-          <% else %>
-            <div class="requested-sent-messsage">
-              <p><%= "#{@role.user.first_name}: #{@request.user_message}" %> </p>
-            </div>
-          <% end %> -->
-
-        <% else %>
-          <div class="requested-sent-messsage">
-            <p><%= "#{@request.created_by.first_name}: #{@request.user_message}" %> </p>
-          </div>
-<!--           <% if @request.owner_message.nil? %>
-            <% if @request.role.project.owner == current_user %>
+  <!--           <% if @request.user_message.nil? %>
               <div class="requested-send-message">
-                <%= f.text_field :owner_message %>
+                <%= f.text_field :user_message %>
                 <%= link_to 'send', "", :onclick => "$('#requested-form').submit()" %>
               </div>
+            <% else %>
+              <div class="requested-sent-messsage">
+                <p><%= "#{@role.user.first_name}: #{@request.user_message}" %> </p>
+              </div>
+              <% end %> -->
+
+              <% else %>
+              <div class="request-project-details">
+              <h3>Message</h3>
+                <p> <strong><%= @request.created_by.first_name %>:</strong> <%= @request.user_message %> </p>
+              </div>
+  <!--           <% if @request.owner_message.nil? %>
+              <% if @request.role.project.owner == current_user %>
+                <div class="requested-send-message">
+                  <%= f.text_field :owner_message %>
+                  <%= link_to 'send', "", :onclick => "$('#requested-form').submit()" %>
+                </div>
+              <% end %>
+
+            <% else %>
+              <p><%= "#{@role.project.owner.first_name}: #{@request.owner_message}" %> </p>
+              <% end %> -->
+              <% end %>
+            </div>
+
+
+            <div class="row">
+
+
+
+            <!-- implement message thread table -->
+            <div class="message-button">
+              <% if @request.user == current_user %>
+              <button class="msg-btn"><%= link_to 'send a message', new_personal_message_path(receiver_id: @request.role.project.owner.id) %></button>
+
+              <% else %>
+              <button class="msg-btn"><%= link_to 'send a message', new_personal_message_path(receiver_id: @request.user.id) %></button>
+              <% end %>
+
+
+
+              <button class="btn popup-btn btn-margin"><%= link_to "Back", dashboard_path %></button>
+              <% unless (@request.user_confirm && @request.owner_confirm) || current_user == @request.created_by %>
+              <%= f.button :submit, 'decline', class: "btn" %>
+              <%= f.button :submit, 'accept', class: "btn" %>
+              <% end %>
+            </div>
+            </div>
             <% end %>
-
-          <% else %>
-            <p><%= "#{@role.project.owner.first_name}: #{@request.owner_message}" %> </p>
-          <% end %> -->
-        <% end %>
+          </div>
+        </div>
       </div>
-
-      <!-- implement message thread table -->
-      <div class="message-button">
-        <% if @request.user == current_user %>
-          <%= link_to 'send a message', new_personal_message_path(receiver_id: @request.role.project.owner.id) %>
-        <% else %>
-          <%= link_to 'send a message', new_personal_message_path(receiver_id: @request.user.id) %>
-        <% end %>
-      </div>
-
-      <div class="requested-create-or-back">
-        <button class="btn btn-primary"><%= link_to "Back", dashboard_path %></button>
-        <% unless (@request.user_confirm && @request.owner_confirm) || current_user == @request.created_by %>
-          <%= f.button :submit, 'decline', class: "btn" %>
-          <%= f.button :submit, 'accept', class: "btn" %>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
-</div>

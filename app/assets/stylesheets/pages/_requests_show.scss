@@ -1,0 +1,33 @@
+.msg-btn {
+  border-radius: 0;
+  background-color: $sunset-orange;
+  color: white;
+  text-decoration: none;
+  margin-top: 10px;
+  border: solid $sunset-orange 2px;
+  padding: 6px 12px;
+  margin-left: 15px;
+}
+
+.msg-btn a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.msg-btn:hover {
+  background-color: white;
+  border: solid $sunset-orange 2px;
+}
+
+
+.msg-btn:hover a {
+  color: $sunset-orange;
+}
+
+.btn-margin {
+  margin-top: -4px !important;
+  margin-left: 10px;
+}

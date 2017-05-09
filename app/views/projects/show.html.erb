@@ -5,9 +5,10 @@
 <div class="container">
   <div class="project-show">
   <h1><%= @project.title %></h1>
-    <div class="row project-card">
+    <div class="row">
+      <div class="col-md-12 project-card">
       <div class="col-md-7 video">
-        <div class="project-picture" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.45) 0%, rgba(0,36,61,0.45) 50%), url(<%= @project.picture %>); width: 100%; height: 300px;">
+        <div class="project-picture bg-picture" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.45) 0%, rgba(0,36,61,0.45) 50%), url(<%= @project.picture %>); width: 100%; height: 300px;">
         </div>
       </div>
       <div class="col-md-5 panel-side">
@@ -23,6 +24,7 @@
           <div class="short-description"><p><%= @project.short_description %></p></div>
         </div>
 
+        </div>
       </div>
     </div>
   </div>
@@ -39,7 +41,7 @@
           <p>Replace with actual collaborators</p>
           <% @team.each do |member| %>
             <%= link_to user_path(member) do  %>
-              <%= image_tag(member.profile_picture) %>
+              <%= image_tag(member.profile_picture)%>
             <% end %>
           <% end %>
         </div>
@@ -78,15 +80,27 @@
         <div class="modal-content">
           <span class="close">&times;</span>
           <div class="roles-modal-list">
+          <div class="row">
             <% @project.roles.each do |role| %>
               <div class="role-modal-details" id = <%= "role-#{role.id}" %>>
-                <h2>Role: <%= role.title %></h2>
-                <p>Description: <%= role.description %></h3>
-                <p>Requirements: <%= role.requirements %></p>
-                <p>Compensation: <%= role.compensation %></p>
-                <button class="btn btn-primary"> <%= link_to "Request to Join", new_role_request_path(role.id) %> </button>
+                <div class="col-md-12 text-center">
+                  <h2 class="popup-title"><%= role.title %></h2>
+                </div>
+                <div class="col-xs-12 col-md-7 popup-description">
+                  <p>Description: <%= role.description %></h3>
+                </div>
+                <div class="col-xs-12 col-md-4 col-md-offset-1 popup-requirements">
+                <h3>Requirements:</h3>
+                <p><%= role.requirements %></p>
+                <h3>Compensation:</h3>
+                <p><%= role.compensation %></p>
+                </div>
+                <div class="col-md-12 text-center">
+                <button class="btn popup-btn"> <%= link_to "Request to Join", new_role_request_path(role.id) %> </button>
+                </div>
               </div>
             <% end %>
+            </div>
           </div>
         </div>
 

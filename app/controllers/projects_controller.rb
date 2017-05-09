@@ -6,7 +6,7 @@ class ProjectsController < ApplicationController
   def index
 
     @projects = Project.near(project_params[:address], 30).where({category: project_params[:category]})
-    .joins(:roles).where(roles: {title: params[:project][:roles][:title]})
+    .joins(:roles).where(roles: {title: params[:project][:roles][:title].titleize})
 
     if project_params[:category]
       @category = project_params[:category]
@@ -46,7 +46,7 @@ class ProjectsController < ApplicationController
     @project = Project.new(project_params)
     @project.picture = "film.jpg"  if project_params[:picture].nil?
     @project.user = current_user
-    @project.subcategory = params[:subcategory]
+    @project.subcategory = params["subcategory#{@project.category}"]
     authorize @project
     if @project.save!
       redirect_to dashboard_path

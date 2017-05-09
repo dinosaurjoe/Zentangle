@@ -1,27 +1,45 @@
 <div class="container">
   <div class="request-to-join">
-    <div class="request-to-join-header">
-      <h1>Request to join <%= @role.project.title %></h2>
+    <div class="row">
+      <div class="col-xs-12 col-md-10 col-md-offset-1">
+        <div class="request-to-join-header text-center">
+          <h1>Request to join</h1>
+
+        </div>
+      </div>
     </div>
-    <div class="request-project-details">
-      <h3><%= @role.project.short_description %></h3>
+    <div class="row">
+      <div class="col-xs-12 col-md-5 col-md-offset-1">
+        <div class="request-project-details">
+          <h2><%= @role.project.title %></h2>
+          <h3>about the project</h3>
+          <p><%= @role.project.short_description %></p>
+          <%= simple_form_for @request do |f| %>
+          <h3>Role: <%= @role.title %></h3>
+          <p><%= @role.description %></p>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-5 col-md-offset-1">
+        <div class="right-col">
+          <h3>Requirements</h3>
+          <p><%= @role.requirements %></p>
+          <h3>Compensation</h3>
+          <p><%= @role.compensation %></p>
+          <div class="request-role-message">
+            <%= f.text_area :user_message, placeholder: "How can you contribute to the project?" %>
+            <%= f.input :role_id, as: :hidden %>
+            <%= f.input :user_confirm, as: :hidden %>
+          </div>
+          <div class="request-create-or-back">
+            <button class="btn popup-btn"><%= link_to "Back", project_path(@role.project) %></button>
+            <%= f.button :submit, 'submit request', class: "btn request-btn" %>
+          </div>
+        </div>
+      </div>
+
     </div>
-    <%= simple_form_for @request do |f| %>
-      <div class="request-role-details">
-        <h2><%= @role.title %></h2>
-        <p><%= @role.description %></h3>
-        <p><%= @role.requirements %></p>
-        <p><%= @role.compensation %></p>
-      </div>
-      <div class="request-role-message">
-        <%= f.text_field :user_message %>
-        <%= f.input :role_id, as: :hidden %>
-        <%= f.input :user_confirm, as: :hidden %>
-      </div>
-      <div class="request-create-or-back">
-        <button class="btn btn-primary"><%= link_to "Back", project_path(@role.project) %></button>
-        <%= f.button :submit, 'submit request', class: "btn" %>
-      </div>
+
+
     <%end %>
   </div>
 </div>
