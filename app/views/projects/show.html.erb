@@ -5,9 +5,10 @@
 <div class="container">
   <div class="project-show">
   <h1><%= @project.title %></h1>
-    <div class="row project-card">
+    <div class="row">
+      <div class="col-md-12 project-card">
       <div class="col-md-7 video">
-        <div class="project-picture" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.45) 0%, rgba(0,36,61,0.45) 50%), url(<%= @project.picture %>); width: 100%; height: 300px;">
+        <div class="project-picture bg-picture" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.45) 0%, rgba(0,36,61,0.45) 50%), url(<%= @project.picture %>); width: 100%; height: 300px;">
         </div>
       </div>
       <div class="col-md-5 panel-side">
@@ -23,6 +24,7 @@
           <div class="short-description"><p><%= @project.short_description %></p></div>
         </div>
 
+        </div>
       </div>
     </div>
   </div>

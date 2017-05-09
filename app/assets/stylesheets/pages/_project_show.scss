@@ -37,9 +37,9 @@
   margin-top:25px;
 }
 
-.short_description {
+.short-description {
   font-size: 16px;
-  letter-spacing: 1px;
+  letter-spacing: 0.7px;
 }
 
 .panel-side {
@@ -75,9 +75,9 @@
   margin-top: 60px;
   color: $payne-grey;
   font-size: 16px;
-  letter-spacing: 1px;
+  letter-spacing: 1.2px;
   font-weight: 300;
-  line-height: 24px;
+  line-height: 26px;
 
 }
 
@@ -183,4 +183,10 @@
 
 .close {
   color: $new-blue;
+}
+
+.bg-picture {
+  background-size: cover !important;
+  background-position: center;
+  background-repeat: no-repeat;
 }

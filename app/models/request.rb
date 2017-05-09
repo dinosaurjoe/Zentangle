@@ -45,7 +45,7 @@ class Request < ApplicationRecord
   def user_status_logic
     if @request.created_by == @request.user
       # you requested to join owner's project
-      @message = "You requested to join #{@role.project.title}"
+      @message = "You requested to join"
       @message = "#{@role.project.owner.full_name} declined your request to join #{@role.project.title}" if @request.owner_confirm == false
 
     else
