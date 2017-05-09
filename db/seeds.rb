@@ -517,10 +517,11 @@ ROLES = ["Lead Designer", "Illustrator", "Editor", "Director", "Writer",
          "Art Director", "Producer", "Junior Art Director",
          "Assistant Producer", "Production Assistant",
          "Technical Director", "Engineer"]
-EXPERIENCE_YEARS = (1..5).to_a
-count = 0
-115.times do
 
+EXPERIENCE_YEARS = (1..5).to_a
+
+count = 0
+160.times do
   Role.create(
     project: projects[count],
     description: Faker::Lorem.paragraph(2),
@@ -532,14 +533,13 @@ count = 0
    count = (count + 1) % 22
 end
 
-
 rolestodelete = Role.all
 
 25.times do
   rolestodelete = Role.all
 
    samrole =  rolestodelete.sample
-   samrole.destroy unless samrole.project.roles.length < 2
+   samrole.destroy unless samrole.project.roles.length < 3
 end
 
 200.times do
