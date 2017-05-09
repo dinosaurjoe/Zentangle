@@ -1,5 +1,6 @@
 class PersonalMessagesController < ApplicationController
   before_action :find_conversation!
+  skip_after_action :verify_authorized
 
   def create
     @conversation ||= Conversation.create(author_id: current_user.id,
@@ -13,12 +14,8 @@ class PersonalMessagesController < ApplicationController
   end
 
   def new
-    p "llllllaaaa"
     redirect_to conversation_path(@conversation) and return if @conversation
     @personal_message = current_user.personal_messages.build
-    p @receiver
-
-    p @personal_message
   end
 
   private

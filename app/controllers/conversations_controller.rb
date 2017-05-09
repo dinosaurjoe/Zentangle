@@ -1,6 +1,8 @@
 class ConversationsController < ApplicationController
   def index
     @conversations = Conversation.participating(current_user).order('updated_at DESC')
+    @conversation = Conversation.new
+    authorize @conversation
   end
 
 before_action :set_conversation, except: [:index]
@@ -14,6 +16,7 @@ before_action :check_participating!, except: [:index]
 
   def set_conversation
     @conversation = Conversation.find_by(id: params[:id])
+    authorize @conversation
   end
 
   def check_participating!

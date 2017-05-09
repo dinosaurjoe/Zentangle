@@ -17,6 +17,8 @@ gem "coffee-rails"
 gem 'pg_search'
 gem "algoliasearch-rails"
 
+gem "pundit"
+
 
 gem 'turbolinks', '~> 5.0.0'
 gem 'emoji'
