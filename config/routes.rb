@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  get 'pieces/edit'
+
+  get 'pieces/update'
+
+  get 'pieces/show'
+
+  get 'pieces/new'
+
+  get 'pieces/create'
+  
   get 'errors/not_found'
 
   get 'errors/internal_server_error'
@@ -11,6 +21,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :projects
+  resources :pieces, only: [:destroy]
   resources :roles do
     resources :requests, only: :new
   end

@@ -1,12 +1,16 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+  mount_uploader :profile_picture, PhotoUploader
   has_many :request_collaborator, :class_name => 'Request', :foreign_key => 'user_id'
   has_many :created_requests, :class_name => 'Request', :foreign_key => 'created_by_id'
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  # has_many :requests
+
+  has_many :pieces
+  accepts_nested_attributes_for :pieces
+
   has_many :projects
   has_many :requests, through: :projects
   validates :email, uniqueness: true
