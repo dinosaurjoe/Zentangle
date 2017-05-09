@@ -3,7 +3,9 @@ class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
 
   def index
-    @projects = Project.near(project_params[:address], 30).where({ category: project_params[:category] })
+
+    @projects = Project.near(project_params[:address], 30).where({category: project_params[:category]})
+    .joins(:roles).where(roles: {title: params[:project][:roles][:title]})
 
     if project_params[:category]
       @category = project_params[:category]

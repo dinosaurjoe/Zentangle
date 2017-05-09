@@ -8,7 +8,9 @@
       <div class="form-inline aa-input-container">
           <%= simple_form_for [@project], url: projects_path, method: :get do |f| %>
           <%= f.input :category, priority: [ "Film" ], collection: Project::CATEGORIES.keys, required: false, prompt: 'category', label:false, class: "home-category"  %>
-          <%= f.association :roles, as: :string, required: false, placeholder: "Role", label: false, input_html: { class: "aa-input-search"} %>
+          <%= f.association :roles, as: :string, required: false, placeholder: "Role", label: false do |r| %>
+          <% r.input :title, required: false, label: false, input_html: { class: "aa-input-search"} %>
+          <% end %>
           <%= f.input :address, required: false, placeholder: "Location", label: false %>
           <%= f.button :submit, 'search',  class: "btn"  %>
         <% end %>
@@ -48,7 +50,7 @@
   var client = algoliasearch("8ECOR4OKYP", "265f77efadba84f52617a6870bfa7c68");
   var index = client.initIndex('Role');
   //initialize autocomplete on search input (ID selector must match)
-  autocomplete('#project_role_ids',
+  autocomplete('#project_roles_title',
   { hint: false }, {
       source: autocomplete.sources.hits(index, {hitsPerPage: 5}),
       //value to be displayed in input control after user's suggestion selection
