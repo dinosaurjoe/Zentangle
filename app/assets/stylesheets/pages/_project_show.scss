@@ -34,7 +34,7 @@
   font-weight: 200;
   text-transform: uppercase;
   letter-spacing: 2px;
-  margin-top:35px;
+  margin-top:25px;
 }
 
 .short_description {
@@ -65,8 +65,8 @@
   margin-bottom: 10px;
 }
 
-.lower-right {
-  border-left: $sunset-orange 2px solid;
+.lower-left {
+  border-right: $sunset-orange 2px solid;
 }
 
 
@@ -84,6 +84,7 @@
 .lower-right {
   padding-left: 40px;
   margin-top: 25px;
+
 }
 
 
@@ -95,6 +96,7 @@
   border: $new-blue 2px solid;
   margin-bottom: 8px;
   margin-left: 4px;
+  letter-spacing: 0.7px;
 
 }
 
@@ -112,6 +114,70 @@
   color: $new-blue;
   letter-spacing: 1.4px;
   margin-top: 0;
+}
+
+.popup-title {
+  margin-top: 0;
+  font-size: 47px;
+  font-weight: 100;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-style: italic;
+  color: $sunset-orange;
+  margin-bottom: 28px;
+}
+
+.popup-description, .popup-requirements p{
+  color: $payne-grey;
+  font-size: 18px;
+  letter-spacing: 0.7px;
+  font-weight: 300;
+  line-height: 26px;
+  margin-bottom: 20px;
+}
+
+.roles-modal-list {
+  padding: 10px 20px;
+}
+
+.popup-requirements h3 {
+  color: $sunset-orange;
+  text-transform: uppercase;
+  font-size: 24px;
+  margin-top: 0;
+  font-weight: 100;
+  letter-spacing: 1.3px;
+}
+
+.popup-btn {
+  border-radius: 0;
+  background-color: $new-blue;
+  color: white;
+  text-decoration: none;
+  margin-top: 10px;
+  border: solid $new-blue 2px;
+}
+
+.popup-btn a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 300;
+  letter-spacing: 1px;
 
 }
 
+.popup-btn:hover {
+  background-color: white;
+  border: solid $new-blue 2px;
+}
+
+
+.popup-btn:hover a {
+  color: $new-blue;
+}
+
+.modal-content {
+  border: solid 4px $sunset-orange;
+  box-shadow: none;
+}
