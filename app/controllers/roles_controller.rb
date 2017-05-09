@@ -40,7 +40,7 @@ class RolesController < ApplicationController
   private
 
   def set_role
-    @role = role.find(params[:id])
+    @role = Role.find(params[:id])
     authorize @role
   end
 

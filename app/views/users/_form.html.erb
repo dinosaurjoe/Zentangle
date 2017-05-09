@@ -6,7 +6,7 @@
           <h2>Edit your Profile</h2>
         </div>
       </div>
-      <%= simple_form_for(@user) do |f| %>
+      <%= simple_form_for @user, html: { id: "user-form"} do |f| %>
 
         <%= f.input :profile_picture %>
 
@@ -22,36 +22,22 @@
 
         <%= f.text_field :portfolio_url, placeholder: 'portfolio url', label:false %>
 
-        <%= f.simple_fields_for @piece do |p| %>
-          <%= p.input :cloudinary_path, class: "cloudinary_path" %>
-          <%= p.input :cloudinary_path_cache, as: :hidden %>
-        <% end %>
 
         <%= f.button :submit, "update profile", class: "btn" %>
       <% end %>
 
+      <div class="portfolio">
+        <%= @user.pieces.each |piece| do %>
+          <div class="portfolio-piece" id="#piece-card-<%= @piece.id %>">
+            <%= cl_image_tag piece.cloudinary_path %>
+            <%= link_to "edit", edit_piece_path(piece), class: "btn"%>
+            <%= link_to 'delete', piece_path(piece),
+              data: {:confirm => 'Are you sure?'}, :method => :delete, remote: :true %>
+          </div>
+      </div>
 
+      <button id= "add"><%= link_to "add another file", pieces_new_path(@user.pieces.new) %></button>
     </div>
   </div>
 </div>
-
-
-
-<% content_for(:after_js) do %>
-  <script>
-    // Get the modal
-    $(document).ready(function() {
-      $('').click(function(event) {
-        console.log($(event.target).parent());
-        if ($(event.target).parent().is("li")) {
-          $(event.target).parent().siblings().removeClass('active');
-          $(event.target).parent().addClass('active');
-        }
-        // $(btnValForId).show();
-        // $(btnValForId).siblings().hide();
-      });
-    });
-
-  </script>
-<% end %>
 

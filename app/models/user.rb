@@ -7,7 +7,10 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
   has_many :pieces
+  accepts_nested_attributes_for :pieces
+
   has_many :projects
   has_many :requests, through: :projects
   validates :email, uniqueness: true
