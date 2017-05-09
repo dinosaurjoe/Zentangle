@@ -33,13 +33,15 @@
 .card-category {
   position: absolute;
   color: white;
-  padding: 1.5px 1.5px;
+  padding: 1.5px 10px;
   background-color: $sunset-orange;
   top: 15px;
   right: 15px;
   font-size: 12px;
   text-transform: uppercase;
   margin: 0;
+  letter-spacing: 0.5px;
+
 }
 
 .card-subcategory {
@@ -47,6 +49,7 @@
   letter-spacing: 1.2px;
   font-size: 14px;
   margin: 10px 0 0 0;
+
 }
 
 .card-content p {

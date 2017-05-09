@@ -41,7 +41,7 @@
           <p>Replace with actual collaborators</p>
           <% @team.each do |member| %>
             <%= link_to user_path(member) do  %>
-              <%= image_tag(member.profile_picture) %>
+              <%= image_tag(member.profile_picture)%>
             <% end %>
           <% end %>
         </div>
