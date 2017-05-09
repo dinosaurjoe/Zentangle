@@ -164,7 +164,6 @@
   text-transform: uppercase;
   font-weight: 300;
   letter-spacing: 1px;
-
 }
 
 .popup-btn:hover {
@@ -180,4 +179,8 @@
 .modal-content {
   border: solid 4px $sunset-orange;
   box-shadow: none;
+}
+
+.close {
+  color: $new-blue;
 }
