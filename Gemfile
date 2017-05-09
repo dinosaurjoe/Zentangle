@@ -20,7 +20,7 @@ gem "algoliasearch-rails"
 gem "pundit"
 
 
-gem 'turbolinks', '~> 5.0.0'
+# gem 'turbolinks', '~> 5.0.0'
 gem 'emoji'
 
 gem 'sass-rails'
