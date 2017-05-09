@@ -45,7 +45,7 @@ class ProjectsController < ApplicationController
     @project = Project.new(project_params)
     @project.picture = "film.jpg"  if project_params[:picture].nil?
     @project.user = current_user
-    @project.subcategory = params[:subcategory]
+    @project.subcategory = params["subcategory#{@project.category}"]
     authorize @project
     if @project.save!
       redirect_to dashboard_path
