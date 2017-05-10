@@ -5,8 +5,16 @@ class ProjectsController < ApplicationController
 
   def index
     # TODO: Account for params missing
-    @projects = Project.near(project_params[:address], 30).where({category: project_params[:category]})
-    .joins(:roles).where(roles: {title: params[:project][:roles][:title].titleize})
+    if project_params[:address].present? && project_params[:category].present? && params[:project][:roles][:title].present?
+      @projects = Project.near(project_params[:address], 30).where({category: project_params[:category]})
+      .joins(:roles).where(roles: {title: params[:project][:roles][:title].titleize})
+    elsif project_params[:category].present? && params[:project][:roles][:title].present? && !project_params[:address].present?
+      @projects = Project.where({category: project_params[:category]})
+      .joins(:roles).where(roles: {title: params[:project][:roles][:title].titleize})
+    else
+      @projects = Project.where({category: project_params[:category]})
+    end
+
     # Category can never be nil TODO: make sure it's preselected on home
     @category = @projects.first.category unless @projects.empty?
     @subcategories = @projects.map { |p| p.subcategory }.uniq
@@ -14,6 +22,7 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    @user = current_user
     @project_coordinates = { lat: @project.latitude, lng: @project.longitude }
     @available_roles = @project.roles.select { |role| role.status }
     @team = []
@@ -75,4 +84,16 @@ class ProjectsController < ApplicationController
                                     :short_description, :user_id, :picture, :address, :total_budget,
                                     :roles_attributes => [:title, :description, :compensation, :requirements])
   end
+
+  def request_status(request)
+    if request.user_confirm && request.owner_confirm
+      return "joined"
+    elsif request.user_confirm.nil? || request.owner_confirm.nil?
+      return "pending"
+    elsif !request.user_confirm || !request.owner_confirm
+      return "declined"
+    end
+  end
+
+  helper_method :request_status
 end
