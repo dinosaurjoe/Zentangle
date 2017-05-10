@@ -3,5 +3,5 @@ class Piece < ApplicationRecord
   mount_uploader :cloudinary_path, PhotoUploader
 
   validates :cloudinary_path, presence: true
-  validates :title, presence: true
+  # validates :title, presence: true
 end

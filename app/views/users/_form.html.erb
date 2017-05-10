@@ -22,19 +22,29 @@
 
         <%= f.text_field :portfolio_url, placeholder: 'portfolio url', label:false %>
 
+<!--         <%= simple_fields_for :pieces do |p| %>
+          <%= p.label "upload files" %><br>
+          <%= p.file_field :cloudinary_path, :multiple => true %> -->
 
         <%= f.button :submit, "update profile", class: "btn" %>
+<!--         <% end %> -->
       <% end %>
+<!-- uncomment to work on user portfolio -->
+<!--       <div class="portfolio">
+        <h2>Your Portfolio</h2>
+        <% unless @user.pieces.nil? %>
+          <%= @user.pieces.each do |piece| %>
+            <div class="portfolio-piece" id="#piece-card-<%= piece.id %>">
+            <%= p piece %>
+              <%= cl_image_tag piece.cloudinary_path %>
+              <%= link_to "edit", edit_piece_path(piece), class: "btn"%>
+              <%= link_to 'delete', piece_path(piece),
+                data: {:confirm => 'Are you sure?'}, :method => :delete, remote: :true %>
+            </div>
+          <% end %>
+        <% end %>
 
-      <div class="portfolio">
-        <%= @user.pieces.each |piece| do %>
-          <div class="portfolio-piece" id="#piece-card-<%= @piece.id %>">
-            <%= cl_image_tag piece.cloudinary_path %>
-            <%= link_to "edit", edit_piece_path(piece), class: "btn"%>
-            <%= link_to 'delete', piece_path(piece),
-              data: {:confirm => 'Are you sure?'}, :method => :delete, remote: :true %>
-          </div>
-      </div>
+      </div> -->
 
       <button id= "add"><%= link_to "add another file", pieces_new_path(@user.pieces.new) %></button>
     </div>
