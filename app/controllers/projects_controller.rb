@@ -9,7 +9,7 @@ class ProjectsController < ApplicationController
     .joins(:roles).where(roles: {title: params[:project][:roles][:title].titleize})
     # Category can never be nil TODO: make sure it's preselected on home
     @category = @projects.first.category unless @projects.empty?
-    @subcategories = @projects.map { |p| p.subcategory }
+    @subcategories = @projects.map { |p| p.subcategory }.uniq
     # Array of subcategories names for yielded projects
   end
 
