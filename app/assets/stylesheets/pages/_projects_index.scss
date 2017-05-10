@@ -1,33 +1,49 @@
 .filter-buttons {
   form {
-    font-family: sans-serif;
     border: none;
-    background: #333;
     padding: 10px;
-}
-.inline-stuff{
+  }
+  .inline-stuff{
     display: inline-block;
-}
-input[type="checkbox"] {
+  }
+
+  input[type="checkbox"] {
     position: absolute;
     opacity: 0;
     & + label {
-        display: block;
-        padding: .4em .8em;
-        line-height: 1;
-        color: #fff;
-        background-color: #444;
-        &:hover, &:focus, &:active {
-            background-color: #DDE3ED;
-            color:  #333;
-        }
+      display: block;
+      border: 1px solid white;
+      line-height: 1;
+      color: #fff;
+      padding: 10px 10px;
+      text-decoration: none;
+      margin-right: 10px;
+      font-weight: 300;
+      font-size: 13px;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+      background-color: $sunset-orange;
+      &:hover, &:focus {
+          background-color: white;
+          border: 1px solid $sunset-orange;
+          color: $sunset-orange;
+      }
+      &:active {
+          background-color: $new-blue;
+          border: 1px solid white;
+          color: white;
+      }
     }
     &:checked + label {
-        background-color: #DDE3ED;
-        color:  #333;
-        &:hover, &:focus, &:active { background-color: #eee; }
+      background-color: $new-blue;
+      color:  white;
+      &:hover, &:focus, &:active {
+        background-color: $new-blue;
+        border: 1px solid white;
+        color: white;
+      }
     }
-}
+  }
 }
 
 .index-banner {
