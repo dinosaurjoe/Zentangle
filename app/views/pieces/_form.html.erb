@@ -1,0 +1,9 @@
+<%= simple_form_for @piece %>
+  <%= p.input :cloudinary_path, label:false %>
+  <%= p.input :cloudinary_path_cache, as: :hidden %>
+  <%= p.text_field :title, placeholder: 'title', label:false %>
+  <%= p.text_field :description, placeholder: 'description', label:false %>
+
+  <button class="btn"><%= link_to "back", user_edit_path(current_user)%></button>
+  <%= f.button :submit, "submit", class: "btn" %>
+<% end %>

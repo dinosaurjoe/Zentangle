@@ -1,0 +1,85 @@
+.btn-edit {
+  background-color: $new-blue;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 0;
+  font-weight: 300;
+  letter-spacing: 0.7px;
+  border: solid 2px $new-blue;
+}
+
+
+.btn-delete {
+  background-color: $sunset-orange;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 0;
+  font-weight: 300;
+  letter-spacing: 0.7px;
+  border: solid 2px $sunset-orange;
+  margin-left: 5px;
+}
+
+.btn-edit:hover {
+  background-color: white;
+  color: $new-blue;
+}
+
+
+.btn-delete:hover {
+  background-color: white;
+  color: $sunset-orange;
+}
+
+.dash-subcategory {
+  color: $payne-grey;
+}
+
+.dash-description {
+  color: $payne-grey;
+}
+
+.card-btns {
+  margin-top: 10px;
+}
+
+
+.tab-container a {
+  font-family: $header-font;
+  font-weight: 300;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+  background-color: $new-blue;
+  letter-spacing: 1.3px;
+  word-spacing: 1.3px;
+}
+
+
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+  color: $new-blue;
+  background-color: white;
+  border: 1px solid $new-blue;
+  border-bottom-color: transparent;
+  border-top-color: transparent;
+  cursor: default;
+  border-radius: 0;
+
+}
+
+.nav-tabs > li > a {
+  border: 1px solid $new-blue;
+  border-radius: 0;
+}
+
+
+.nav-tabs {
+  border-bottom: 1px solid $new-blue;
+}
+
+.first-tab {
+  margin-left: 45px;
+}

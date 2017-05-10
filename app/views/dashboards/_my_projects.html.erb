@@ -7,22 +7,25 @@
       <div id="dashboard-card-<%= project.id %>">
         <div class="col-xs-12 col-sm-6 col-md-4">
           <%= link_to project_path(project.id) do%>
-            <div class="user-projects-picture" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.4) 0%, rgba(0,36,61,0.4) 30%), url( <%= project.picture %>);">
-            <div class="user-projects-content">
-              <h3><%= project.title %></h3>
-              <h5><%= project.subcategory %></h5>
-              <p><%= project.short_description %></p>
-              <%= link_to "edit", edit_project_path(project), class: "btn"%>
-              <%= link_to 'delete', project_path(project),
-            data: {:confirm => 'Are you sure?'}, :method => :delete, remote: :true %>
-
+          <div class="card">
+            <div class="card-img bg-picture"" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.4) 0%, rgba(0,36,61,0.4) 30%), url( <%= project.picture %>);">
             </div>
+            <div class="card-content">
+              <h3 class="card-title"><%= project.title %></h3>
+              <h4 class="card-category"><%= project.category %></h4>
+              <h5 class="card-subcategory dash-subcategory"><%= project.subcategory %></h5>
+              <p class="card-description dash-description"><%= project.short_description %></p>
+                <div class="card-btns">
+                  <%= link_to "edit", edit_project_path(project), class: "btn btn-edit"%>
+                  <%= link_to 'delete', project_path(project),
+                  data: {:confirm => 'Are you sure?'}, :method => :delete, remote: :true, class: "btn btn-delete" %>
+              </div>
             </div>
-
-          <% end %>
+          </div>
         </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
+    <% end %>
   </div>
 </div>

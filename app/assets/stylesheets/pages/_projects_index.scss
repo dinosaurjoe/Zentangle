@@ -1,3 +1,51 @@
+.filter-buttons {
+  form {
+    border: none;
+    padding: 10px;
+  }
+  .inline-stuff{
+    display: inline-block;
+  }
+
+  input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    & + label {
+      display: block;
+      border: 1px solid white;
+      line-height: 1;
+      color: #fff;
+      padding: 10px 10px;
+      text-decoration: none;
+      margin-right: 10px;
+      font-weight: 300;
+      font-size: 13px;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+      background-color: $sunset-orange;
+      &:hover, &:focus {
+          background-color: white;
+          border: 1px solid $sunset-orange;
+          color: $sunset-orange;
+      }
+      &:active {
+          background-color: $new-blue;
+          border: 1px solid white;
+          color: white;
+      }
+    }
+    &:checked + label {
+      background-color: $new-blue;
+      color:  white;
+      &:hover, &:focus, &:active {
+        background-color: $new-blue;
+        border: 1px solid white;
+        color: white;
+      }
+    }
+  }
+}
+
 .index-banner {
   color: white;
   text-align: center;

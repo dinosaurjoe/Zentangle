@@ -4,26 +4,13 @@ class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
 
   def index
-
+    # TODO: Account for params missing
     @projects = Project.near(project_params[:address], 30).where({category: project_params[:category]})
     .joins(:roles).where(roles: {title: params[:project][:roles][:title].titleize})
-
-    if project_params[:category]
-      @category = project_params[:category]
-      @categories = Project::CATEGORIES.keys.map(&:to_s)
-      @projects = @projects.where({ category: @category })
-    end
-    if project_params[:subcategory]
-      @subcategory = project_params[:subcategory]
-      @projects = @projects.where({ subcategory: @subcategory })
-    end
-
-    if project_params[:role]
-      @role = project_params[:role]
-      @projects = @projects.where({ role: @role })
-    end
-
-    @subcategories = Project::CATEGORIES[@category.to_sym]
+    # Category can never be nil TODO: make sure it's preselected on home
+    @category = @projects.first.category unless @projects.empty?
+    @subcategories = @projects.map { |p| p.subcategory }.uniq
+    # Array of subcategories names for yielded projects
   end
 
   def show

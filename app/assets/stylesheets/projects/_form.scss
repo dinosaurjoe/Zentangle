@@ -37,7 +37,7 @@
 #navigation ul{
   list-style:none;
   float:center;
-  margin-left:22px;
+
   background-color: white;
 }
 
@@ -60,6 +60,10 @@
     border-left: solid white 2px;
     border-right: solid white 2px;
     background:$sunset-orange;
+    font-family: $header-font;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    word-spacing: 1.3px;
 }
 
 

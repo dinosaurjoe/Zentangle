@@ -35,6 +35,16 @@ ActiveRecord::Schema.define(version: 20170510111226) do
     t.index ["user_id"], name: "index_personal_messages_on_user_id", using: :btree
   end
 
+  create_table "pieces", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "cloudinary_path"
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["user_id"], name: "index_pieces_on_user_id", using: :btree
+  end
+
   create_table "projects", force: :cascade do |t|
     t.string   "title"
     t.text     "full_description"
@@ -107,6 +117,7 @@ ActiveRecord::Schema.define(version: 20170510111226) do
 
   add_foreign_key "personal_messages", "conversations"
   add_foreign_key "personal_messages", "users"
+  add_foreign_key "pieces", "users"
   add_foreign_key "projects", "users"
   add_foreign_key "requests", "roles"
   add_foreign_key "requests", "users"

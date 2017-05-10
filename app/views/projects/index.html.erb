@@ -1,43 +1,34 @@
+<% if @projects.empty? %>
+  <div class="index-banner text-center bg-picture" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.45) 0%, rgba(0,36,61,0.45) 50%), url( <%= asset_path "banner.jpg" %>) ;">
+<% else %>
+  <div class="index-banner text-center bg-picture" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.45) 0%, rgba(0,36,61,0.45) 50%), url( <%= asset_path "#{@category}.jpg" %>) ;">
+<% end %>
 
-<!-- <div class="index-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.45) 0%, rgba(0,36,61,0.45) 50%), url( <%= @projects.first.try(:picture) %>);"></div> -->
-<div class="index-banner text-center bg-picture" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.45) 0%, rgba(0,36,61,0.45) 50%), url( <%= asset_path "#{@category}.jpg" %>) ;">
-<%#TODO use default picture for category %>
-<!--   <div class="banner-content">
-
-</div> -->
   <h1><%= @category %></h1>
 </div>
 
-
-
 <div class="container">
-  <div class="wrapper">
-<!--   <h2 ><%= @category %></h2> -->
-    <div class="form-inline">
-      <ul class="list-inline text-center">
-        <% @categories.each do |category| %>
-        <li class="index-category">
-          <%= link_to category, url_for({project:{category: category}}), class: "#{'active' if category == @category} bg-picture" %></li>
-        <% end %>
-      </ul>
-  </div>
-    <div class="subcategories-list list">
-    <ul class="list-inline text-center">
-      <% @subcategories.each do |subcategory| %>
-        <li class="index-subcategory">
-          <% if subcategory == @subcategory %>
-            <%= subcategory %>
-          <% else %>
-            <%= link_to subcategory, url_for({project:{category: @category, subcategory:subcategory}})%>
-          <% end %>
-        </li>
-        <% end %>
-      </ul>
-    </div>
 
-    <div class="row">
+  <!-- Build checkbox form -->
+  <div class="filter-buttons">
+    <form id="filters">
+      <% @subcategories.each do |name| %>
+        <div class="inline-stuff subcategories-list">
+          <input type="checkbox" name='<%= name %>' id='<%= name %>'>
+          <label class="index-subcategory" for='<%= name %>'> <%= name %> </label>
+        </div>
+      <% end %>
+    </form>
+  </div>
+
+  <div class="row">
+    <% if @projects.empty? %>
+      <div class="col-xs-12 col-sm-6">
+        <h1>Sorry, no results found</h1>
+      </div>
+    <% else %>
       <% @projects.each do |project| %>
-        <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="col-xs-12 col-sm-6 col-md-4 selectable-card" data-subcategory="<%=project.subcategory%>">
           <%= link_to project_path(project.id) do%>
           <div class="index-card text-center">
             <div class="index-card-img" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.4) 0%, rgba(0,36,61,0.4) 30%), url( <%= project.picture %>);">
@@ -47,12 +38,37 @@
               <h5 class="index-card-subcategory"><%= project.subcategory %></h5>
               <p><%= cutoff_text(project.short_description) %></p>
             </div>
-
-            </div>
-          <% end %>
+          </div>
+        <% end %>
         </div>
       <% end %>
-    </div>
+    <% end %>
+  </div>
+
   </div>
 </div>
 
+<%= content_for(:after_js) do %>
+
+<script>
+  $(document).ready(function() {
+    $('#filters input:checkbox').change(function () {
+
+      var selectedCategoryNames = $('#filters input:checkbox:checked').map(function () {
+        return $(this).attr('name')
+      }).toArray();
+
+      cards = $('.selectable-card');
+      cards.hide()
+
+      cards.each(function() {
+        if (selectedCategoryNames.includes($(this).attr('data-subcategory'))) $(this).show()
+      });
+
+      if (selectedCategoryNames.length === 0) cards.show();
+
+    });
+  });
+</script>
+
+<% end %>
