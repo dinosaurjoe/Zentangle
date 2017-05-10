@@ -14,6 +14,7 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    @user = current_user
     @project_coordinates = { lat: @project.latitude, lng: @project.longitude }
     @available_roles = @project.roles.select { |role| role.status }
     @team = []
@@ -75,4 +76,16 @@ class ProjectsController < ApplicationController
                                     :short_description, :user_id, :picture, :address, :total_budget,
                                     :roles_attributes => [:title, :description, :compensation, :requirements])
   end
+
+  def request_status(request)
+    if request.user_confirm && request.owner_confirm
+      return "joined"
+    elsif request.user_confirm.nil? || request.owner_confirm.nil?
+      return "pending"
+    elsif !request.user_confirm || !request.owner_confirm
+      return "declined"
+    end
+  end
+
+  helper_method :request_status
 end

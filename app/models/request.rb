@@ -26,7 +26,7 @@ class Request < ApplicationRecord
   private
 
   def owner_status_logic
-    if @request.created_by == @request.project.owner
+    if @request.created_by == @request.role.project.owner
       # you invited user
       if @request.user_confirm
         @message = "#{@request.user.full_name} joined #{@role.project.title}!"
