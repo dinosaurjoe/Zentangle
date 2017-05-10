@@ -6,6 +6,31 @@
 <% end %>
 
 <div class="container">
+  <% if current_user == @project.owner %>
+    <div class="row requests">
+      <% @project.requests.each do |request| %>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="owner-request-card">
+          <%= link_to request_path(request) do %>
+          <div class="owner-request-card-content">
+            <h3 class="owner-request-card-subcategory"><%= request.role.title %></h3>
+            <h5 class="owner-request-user-name"><%= request.user.full_name %></h5>
+            <h6 class="owner-request-created-at"><%= distance_of_time_in_words(request.created_at, Time.now) + " ago" %></h6>
+            <div class=<%= request_status(request) %>> <p> status: <%= request_status(request) %></p></div>
+          </div>
+        </div>
+
+        <% end %>
+      <% end %>
+    </div>
+
+  <% end %>
+</div>
+
+
+
+
+<div class="container">
   <div class="project-show">
   <h1><%= @project.title %></h1>
     <div class="row">
