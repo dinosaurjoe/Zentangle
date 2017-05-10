@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170508132143) do
+ActiveRecord::Schema.define(version: 20170510111226) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -76,9 +76,9 @@ ActiveRecord::Schema.define(version: 20170508132143) do
     t.string   "requirements"
     t.string   "compensation"
     t.string   "title"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.boolean  "status"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.boolean  "status",       default: true
     t.index ["project_id"], name: "index_roles_on_project_id", using: :btree
   end
 

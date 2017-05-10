@@ -40,6 +40,9 @@ class ProjectsController < ApplicationController
   def new
     @project = current_user.projects.new
     authorize @project
+    150.times do
+      @project.roles.new
+    end
   end
 
   def create
@@ -82,6 +85,7 @@ class ProjectsController < ApplicationController
 
   def project_params
     params.require(:project).permit(:title, :full_description, :category, :subcategory,
-                                    :short_description, :user_id, :picture, :address, :total_budget)
+                                    :short_description, :user_id, :picture, :address, :total_budget,
+                                    :roles_attributes => [:title, :description, :compensation, :requirements])
   end
 end
