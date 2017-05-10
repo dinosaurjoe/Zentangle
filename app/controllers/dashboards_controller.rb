@@ -3,6 +3,7 @@ class DashboardsController < ApplicationController
   def show
     @user = current_user
     @projects = @user.projects
+    @requests = Request.where(user: current_user)
   end
 
   private
