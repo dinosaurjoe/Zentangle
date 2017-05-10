@@ -24,6 +24,19 @@
           <div class="short-description"><p><%= @project.short_description %></p></div>
         </div>
 
+        <div class="apply-ui">
+          <button class="btn" id="check">Check Out Roles!</button>
+          <div class="available-roles">
+            <div class="roles-btns">
+              <% @available_roles.each do |role| %>
+                <!-- Trigger/Open The Modal -->
+                <button class="role-btn" id = <%= role.id %>><%= role.title %></button>
+              <% end %>
+            </div>
+          </div>
+
+        </div>
+
         </div>
       </div>
     </div>
@@ -45,16 +58,6 @@
             <% end %>
           <% end %>
         </div>
-        <div class="title">
-          <h3>Available Roles</h3>
-        </div>
-        <div class="available-roles">
-          <div class="roles-btns">
-            <% @available_roles.each do |role| %>
-              <!-- Trigger/Open The Modal -->
-              <button class="role-btn" id = <%= role.id %>><%= role.title %></button>
-            <% end %>
-          </div>
           <div class="title">
             <h3>Budget</h3>
           </div>
@@ -96,7 +99,7 @@
                 <p><%= role.compensation %></p>
                 </div>
                 <div class="col-md-12 text-center">
-                <button class="btn popup-btn"> <%= link_to "Request to Join", new_role_request_path(role.id) %> </button>
+                <button class="btn popup-btn"> <%= link_to "Apply Now", new_role_request_path(role.id) %> </button>
                 </div>
               </div>
             <% end %>
@@ -114,6 +117,8 @@
     // Get the modal
     $(document).ready(function() {
       var modal = $('#roles-modal');
+
+      $('#check').siblings().hide();
       // Get the button that opens the modal
       var btn = $(".role-btn");
       // Get the <span> element that closes the modal
@@ -138,6 +143,15 @@
           modal.css({"display": "none"});
         }
       });
+
+
+      $('#check').on('click', function(e) {
+        $(e.target).hide();
+        $(e.target).siblings().show();
+
+
+      })
+
     });
 
   </script>
