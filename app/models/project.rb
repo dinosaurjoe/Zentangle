@@ -51,6 +51,7 @@ class Project < ApplicationRecord
   mount_uploader :picture, PhotoUploader
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
+  accepts_nested_attributes_for :roles
 
 # check validations
 
