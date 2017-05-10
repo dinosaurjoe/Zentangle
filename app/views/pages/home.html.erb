@@ -9,7 +9,7 @@
         <%= simple_form_for [@project], url: projects_path, method: :get do |f| %>
           <%= f.input :category, collection: Project::CATEGORIES.keys, prompt: "Category", required: false, label: false %>
           <%= f.association :roles, as: :string, required: false, label: false do |r| %>
-            <% r.input :title, required: false, label: false, placeholer: "Role", input_html: { class: "aa-input-search"} %>
+            <% r.input :title, required: false, label: false, input_html: { placeholder: "Role", class: "aa-input-search"} %>
           <% end %>
           <%= f.input :address, required: false, placeholder: "Location", label: false %>
           <%= f.button :submit, 'search',  class: "btn"  %>
