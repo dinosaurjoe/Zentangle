@@ -1,48 +1,81 @@
-<!-- USING BOOTSTRAP TABS! NOT LEWAGON TABS! -->
-<div>
-  <div class="tab-container">
-    <!-- Nav tabs -->
-    <div class="responsive">
-      <ul class="nav nav-tabs dash-tabs" role="tablist">
-        <li role="presentation" class="first-tab active"><a href="#main" aria-controls="#" role="tab" data-toggle="tab">Main</a></li>
-        <li role="presentation" ><a href="#projects" aria-controls="#" role="tab" data-toggle="tab">My Projects</a></li>
-        <li role="presentation"><a href="#working" aria-controls="#" role="tab" data-toggle="tab">Working on</a></li>
-        <li role="presentation"><a href="#incoming" aria-controls="#" role="tab" data-toggle="tab">Incoming</a></li>
-        <li role="presentation"><a href="#outgoing" aria-controls="#" role="tab" data-toggle="tab">Outgoing</a></li>
-      </ul>
-    </div>
-  </div>
+<div class="container">
 
-  <!-- Tab panes -->
-  <div class="tab-content">
-
-<!-- EVERYTHING SHOULD BE EDITED IN HERE FOR EACH TAB. ALL HTML CODE GOES IN HERE! -->
-    <div role="tabpanel" class="tab-pane active " id="main">
-      <%= render 'main' %>
-    </div>
-
-
-<!-- EVERYTHING SHOULD BE EDITED IN HERE FOR EACH TAB. ALL HTML CODE GOES IN HERE! -->
-    <div role="tabpanel" class="tab-pane" id="projects">
-      <%= render 'my_projects' %>
-    </div>
-
-<!-- EVERYTHING SHOULD BE EDITED IN HERE FOR EACH TAB. ALL HTML CODE GOES IN HERE! -->
-    <div role="tabpanel" class="tab-pane" id="working">
-      working on
+  <div class="row">
+    <div class="profile-card col-md-offset-1 col-md-3">
+        <div class="profile-picture bg-picture">
+           <% if @user.profile_picture %>
+            <%= cl_image_tag @user.profile_picture %>
+            <% else %>
+            <%= image_tag "default-user.png", width: 100%>
+            <% end %>
+        </div>
+        <div class="profile-info">
+          <h2><%= @user.first_name %> <%= @user.last_name %></h2>
+          <p><%= @user.bio %></p>
+          <h4>Skills</h4>
+          <p><%= @user.skills %></p>
+          <h4>Portfolio</h4>
+          <p><%= link_to "my portfolio", "http://#{@user.portfolio_url}" %></p>
+        </div>
+        <%= link_to "edit", edit_user_path(@user) %>
     </div>
 
 
-<!-- EVERYTHING SHOULD BE EDITED IN HERE FOR EACH TAB. ALL HTML CODE GOES IN HERE!-->
-    <div role="tabpanel" class="tab-pane" id="incoming">
-      <%= render 'requests', requests: @user.incoming_requests, invites: @user.incoming_invites %>
-    </div>
+    <div class="dashboard-right-list col-md-8">
+      <div class="row dashboard-my-projects">
+        <h2 class="dashboard-projects-header">My Projects</h2>
+        <% @projects.each do |project| %>
+        <div id="dashboard-card-<%= project.id %>">
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <%= link_to project_path(project.id) do%>
+            <div class="card">
+              <div class="card-img bg-picture"" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.4) 0%, rgba(0,36,61,0.4) 30%), url( <%= project.picture %>);">
+              </div>
+              <div class="card-content">
+                <h3 class="card-title"><%= project.title %></h3>
+                <h4 class="card-category"><%= project.category %></h4>
+                <h5 class="card-subcategory dash-subcategory"><%= project.subcategory %></h5>
+                <p class="card-description dash-description"><%= project.short_description %></p>
+                  <div class="card-btns">
+                    <%= link_to "edit", edit_project_path(project), class: "btn btn-edit"%>
+                    <%= link_to 'delete', project_path(project),
+                    data: {:confirm => 'Are you sure?'}, :method => :delete, remote: :true, class: "btn btn-delete" %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+      <% end %>
 
-      <!-- EVERYTHING SHOULD BE EDITED IN HERE FOR EACH TAB. ALL HTML CODE GOES IN HERE!-->
-    <div role="tabpanel" class="tab-pane" id="outgoing">
-      <%= render 'requests', requests: @user.outgoing_requests, invites: @user.outgoing_invites %>
-    </div>
 
+      <div class="row dashboard-my-requests">
+        <div class="row requests">
+        <h2 class="dashboard-requests-header">My Requests</h2>
+        <% if @requests.first.nil? %>
+        <h5>You have no applications, search projects and apply!</h5>
+
+        <% end %>
+          <% @requests.each do |request| %>
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="request-card">
+              <%= link_to request_path(request) do %>
+              <div class="request-card-img bg-picture" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.4) 0%, rgba(0,36,61,0.4) 30%), url( <%= request.role.project.picture %>);">
+              </div>
+              <div class="request-card-content">
+                <h3 class="request-card-subcategory"><%= request.role.title %></h3>
+                <h5 class="request-card-title"><%= request.role.project.title %></h5>
+                <div class=<%= request_status(request) %>> <p> status: <%= request_status(request) %></p></div>
+              </div>
+            </div>
+
+            <% end %>
+          </div>
+          <% end %>
+      </div>
+
+    </div>
   </div>
 </div>
 
