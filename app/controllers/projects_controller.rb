@@ -4,21 +4,22 @@ class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
 
   def index
-    # TODO: Account for params missing
-    if project_params[:address].present? && project_params[:category].present? && params[:project][:roles][:title].present?
-      @projects = Project.near(project_params[:address], 30).where({category: project_params[:category]})
-      .joins(:roles).where(roles: {title: params[:project][:roles][:title].titleize})
-    elsif project_params[:category].present? && params[:project][:roles][:title].present? && !project_params[:address].present?
-      @projects = Project.where({category: project_params[:category]})
-      .joins(:roles).where(roles: {title: params[:project][:roles][:title].titleize})
+    if params[:project][:address].present? && params[:project][:category].present? && params[:role_input][:roles].present?
+      @projects = Project.near(params[:project][:address], 30).where({category: params[:project][:category]})
+      .joins(:roles).where(roles: {title: params[:role_input][:roles].titleize})
+    elsif params[:project][:category].present? && params[:role_input][:roles].present? && !params[:project][:address].present?
+      @projects = Project.where({category: params[:project][:category]})
+      .joins(:roles).where(roles: {title: params[:role_input][:roles].titleize})
     else
-      @projects = Project.where({category: project_params[:category]})
+      @projects = Project.where({category: params[:project][:category]})
     end
 
     # Category can never be nil TODO: make sure it's preselected on home
     @category = @projects.first.category unless @projects.empty?
     @subcategories = @projects.map { |p| p.subcategory }.uniq
     # Array of subcategories names for yielded projects
+
+
   end
 
   def show
@@ -78,6 +79,7 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     authorize @project
   end
+
 
   def project_params
     params.require(:project).permit(:title, :full_description, :category, :subcategory,
