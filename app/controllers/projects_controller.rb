@@ -5,8 +5,16 @@ class ProjectsController < ApplicationController
 
   def index
     # TODO: Account for params missing
-    @projects = Project.near(project_params[:address], 30).where({category: project_params[:category]})
-    .joins(:roles).where(roles: {title: params[:project][:roles][:title].titleize})
+    if project_params[:address].present? && project_params[:category].present? && params[:project][:roles][:title].present?
+      @projects = Project.near(project_params[:address], 30).where({category: project_params[:category]})
+      .joins(:roles).where(roles: {title: params[:project][:roles][:title].titleize})
+    elsif project_params[:category].present? && params[:project][:roles][:title].present? && !project_params[:address].present?
+      @projects = Project.where({category: project_params[:category]})
+      .joins(:roles).where(roles: {title: params[:project][:roles][:title].titleize})
+    else
+      @projects = Project.where({category: project_params[:category]})
+    end
+
     # Category can never be nil TODO: make sure it's preselected on home
     @category = @projects.first.category unless @projects.empty?
     @subcategories = @projects.map { |p| p.subcategory }.uniq
