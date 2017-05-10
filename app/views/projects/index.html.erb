@@ -11,12 +11,12 @@
 <div class="container">
 
     <!-- Build checkbox form -->
-    <div id="filter-buttons">
+    <div class="filter-buttons">
       <form id="filters">
         <% @subcategories.each do |name| %>
-          <div>
-            <input type="checkbox" name='<%= name %>'>
-            <label for='<%= name %>'> <%= name %> </label>
+          <div class="inline-stuff">
+            <input type="checkbox" name='<%= name %>' id='<%= name %>'>
+            <label class="index-subcategory" for='<%= name %>'> <%= name %> </label>
           </div>
         <% end %>
       </form>
