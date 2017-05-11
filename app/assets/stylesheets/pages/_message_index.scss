@@ -20,6 +20,9 @@
   font-size: 18px;
   margin-top: 15px;
   margin-bottom: 15px;
+  letter-spacing: 0.8px;
+  word-spacing: 0.8px;
+
 }
 
 .view-msg-btn {
@@ -36,6 +39,16 @@
   margin-bottom: 15px;
 }
 
+.empty-conversarion h3 {
+  font-size: 34px;
+  font-weight: 100;
+  letter-spacing: 1.5px;
+  word-spacing: 1px;
+  color: $new-blue;
+  text-transform: uppercase;
+  font-style: italic;
+  margin-top: 150px;
+}
 .view-msg-btn:hover {
   background-color: white;
   border: solid $new-blue 2px;
@@ -46,3 +59,8 @@
   vertical-align: middle;
 }
 
+
+.conversation-username {
+  font-weight: 300;
+  font-style: italic;
+}

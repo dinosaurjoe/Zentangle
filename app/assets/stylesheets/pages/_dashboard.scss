@@ -38,9 +38,13 @@
 
 .btn-edit:hover {
   background-color: white;
-  color: $new-blue;
+  color: $new-blue !important;
 }
 
+.btn-edit:hover a {
+  background-color: white;
+  color: $new-blue !important;
+}
 
 .btn-delete:hover {
   background-color: white;
