@@ -513,21 +513,32 @@ COMPENSATION = ["pizza", "20 dollars", "free coffee", "1,000 dollars"]
 
 projects = Project.all
 
-ROLES = ["Lead Designer", "Illustrator", "Editor", "Director", "Writer",
-         "Art Director", "Producer", "Junior Art Director",
-         "Assistant Producer", "Production Assistant",
-         "Technical Director", "Engineer"]
+ROLES = {
+  "Lead Designer" => "A Conceptual or Lead Designer is an individual who works on the overall conceptualization and design of a media project. Projects may include a game, web site, interactive CD ROM, film, video, or other type of multimedia product. A person taking on the role of Lead Designer assumes a high level of responsibility. He or she is the creative driving force behind the conceptualization of a product.",
+  "Illustrator" => "Illustrators combine art, design and creative skills to develop ideas and produce original visual images for a wide range of products.",
+  "Director" => "If you lead, they'll follow. Director jobs typically lead large groups of employees that work directly under their guidance. Directors make sure that employees work together for the good of the company, ensure that company policy is upheld. Some directors will create operations and marketing plans, interview and hire employees, and work with customers.",
+  "Writer" => "A writer is someone who writes for a living, creating fiction (e.g. novels, short stories, scripts for films, theatre and television), non-fiction (e.g. biographies, autobiographies, web content and reference books) or poetry.",
+  "Art Director"=> "They are involved in creating a campaign that has an instant, positive impact on the consumer in order to promote the product or brand being advertised. They can be involved in all of the different forms of advertising, including advertising on television and radio, the internet, posters and direct mailings.",
+  "Producer"=> "Producers play an integral role in the television, film and video industries. In this role you will oversee each project from conception to completion and may also be involved in the marketing and distribution process.",
+  "Junior Art Director"=> "Junior art directors need to be natural visual thinkers, ready to expand on their skills and learn from senior art directors in order to flourish.",
+  "Assistant Producer"=> "The Assistant to the Producer is an administrator who works closely with producers throughout the production process. They are involved at the pre-production stage through to post production and marketing and distribution.",
+  "Production Assistant"=> "Production Runners are deployed by the producer and by other film/television production staff, such as the production coordinator, to assist wherever they are needed on productions. Their responsibilities vary considerably depending on where Production Runners are assigned.",
+  "Technical Director"=> "The Technical Director (TD) or technical producer (TP) is usually the most senior technical person within a theatrical company or television studio. This person usually possesses the highest level of competence in a specific technical field and may be recognized as an expert in that industry. ",
+  "Engineer"=> "Engineers work in a variety of fields to analyze, develop and evaluate large-scale, complex systems. This can mean and improve and maintaining current systems or creating brand new projects. Engineers will design and draft blueprints, visit systems in the field and manage projects."}
+
+
 
 EXPERIENCE_YEARS = (1..5).to_a
 
 count = 0
 80.times do
+  rolenow = ROLES.to_a.sample
   Role.create(
     project: projects[count],
-    description: Faker::Lorem.paragraph(2),
+    description: rolenow[1],
     requirements: "#{EXPERIENCE_YEARS.sample} years of experience",
     compensation: COMPENSATION.sample,
-    title: ROLES.sample,
+    title: rolenow[0],
     status: true
   )
 
@@ -550,11 +561,7 @@ ind = 0
 count.times do
   Role.create(
     project: projects[ind],
-    description: "As a film or video editor, you'll be responsible for assembling recorded raw material into a finished product that's suitable for broadcasting. The material may include camera footage, dialogue, sound effects, graphics and special effects. This is a key role in the post-production process and your skills can determine the quality and delivery of the final product. You'll usually work closely with the director to achieve the desired end result.
-
-You'll probably be employed on a freelance basis, working on short-term contracts for post-production studios, television companies and corporate employers.
-
-Digital technology, specialist computer software and high-quality digitisation of sound and pictures have effectively replaced the traditional manual method of cutting film. In some instances you may be given creative freedom, while in others you'll just be required to operate the necessary machines.",
+    description: "As a film or video editor, you'll be responsible for assembling recorded raw material into a finished product that's suitable for broadcasting. The material may include camera footage, dialogue, sound effects, graphics and special effects.",
     requirements: "#{EXPERIENCE_YEARS.sample} years of experience",
     compensation: COMPENSATION.sample,
     title: "Editor",
