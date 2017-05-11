@@ -398,7 +398,7 @@ Project.create(
   )
 
 Project.create(
-    title: "Duty Free: A Documentary Film",
+    title: "Duty Free",
     full_description: "After working every day of her adult life, my mom - a single mom - was fired from her job at age 75. To help her deal with the pain of this loss, I encouraged her to write out a list of all the things she could never do while on the clock, and one by one, we ticked the items off her bucket list. Throughout these adventures, my mom really lived -- she took a hip hop class with a 'Hamilton' dancer; she finally got to visit her sister's grave in the UK; she reunited with her daughter and the granddaughter she hadn't seen in a decade. But without an income, the realities of unemployment loomed.",
     category: "film",
     subcategory: "documentary",
