@@ -9,16 +9,25 @@ a {
 a:hover {
   text-decoration: none;
 }
-
-
+.search-bar {
+  // margin-top: 300px;
+  // position: absolute;
+  // bottom: 65px;
+  // left: 60px;
+  text-align: left;
+}
 
 .search-bar input {
   border-radius: 0;
   border: solid $new-blue 2px;
   color: $new-blue;
-  margin-left: 10px;
-  height: 40px;
-
+  // margin-left: 10px;
+  font-family: $header-font;
+  font-size: 34px;
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  padding: 1px;
 }
 
 .search-bar label {
@@ -28,23 +37,26 @@ a:hover {
 
 .search-bar .btn {
   border-radius: 0;
-  background-color: $sunset-orange;
-  color: white;
-  border: none;
+  background: transparent;
+  color: $sunset-orange;
+  border: solid 2px;
+  padding: 5px;
+  margin-top: 17px;
 
 }
 
 .search-bar .btn:hover {
   box-shadow: none;
-  color: $sunset-orange;
-  background-color: white;
-  border: none;
+  border-radius: 0;
+  color: white;
+  background-color: transparent;
+  border: solid 2px;
 }
 
 #project_category {
   border-radius: 0 !important;
-  color: #999999;
-  border: solid white 2px;
+  border-bottom: solid $new-blue 1px;
+  // -webkit-appearance: none;
 }
 
 #project-title  {
@@ -63,13 +75,60 @@ a:hover {
 }
 
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    color: $new-blue;
+    color: $new-blue !important;
+    background-color: transparent !important;
 }
 
-::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    color: $new-blue;
+:-moz-placeholder { /* Firefox 18- */
+   color: $new-blue !important;
+   background-color: transparent !important;
 }
 
+::-moz-placeholder {  /* Firefox 19+ */
+   color: $new-blue !important;
+   background-color: transparent !important;
+}
+
+:-ms-input-placeholder {
+   color: $new-blue;
+   background-color: transparent !important;
+}
+
+.invisible-search {
+  .form-control:focus {
+    box-shadow: none;
+  }
+   .project_category {
+      background-color: transparent !important;
+      border: 0px;
+      outline: 0px;
+
+      select {
+        border: 0px;
+        outline: 0px;
+      }
+   }
+  option {
+      background-color: transparent !important;
+  }
+  select {
+      background-color: transparent !important;
+      padding: 5px;
+      border: 0px;
+      outline: 0px;
+  }
+
+  .simple_form .form-control {
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid $new-blue;
+    outline: none;
+    color: $new-blue;
+    background: transparent;
+    display: inline-block;
+    margin-bottom: 13px;
+  }
+}
 
 // Algolia shit
 
@@ -90,13 +149,24 @@ a:hover {
 .aa-dropdown-menu {
   background-color: #fff;
   border: 1px solid rgba(228, 228, 228, 0.6);
-  min-width: 300px;
+  min-width: 336px;
   margin-top: 10px;
   box-sizing: border-box; }
 .aa-suggestion {
   padding: 12px;
+  // margin-left: 15px;
   cursor: pointer;
   color: black;
+
+  border-radius: 0;
+  color: $new-blue;
+  margin-left: 10px;
+  font-family: $header-font;
+  font-size: 20px;
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 1px;
 }
 .aa-suggestion + .aa-suggestion {
     border-top: 1px solid rgba(228, 228, 228, 0.6);
