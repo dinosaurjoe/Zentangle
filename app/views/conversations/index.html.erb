@@ -4,11 +4,21 @@
         <div class="request-to-join-header text-center">
           <h1>Your chats</h1>
         </div>
-        <div class="col-xs-12">
-          <div id="conversations">
-          <%= render @conversations %>
+
+        <% if @conversations.first.nil? %>
+        <div class="empty-conversarion">
+          <div class="col-xs-12 text-center">
+            <h3>No chats to show</h3>
           </div>
         </div>
+          <% else %>
+            <div class="col-xs-12">
+              <div id="conversations">
+              <%= render @conversations %>
+              </div>
+            </div>
+          <% end %>
+
     </div>
   </div>
 </div>
