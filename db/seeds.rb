@@ -16,8 +16,8 @@ User.destroy_all
 
 password = Faker::Internet.password(8)
 SKILLS = ["acting", "directing", "writing", "editting", "sound"]
-
-
+GENDER = ["men", "women"]
+NUMBER = (0..99)
 
 20.times do
   u = User.new(
@@ -30,7 +30,7 @@ SKILLS = ["acting", "directing", "writing", "editting", "sound"]
     portfolio_url: "www.portfolio.com",
     skills: "#{SKILLS.sample} and #{SKILLS.sample}"
     )
-  u.remote_profile_picture_url = "http://lorempixel.com/50/50/people"
+  u.remote_profile_picture_url = "https://randomuser.me/api/portraits/#{GENDER.sample}/#{rand(NUMBER)}.jpg"
   u.save!
 end
 
