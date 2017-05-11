@@ -12,13 +12,12 @@
     <div class="col-xs-12 col-md-6 ">
       <div class="msg-box text-center">
         <%= form_for @personal_message do |f| %>
-        <%= hidden_field_tag 'receiver_id', @receiver.id %>
-        <%= f.text_area :body, label:false, placeholder: "Write your message" %>
-      <div class="send text-center">
-        <%= f.submit "send", class: "send-msg-btn" %>
-        <button class="btn conversation-back-button"><%= link_to "back", url_for(:back)%></button>
-      </div>
-
+          <%= hidden_field_tag 'receiver_id', @receiver.id %>
+          <%= f.text_area :body, label:false, placeholder: "Write your message" %>
+          <div class="send text-center">
+            <%= f.submit "send", class: "send-msg-btn" %>
+            <button class="btn conversation-back-button"><%= link_to "back", url_for(:back)%></button>
+          </div>
         <% end %>
       </div>
     </div>
