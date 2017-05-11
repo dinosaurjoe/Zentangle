@@ -20,7 +20,7 @@
         <h4>Portfolio</h4>
         <p><%= link_to "Behance", "http://#{@user.portfolio_url}" %></p>
       </div>
-      <p class="edit-profile-link text-center">
+      <p class="edit-profile-link text-center" id="edit">
         <%= link_to "edit profile", edit_user_path(@user) %>
       </p>
     </div>
