@@ -26,14 +26,48 @@
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
+    <%= render 'shared/pusher' %>
     <div style="min-height: 660px;">
       <%= yield %>
     </div>
     <%= render 'shared/footer' %>
 
-        <%= javascript_include_tag "https://maps.google.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
+    <%= javascript_include_tag "https://maps.google.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
     <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag "https://js.pusher.com/4.0/pusher.min.js" %>
 
     <%= yield(:after_js) %>
+
+    <script>
+      // Enable pusher logging - don't include this in production
+      Pusher.logToConsole = true;
+
+      $(document).ready(function(){
+        $('.pusher').children().hide();
+      })
+
+      var pusher = new Pusher('b0de02a8f3fdb48196e8', {
+        cluster: 'eu',
+        encrypted: true
+      });
+
+      var channel = pusher.subscribe('user-id');
+      channel.bind('status', function(data) {
+        console.log(data.messsage);
+        if (data.message === "accepted"){
+          $('.accepted-request-notification').show();
+        }
+      });
+
+      channel.bind('message', function(data) {
+        console.log(data.message === "message");
+        if (data.message === "message"){
+          $('.new-message-notification').show();
+        }
+      });
+
+    </script>
+
+    <%= link_to "ACCEPT", accept_request_path(Request.all.first), method: :post%>
   </body>
 </html>

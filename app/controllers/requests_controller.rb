@@ -40,18 +40,34 @@ class RequestsController < ApplicationController
     authorize @request
     if current_user == @request.project.owner
       @request.owner_confirm == false
+      Pusher.trigger('requests', 'status', {
+        message: "Your request to join #{@request.role.project.title} was declined :("
+    })
     else
       @request.user_confirm == false
+      Pusher.trigger('requests', 'status', {
+        message: "Your request to join #{@request.role.project.title} was declined :("
+      })
     end
 
   end
 
   def accept
+    Pusher.trigger("user-id", 'status', {
+      message: "accept"
+    })
+
+
+    # Pusher.trigger("#{@request.user.id}", 'request', {
+    #   message: "accept"
+    # })
     authorize @request
 
     @request.user_confirm = true
     @request.owner_confirm = true
     @request.save
+
+    #"#{@request.role.project.owner.first_name} accepted your request to join #{@request.role.project.title}"
     redirect_to dashboard_path
   end
 
