@@ -549,7 +549,11 @@ ind = 0
 count.times do
   Role.create(
     project: projects[ind],
-    description: Faker::Lorem.paragraph(2),
+    description: "As a film or video editor, you'll be responsible for assembling recorded raw material into a finished product that's suitable for broadcasting. The material may include camera footage, dialogue, sound effects, graphics and special effects. This is a key role in the post-production process and your skills can determine the quality and delivery of the final product. You'll usually work closely with the director to achieve the desired end result.
+
+You'll probably be employed on a freelance basis, working on short-term contracts for post-production studios, television companies and corporate employers.
+
+Digital technology, specialist computer software and high-quality digitisation of sound and pictures have effectively replaced the traditional manual method of cutting film. In some instances you may be given creative freedom, while in others you'll just be required to operate the necessary machines.",
     requirements: "#{EXPERIENCE_YEARS.sample} years of experience",
     compensation: COMPENSATION.sample,
     title: "Editor",
