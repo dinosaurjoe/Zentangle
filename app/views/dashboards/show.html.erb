@@ -38,8 +38,6 @@
                 <p class="card-description dash-description"><%= project.short_description %></p>
                   <div class="card-btns">
                     <%= link_to "edit", edit_project_path(project), class: "btn btn-edit"%>
-                    <%= link_to 'delete', project_path(project),
-                    data: {:confirm => 'Are you sure?'}, :method => :delete, remote: :true, class: "btn btn-delete" %>
                 </div>
               </div>
             </div>
