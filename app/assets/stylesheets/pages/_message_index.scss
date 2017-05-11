@@ -20,6 +20,9 @@
   font-size: 18px;
   margin-top: 15px;
   margin-bottom: 15px;
+  letter-spacing: 0.8px;
+  word-spacing: 0.8px;
+
 }
 
 .view-msg-btn {
@@ -56,3 +59,8 @@
   vertical-align: middle;
 }
 
+
+.conversation-username {
+  font-weight: 300;
+  font-style: italic;
+}
