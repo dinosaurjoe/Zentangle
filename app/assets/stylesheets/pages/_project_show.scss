@@ -1,13 +1,15 @@
 .project-show h1 {
   text-align: center;
-  font-size: 80px;
+  font-size: 60px;
   font-weight: 100;
-  letter-spacing: 4px;
+  letter-spacing: 3px;
+  word-spacing: 2px;
   text-transform: uppercase;
   font-style: italic;
-  margin-top: 0;
+  margin-top: 20px;
   color: $sunset-orange;
   margin-bottom: 30px;
+  line-height: 74px;
 }
 
 .collaborator-img {
@@ -20,7 +22,7 @@
   margin-bottom: 6px;
 }
 .project-card {
-  min-height: 300px;
+  height: 400px;
   position: relative;
   // border: solid $sunset-orange 2px;
   outline: solid $sunset-orange 2px;
@@ -35,7 +37,7 @@
   text-transform: uppercase;
   letter-spacing: 1.2px;
   font-size: 15px;
-  margin: 10px 0 0 0;
+  margin: 20px 0 0 0;
   color: $payne-grey;
 }
 
@@ -45,7 +47,8 @@
   font-weight: 200;
   text-transform: uppercase;
   letter-spacing: 2px;
-  margin-top:25px;
+  margin-top: 35px;
+  margin-bottom: 20px;
 }
 
 .short-description {
@@ -55,6 +58,7 @@
 
 .panel-side {
   margin-top: 45px;
+  margin-bottom: 45px;
   padding-right: 40px;
 }
 
@@ -73,11 +77,12 @@
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-top: 25px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .lower-left {
   border-right: $sunset-orange 2px solid;
+  min-height: 300px;
 }
 
 
@@ -125,6 +130,7 @@
   color: $new-blue;
   letter-spacing: 1.4px;
   margin-top: 0;
+  margin-bottom: 20px;
 }
 
 .popup-title {
@@ -200,4 +206,32 @@
   background-size: cover !important;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.project-show-request {
+  border: solid 2px $new-blue;
+
+}
+
+.btn-roles {
+  border-radius: 0;
+  background-color: $new-blue;
+  color: white;
+  text-decoration: none;
+  margin-top: 10px;
+  border: solid $new-blue 2px;
+}
+
+.btn-roles:hover {
+  background-color: white;
+  border: solid $new-blue 2px;
+}
+
+#check:hover {
+  color: $new-blue;
+}
+
+.project-show-picture {
+  width: 100%;
+  height: 400px;
 }
