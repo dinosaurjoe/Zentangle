@@ -25,7 +25,7 @@ SKILLS = ["acting", "directing", "writing", "editting", "sound"]
     password: password,
     password_confirmation: password,
     first_name: Faker::Name.first_name,
-    last_name: Faker::Food.ingredient,
+    last_name: Faker::Name.last_name,
     bio: Faker::Lorem.paragraph(2),
     portfolio_url: "www.portfolio.com",
     skills: "#{SKILLS.sample} and #{SKILLS.sample}"
