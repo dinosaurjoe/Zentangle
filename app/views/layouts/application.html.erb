@@ -53,14 +53,16 @@
 
       var channel = pusher.subscribe('user-id');
       channel.bind('status', function(data) {
-        console.log(data.messsage);
         if (data.message === "accepted"){
           $('.accepted-request-notification').show();
+        }
+        if (data.message === "declined"){
+          $('.declined-request-notification').show();
         }
       });
 
       channel.bind('message', function(data) {
-        console.log(data.message === "message");
+        // console.log(data.message === "message");
         if (data.message === "message"){
           $('.new-message-notification').show();
         }
