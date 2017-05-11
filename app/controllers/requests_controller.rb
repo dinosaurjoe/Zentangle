@@ -1,6 +1,7 @@
 class RequestsController < ApplicationController
   before_action :set_role, only: []
   before_action :set_request, only: [:show, :edit, :update, :destroy]
+  skip_after_action :verify_authorized
   def index
     authorize @request
     @request = Request.all
