@@ -1,17 +1,34 @@
 <div class="banner bg-picture" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.2) 0%, rgba(0,36,61,0.2) 50%), url('<%= asset_path('banner2.jpg') %>')">
   <div class="banner-content">
     <div class="banner-title">
-      <h1>what's <br> your <br> talent?</h1>
-      <h2>find a project, <br> get connected.</h2>
+      <!-- <h1>what's <br> your <br> talent?</h1> -->
+      <h1>what's your talent?</h1>
+      <!-- <h2>find a project, <br> get connected.</h2> -->
     </div>
     <div class="search-bar">
       <div class="form-inline aa-input-container invisible-search">
         <%= simple_form_for [@project], url: projects_path, method: :get do |f| %>
-          <%= f.input :category, collection: Project::CATEGORIES.keys, prompt: "Category", required: false, label: false %>
-          <%= simple_fields_for :role_input do |r| %>
-              <%= r.input :roles, required: false, label: false, as: :string, placeholder: "Role", input_html: { class: "aa-input-search"} %>
-          <% end %>
-          <%= f.input :address, required: false, placeholder: "anywhere...", label: false %>
+        <ul class="list-inline">
+          <li><h2>I am a </h2></li>
+          <li>
+            <%= simple_fields_for :role_input do |r| %>
+                <%= r.input :roles, required: false, label: false, as: :string, placeholder: "", input_html: { class: "aa-input-search"} %>
+            <% end %>
+          </li>
+          <br>
+          <li><h2>looking for a</h2></li>
+          <li><%= f.input :category, collection: Project::CATEGORIES.keys, prompt: "Category", required: false, label: false %>
+
+          </li>
+          <li><h2> project</h2></li>
+          <br>
+          <li><h2>in</h2></li>
+          <li><%= f.input :address, required: false, placeholder: "anywhere...", label: false %></li>
+          <br>
+        </ul>
+
+
+
           <%= f.button :submit, 'search',  class: "btn"  %>
         <% end %>
       </div>

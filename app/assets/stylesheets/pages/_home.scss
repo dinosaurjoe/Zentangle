@@ -9,18 +9,25 @@ a {
 a:hover {
   text-decoration: none;
 }
-
 .search-bar {
-  margin-bottom: -15px;
+  // margin-top: 300px;
+  // position: absolute;
+  // bottom: 65px;
+  // left: 60px;
+  text-align: left;
 }
 
 .search-bar input {
   border-radius: 0;
   border: solid $new-blue 2px;
   color: $new-blue;
-  margin-left: 10px;
-  height: 40px;
-
+  // margin-left: 10px;
+  font-family: $header-font;
+  font-size: 34px;
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  padding: 1px;
 }
 
 .search-bar label {
@@ -33,6 +40,8 @@ a:hover {
   background: transparent;
   color: $sunset-orange;
   border: solid 2px;
+  padding: 5px;
+  margin-top: 17px;
 
 }
 
@@ -117,6 +126,7 @@ a:hover {
     color: $new-blue;
     background: transparent;
     display: inline-block;
+    margin-bottom: 13px;
   }
 }
 
@@ -139,13 +149,24 @@ a:hover {
 .aa-dropdown-menu {
   background-color: #fff;
   border: 1px solid rgba(228, 228, 228, 0.6);
-  min-width: 300px;
+  min-width: 336px;
   margin-top: 10px;
   box-sizing: border-box; }
 .aa-suggestion {
   padding: 12px;
+  // margin-left: 15px;
   cursor: pointer;
   color: black;
+
+  border-radius: 0;
+  color: $new-blue;
+  margin-left: 10px;
+  font-family: $header-font;
+  font-size: 20px;
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 1px;
 }
 .aa-suggestion + .aa-suggestion {
     border-top: 1px solid rgba(228, 228, 228, 0.6);
