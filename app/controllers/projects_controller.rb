@@ -6,10 +6,10 @@ class ProjectsController < ApplicationController
   def index
     if params[:project][:address].present? && params[:project][:category].present? && params[:role_input][:roles].present?
       @projects = Project.near(params[:project][:address], 30).where({category: params[:project][:category]})
-      .joins(:roles).where(roles: {title: params[:role_input][:roles].titleize})
+      .joins(:roles).where(roles: {title: params[:role_input][:roles].titleize, status: true})
     elsif params[:project][:category].present? && params[:role_input][:roles].present? && !params[:project][:address].present?
       @projects = Project.where({category: params[:project][:category]})
-      .joins(:roles).where(roles: {title: params[:role_input][:roles].titleize})
+      .joins(:roles).where(roles: {title: params[:role_input][:roles].titleize, status: true})
     else
       @projects = Project.where({category: params[:project][:category]})
     end
