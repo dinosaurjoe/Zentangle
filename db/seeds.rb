@@ -509,7 +509,7 @@ Project.create(
     total_budget: "$1,475"
   )
 
-COMPENSATION = ["pizza", "20 dollars", "free coffee", "1,000 dollars"]
+COMPENSATION = ["pizza", "free coffee", "$1,000", "$2,000", "$500"]
 
 projects = Project.all
 
@@ -571,19 +571,19 @@ count.times do
   ind += 1
 end
 
-200.times do
-  user = User.order("RANDOM()").first
-  Request.create(
-    user: user,
-    role: Role.order("RANDOM()").first,
-    user_confirm: [true, false, nil].sample,
-    owner_confirm: [true, false, nil].sample,
-    owner_message: "join me",
-    user_message: "how much $$$",
-    created_by: user
-  )
+# 200.times do
+#   user = User.order("RANDOM()").first
+#   Request.create(
+#     user: user,
+#     role: Role.order("RANDOM()").first,
+#     user_confirm: [true, false, nil].sample,
+#     owner_confirm: [true, false, nil].sample,
+#     owner_message: "please join my project",
+#     user_message: "how much $$$",
+#     created_by: user
+#   )
 
-end
+# end
 
 
 
