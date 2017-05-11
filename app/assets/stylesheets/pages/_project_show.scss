@@ -215,20 +215,21 @@
 
 .btn-roles {
   border-radius: 0;
-  background-color: $new-blue;
+  background-color: $mustard;
   color: white;
   text-decoration: none;
   margin-top: 10px;
-  border: solid $new-blue 2px;
+  border: solid $mustard 2px;
+  text-transform: uppercase;
 }
 
 .btn-roles:hover {
   background-color: white;
-  border: solid $new-blue 2px;
+  border: solid $mustard 2px;
 }
 
 #check:hover {
-  color: $new-blue;
+  color: $mustard;
 }
 
 .project-show-picture {
