@@ -67,8 +67,8 @@
           </div>
 
           <div class="apply-ui">
-            <button class="btn btn-roles" id="check">See Roles</button>
             <div class="available-roles">
+              <div class="project-info"><h3>Apply as a...</h3></div>
               <div class="roles-btns">
                 <% @available_roles.each do |role| %>
                 <!-- Trigger/Open The Modal -->
@@ -168,11 +168,11 @@
       var modal = $('#roles-modal');
 
       $('#check').siblings().hide();
-      // Get the button that opens the modal
+      // // Get the button that opens the modal
       var btn = $(".role-btn");
-      // Get the <span> element that closes the modal
+      // // Get the <span> element that closes the modal
       var span = $(".close");
-      // When the user clicks the button, open the modal associated with that role
+      // // When the user clicks the button, open the modal associated with that role
 
       btn.click(function(event) {
         var btnValForId = "#role-" + event.target.id;
