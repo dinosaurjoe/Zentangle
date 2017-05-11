@@ -6,12 +6,12 @@ class ProjectsController < ApplicationController
   def index
     if params[:project][:address].present? && params[:project][:category].present? && params[:role_input][:roles].present?
       @projects = Project.near(params[:project][:address], 30).where({category: params[:project][:category]})
-      .joins(:roles).where(roles: {title: params[:role_input][:roles].titleize, status: true})
+      .joins(:roles).where(roles: {title: params[:role_input][:roles].titleize, status: true}).uniq
     elsif params[:project][:category].present? && params[:role_input][:roles].present? && !params[:project][:address].present?
       @projects = Project.where({category: params[:project][:category]})
-      .joins(:roles).where(roles: {title: params[:role_input][:roles].titleize, status: true})
+      .joins(:roles).where(roles: {title: params[:role_input][:roles].titleize, status: true}).uniq
     else
-      @projects = Project.where({category: params[:project][:category]})
+      @projects = Project.where({category: params[:project][:category]}).uniq
     end
 
     # Category can never be nil TODO: make sure it's preselected on home
