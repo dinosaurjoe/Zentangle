@@ -65,11 +65,11 @@
 
 .request-btn {
   border-radius: 0;
-  background-color: $mustard;
+  background-color: $sunset-orange;
   color: white;
   text-decoration: none;
   margin-top: 10px;
-  border: solid $mustard 2px;
+  border: solid $sunset-orange 2px;
   text-transform: uppercase;
   font-weight: 300;
   letter-spacing: 1px;
@@ -78,8 +78,8 @@
 
 .request-btn:hover {
   background-color: white;
-  border: solid $mustard 2px;
-  color: $mustard;
+  border: solid $sunset-orange 2px;
+  color: $sunset-orange;
 }
 
 .back-btn {
