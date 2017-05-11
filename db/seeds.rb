@@ -20,17 +20,18 @@ SKILLS = ["acting", "directing", "writing", "editting", "sound"]
 
 
 20.times do
-  User.create(
+  u = User.new(
     email: Faker::Internet.email,
     password: password,
     password_confirmation: password,
     first_name: Faker::Name.first_name,
-    last_name: Faker::Food.ingredient,
+    last_name: Faker::Name.last_name,
     bio: Faker::Lorem.paragraph(2),
-    profile_picture: "profile_pictures/#{rand(16) + 1}.png",
     portfolio_url: "www.portfolio.com",
     skills: "#{SKILLS.sample} and #{SKILLS.sample}"
     )
+  u.remote_profile_picture_url = "http://lorempixel.com/50/50/people"
+  u.save!
 end
 
 category = Project::CATEGORIES.keys.sample.to_s
