@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get 'pieces/new'
 
   get 'pieces/create'
-  
+
   get 'errors/not_found'
 
   get 'errors/internal_server_error'
@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   end
   resources :requests, except: :new do
     post :decline, on: :member
+    post :accept, on: :member
   end
   get 'dashboard' => 'dashboards#show'
   resources :users do
