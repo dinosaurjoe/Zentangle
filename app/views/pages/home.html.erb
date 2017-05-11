@@ -12,7 +12,7 @@
           <li><h2>I am a </h2></li>
           <li>
             <%= simple_fields_for :role_input do |r| %>
-                <%= r.input :roles, required: false, label: false, as: :string, placeholder: "", input_html: { class: "aa-input-search"} %>
+                <%= r.input :roles, required: false, label: false, as: :string, placeholder: "Specialist", input_html: { class: "aa-input-search"} %>
             <% end %>
           </li>
           <br>
@@ -26,8 +26,6 @@
           <li><%= f.input :address, required: false, placeholder: "anywhere...", label: false %></li>
           <br>
         </ul>
-
-
 
           <%= f.button :submit, 'search',  class: "btn"  %>
         <% end %>

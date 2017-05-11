@@ -80,21 +80,25 @@ a:hover {
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
     color: $new-blue !important;
     background-color: transparent !important;
+    opacity: 0.5;
 }
 
 :-moz-placeholder { /* Firefox 18- */
    color: $new-blue !important;
    background-color: transparent !important;
+   opacity: 0.5;
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
    color: $new-blue !important;
    background-color: transparent !important;
+   opacity: 0.5;
 }
 
 :-ms-input-placeholder {
    color: $new-blue;
    background-color: transparent !important;
+   opacity: 0.5;
 }
 
 .invisible-search {
