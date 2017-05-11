@@ -68,8 +68,10 @@ class ProjectsController < ApplicationController
     @project.destroy!
     respond_to do |format|
       format.js do
+        redirect_to dashboard_path, notice: "Successfully Deleted"
       end
       format.html do
+        redirect_to dashboard_path
       end
     end
   end

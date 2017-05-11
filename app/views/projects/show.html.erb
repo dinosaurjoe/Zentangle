@@ -154,7 +154,10 @@
     </div>
   </div>
 </div>
- </div>
+<%= link_to "Delete My Project", @project, data: { confirm: "Are you sure?" }, method: :delete%>
+</div>
+
+
 
 <% content_for(:after_js) do %>
   <script>

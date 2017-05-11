@@ -10,7 +10,7 @@ class Role < ApplicationRecord
                   against: [ :title ]
 
   belongs_to :project
-  has_many :requests
+  has_many :requests, :dependent => :destroy
   validates :title, presence: true
   validates :requirements, presence: true
   validates :description, presence: true
