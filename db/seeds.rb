@@ -507,6 +507,19 @@ Project.create(
     owner: User.all.sample,
     total_budget: "$1,475"
   )
+Project.create(
+    title: "",
+    full_description: "",
+    category: "film",
+    subcategory: "horror",
+    address: address.sample,
+    start_date: Faker::Date.backward(14).to_datetime,
+    finish_date: Faker::Date.forward(23).to_datetime,
+    short_description: "We are shooting a short horror-comedy film using vintage camera equipment and old-school DIY filmmaking techniques.",
+    remote_picture_url: "https://ksr-ugc.imgix.net/assets/016/435/830/8f6e2d4e566a01d85de1c0e5e1f92b60_original.JPG?w=680&fit=max&v=1493345613&auto=format&q=92&s=c1380c99f4b8ecb100125384d84e6ab3",
+    owner: User.all.sample,
+    total_budget: "$1,475"
+  )
 
 
 
@@ -522,17 +535,19 @@ ROLES = ["Lead Designer", "Illustrator", "Editor", "Director", "Writer",
 EXPERIENCE_YEARS = (1..5).to_a
 
 count = 0
-160.times do
+80.times do
   Role.create(
     project: projects[count],
     description: Faker::Lorem.paragraph(2),
     requirements: "#{EXPERIENCE_YEARS.sample} years of experience",
     compensation: COMPENSATION.sample,
     title: ROLES.sample,
-    status: [true, false].sample
+    status: true
   )
+
    count = (count + 1) % 22
 end
+
 
 rolestodelete = Role.all
 
@@ -541,6 +556,22 @@ rolestodelete = Role.all
 
    samrole =  rolestodelete.sample
    samrole.destroy unless samrole.project.roles.length < 3
+end
+
+count = projects.length
+ind = 0
+
+count.times do
+  Role.create(
+    project: projects[ind],
+    description: Faker::Lorem.paragraph(2),
+    requirements: "#{EXPERIENCE_YEARS.sample} years of experience",
+    compensation: COMPENSATION.sample,
+    title: "Editor",
+    status: true
+  )
+
+  ind += 1
 end
 
 200.times do
