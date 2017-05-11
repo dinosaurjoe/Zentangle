@@ -49,11 +49,11 @@
         <div class="col-md-5 panel-side">
           <ul class="project-show-avatar list-inline">
             <li>
-              <div class="avatar" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.2) 0%, rgba(0,36,61,0.2) 50%), url( <%= @project.owner.profile_picture %> )">
-              </div>
+            <%= link_to user_path(@project.user.id) do %>
+            <div class="avatar"> <%= cl_image_tag(@project.owner.profile_picture, :width => 30, :height => 30, :crop=>"fill") %> </div>
             </li>
             <li>
-              <%= link_to user_path(@project.user.id) do %>
+
                 <h6><%= @project.user.first_name %> <%= @project.user.last_name %></h6>
               <% end %>
             </li>
@@ -96,7 +96,7 @@
         <% end %>
           <% @team.each do |member| %>
           <%= link_to user_path(member) do  %>
-          <%= image_tag(member.profile_picture)%>
+          <%= image_tag(member.profile_picture, :width => 60, :height => 60, :crop=>"fill")%>
           <% end %>
           <% end %>
         </div>
@@ -154,7 +154,10 @@
     </div>
   </div>
 </div>
- </div>
+<%= link_to "Delete My Project", @project, data: { confirm: "Are you sure?" }, method: :delete%>
+</div>
+
+
 
 <% content_for(:after_js) do %>
   <script>

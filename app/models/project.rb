@@ -42,7 +42,7 @@ class Project < ApplicationRecord
 
   belongs_to :user
   alias_attribute :owner, :user
-  has_many :roles
+  has_many :roles, :dependent => :destroy
   has_many :requests, through: :roles
   validates :title, presence: true
   validates :category, presence: true

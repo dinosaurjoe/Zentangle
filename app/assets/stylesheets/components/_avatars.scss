@@ -1,6 +1,10 @@
 .avatar {
   width: 30px;
   height: 30px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+
   // border-radius: 50%;
 }
 .avatar-large {

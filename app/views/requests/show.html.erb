@@ -96,8 +96,11 @@
 
               <button class="btn popup-btn btn-margin"><%= link_to "Back", dashboard_path %></button>
               <% unless (@request.user_confirm && @request.owner_confirm) || current_user == @request.created_by %>
-              <%= f.button :submit, 'decline', class: "btn" %>
-              <%= f.button :submit, 'accept', class: "btn" %>
+              <% f.button :submit, 'decline', class: "btn" %>
+
+              <% f.button :submit, 'accept', class: "btn" %>
+
+              <%= link_to "ACCEPT", accept_request_path(@request), method: :post%>
               <% end %>
             </div>
             </div>

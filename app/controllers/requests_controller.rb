@@ -1,6 +1,6 @@
 class RequestsController < ApplicationController
   before_action :set_role, only: []
-  before_action :set_request, only: [:show, :edit, :update, :destroy]
+  before_action :set_request, only: [:show, :edit, :update, :destroy, :accept]
   skip_after_action :verify_authorized
   def index
     authorize @request
@@ -44,6 +44,15 @@ class RequestsController < ApplicationController
       @request.user_confirm == false
     end
 
+  end
+
+  def accept
+    authorize @request
+
+    @request.user_confirm = true
+    @request.owner_confirm = true
+    @request.save
+    redirect_to dashboard_path
   end
 
   def destroy
