@@ -64,7 +64,8 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
-    @project.destroy
+    @project = Project.find(params[:id])
+    @project.destroy!
     respond_to do |format|
       format.js do
       end
