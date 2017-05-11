@@ -5,7 +5,7 @@
       <h2>find a project, <br> get connected.</h2>
     </div>
     <div class="search-bar">
-      <div class="form-inline aa-input-container">
+      <div class="form-inline aa-input-container invisible-search">
         <%= simple_form_for [@project], url: projects_path, method: :get do |f| %>
           <%= f.input :category, collection: Project::CATEGORIES.keys, prompt: "Category", required: false, label: false %>
           <%= simple_fields_for :role_input do |r| %>

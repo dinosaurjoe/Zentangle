@@ -10,7 +10,9 @@ a:hover {
   text-decoration: none;
 }
 
-
+.search-bar {
+  margin-bottom: -15px;
+}
 
 .search-bar input {
   border-radius: 0;
@@ -28,23 +30,24 @@ a:hover {
 
 .search-bar .btn {
   border-radius: 0;
-  background-color: $sunset-orange;
-  color: white;
-  border: none;
+  background: transparent;
+  color: $sunset-orange;
+  border: solid 2px;
 
 }
 
 .search-bar .btn:hover {
   box-shadow: none;
-  color: $sunset-orange;
-  background-color: white;
-  border: none;
+  border-radius: 0;
+  color: white;
+  background-color: transparent;
+  border: solid 2px;
 }
 
 #project_category {
   border-radius: 0 !important;
-  color: #999999;
-  border: solid white 2px;
+  border-bottom: solid $new-blue 1px;
+  // -webkit-appearance: none;
 }
 
 #project-title  {
@@ -63,13 +66,59 @@ a:hover {
 }
 
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    color: $new-blue;
+    color: $new-blue !important;
+    background-color: transparent !important;
 }
 
-::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    color: $new-blue;
+:-moz-placeholder { /* Firefox 18- */
+   color: $new-blue !important;
+   background-color: transparent !important;
 }
 
+::-moz-placeholder {  /* Firefox 19+ */
+   color: $new-blue !important;
+   background-color: transparent !important;
+}
+
+:-ms-input-placeholder {
+   color: $new-blue;
+   background-color: transparent !important;
+}
+
+.invisible-search {
+  .form-control:focus {
+    box-shadow: none;
+  }
+   .project_category {
+      background-color: transparent !important;
+      border: 0px;
+      outline: 0px;
+
+      select {
+        border: 0px;
+        outline: 0px;
+      }
+   }
+  option {
+      background-color: transparent !important;
+  }
+  select {
+      background-color: transparent !important;
+      padding: 5px;
+      border: 0px;
+      outline: 0px;
+  }
+
+  .simple_form .form-control {
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid $new-blue;
+    outline: none;
+    color: $new-blue;
+    background: transparent;
+    display: inline-block;
+  }
+}
 
 // Algolia shit
 
