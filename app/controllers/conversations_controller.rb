@@ -1,4 +1,5 @@
 class ConversationsController < ApplicationController
+  skip_after_action :verify_authorized
   def index
     @conversations = Conversation.participating(current_user).order('updated_at DESC')
     @conversation = Conversation.new

@@ -13,6 +13,10 @@ class RequestPolicy < ApplicationPolicy
     record.user == user || record.role.project.owner == user  # only collaborator or project owner can view request
   end
 
+  def accept?
+    true
+  end
+
   def create?
     true  # Anyone can create a request
   end
