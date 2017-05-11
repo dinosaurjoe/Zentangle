@@ -1,10 +1,15 @@
 .profile-card {
   height: 100%;
+  padding: 0;
+
+}
+
+.dash-profile-info {
+  padding: 0 25px 0px 25px;
 }
 .dashboard-my-projects{
   margin: 15px;
 }
-
 
 
 .btn-edit {
@@ -54,41 +59,166 @@
   margin-top: 10px;
 }
 
+.card-img {
+  background-size: cover !important;
+}
 
-.tab-container a {
+.user-name {
+  font-family: $header-font;
+  text-transform: uppercase;
+  color: $sunset-orange;
+  font-weight: 100;
+  font-style: italic;
+  letter-spacing: 1.4px;
+  margin-bottom: 10px;
+  margin-top: 25px;
+}
+
+.user-bio  {
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0.8px;
+  margin: 15px 0 0 0;
+}
+
+.dash-profile-info h4 {
+  text-transform: uppercase;
+  color: $new-blue;
+  font-weight: 100;
+  margin-top: 25px;
+  letter-spacing: 1px;
+  font-size: 24px;
+
+}
+
+.profile-card a {
+  text-decoration: none;
+  color: $payne-grey;
+}
+
+
+.edit-profile-link {
+  background-color: $mustard;
+  background-size: cover !important;
+  color: white;
+  text-transform: uppercase;
+  padding: 5px 0;
+  margin-bottom: 0;
+  margin-top: 20px !important;
+  border-top: 2px solid $mustard;
+}
+
+.edit-profile-link a {
+  text-decoration: none;
+  color: white;
+  font-size: 16;
+  letter-spacing: 1px;
+}
+
+
+.edit-profile-link:hover {
+  background-color: white;
+  border-top: solid 2px $mustard;
+}
+
+.edit-profile-link:hover a {
+  color: $mustard;
+}
+
+
+.dash-box-right {
+  border: solid 2px $sunset-orange;
+  padding: 20px;
+
+}
+
+.dash-box-title {
+  color: $sunset-orange;
+  font-weight: 100;
+  text-transform: uppercase;
+  font-style: italic;
+  margin-left: 20px;
+  text-align: center;
+  letter-spacing: 3px;
+  word-spacing: 3px;
+  margin-bottom: 0px;
+  font-size: 40px;
+  margin-top: 20;
+}
+
+
+.my-projects-list {
+  margin-bottom: 12px;
+  margin-top: 12px;
+}
+
+.my-projects-list:hover {
+  opacity: 0.6;
+}
+
+.dash-pending-request {
+  font-size: 14px;
+  color: $new-blue;
+  text-transform: uppercase;
   font-family: $header-font;
   font-weight: 300;
-  text-decoration: none;
-  text-transform: uppercase;
-  color: white;
-  background-color: $new-blue;
-  letter-spacing: 1.3px;
-  word-spacing: 1.3px;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+  border: solid 2px $new-blue;
+  padding: 4px;
+  text-align: center;
+
+
 }
 
-
-
-.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+.dash-sub {
   color: $new-blue;
-  background-color: white;
-  border: 1px solid $new-blue;
-  border-bottom-color: transparent;
-  border-top-color: transparent;
-  cursor: default;
-  border-radius: 0;
+  margin-bottom: 5px;
+  margin-top: 10px;
+
 
 }
 
-.nav-tabs > li > a {
-  border: 1px solid $new-blue;
-  border-radius: 0;
+.dash-sub h5 {
+  font-weight: 100 !important;
+  font-family: $header-font !important;
+}
+
+.no-requests {
+  color: $payne-grey;
+  font-weight: 300;
+  letter-spacing: 1px;
+  word-spacing: 1px;
+  text-align: center;
+  margin-top: 20px;
 }
 
 
-.nav-tabs {
-  border-bottom: 1px solid $new-blue;
+.dash-requests {
+  margin-top: 60px;
 }
 
-.first-tab {
-  margin-left: 45px;
+
+.dash-project-info h3 {
+  margin-top: 0;
+  font-size: 30px;
+}
+
+.card-title {
+  margin-top: 0;
+}
+
+#request-title h3 {
+  font-size: 30px;
+}
+
+
+.pending-requests-btn p {
+  color: white;
+  text-align: center;
+  padding: 4px;
+  text-transform: uppercase;
+  background-color: $yellow;
+  font-size: 14px;
+  letter-spacing: 0.5px;
 }
