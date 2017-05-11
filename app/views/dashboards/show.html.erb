@@ -25,39 +25,16 @@
       </p>
     </div>
 
-<!-- MY REQUESTS -->
   <div class="col-md-8 col-md-offset-1 ">
+  <!-- MY REQUESTS -->
     <div class="dash-box-right">
       <div class="dash-projects-title">
         <h2 class="dash-box-title">My Requests</h2>
       </div>
 
-      <% if @requests.first.nil? %>
-        <h5 class="no-requests">You have no applications. Search for projects and apply!</h5>
-    <% @projects.each do |project| %>
-      <%= link_to project_path(project) do %>
-        <div class="row my-projects-list">
-          <hr>
-          <div class="col-md-3 dash-project-picture">
-            <!-- PROJECT PICTURE HERE -->
-            <div class="card-img bg-picture" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.2) 0%, rgba(0,36,61,0.2) 30%), url( <%= project.picture %>); height: 100px;"> </div>
-          </div>
-          <div class="col-md-6 dash-project-info">
-            <!-- PROJECT INFO HERE -->
-            <h3 class="card-title"><%= project.title %></h3>
-            <h5 class="card-subcategory dash-sub"> <strong> <%= project.category %></strong> <%= project.subcategory %></h5>
-            <p class="card-description dash-description"><%= project.short_description %></p>
-          </div>
-          <div class="col-md-3 dash-project-status">
-            <!-- PROJECT STATUS HERE -->
-            <h2 class="dash-pending-request">PENDING REQUESTS</h2>
-          </div>
-
-        </div>
-
-        <% end %>
-      <% end %>
-
+    <% if @requests.first.nil? %>
+      <h5 class="no-requests">You have no applications. Search for projects and apply!</h5>
+    <% else %>
       <% @requests.each do |request| %>
         <%= link_to request_path(request) do  %>
           <div class="row my-projects-list">
@@ -82,6 +59,7 @@
           <% end %>
         </div>
       <% end %>
+    <% end %>
     </div>
 
 <!-- END OF MY REQUESTS -->
@@ -93,24 +71,25 @@
       </div>
 
       <% @projects.each do |project| %>
-        <div class="row my-projects-list">
-          <hr>
-          <div class="col-md-3 dash-project-picture">
-            <!-- PROJECT PICTURE HERE -->
-            <div class="card-img bg-picture" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.2) 0%, rgba(0,36,61,0.2) 30%), url( <%= project.picture %>); height: 100px;">
+        <%= link_to project_path(project) do %>
+          <div class="row my-projects-list">
+            <hr>
+            <div class="col-md-3 dash-project-picture">
+              <!-- PROJECT PICTURE HERE -->
+              <div class="card-img bg-picture" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.2) 0%, rgba(0,36,61,0.2) 30%), url( <%= project.picture %>); height: 100px;"> </div>
+            </div>
+            <div class="col-md-6 dash-project-info">
+              <!-- PROJECT INFO HERE -->
+              <h3 class="card-title"><%= project.title %></h3>
+              <h5 class="card-subcategory dash-sub"> <strong> <%= project.category %></strong> <%= project.subcategory %></h5>
+              <p class="card-description dash-description"><%= project.short_description %></p>
+            </div>
+            <div class="col-md-3 dash-project-status">
+              <!-- PROJECT STATUS HERE -->
+              <h2 class="dash-pending-request">PENDING REQUESTS</h2>
             </div>
           </div>
-          <div class="col-md-6 dash-project-info">
-            <!-- PROJECT INFO HERE -->
-            <h3 class="card-title"><%= project.title %></h3>
-            <h5 class="card-subcategory dash-sub"> <strong> <%= project.category %></strong> <%= project.subcategory %></h5>
-            <p class="card-description dash-description"><%= project.short_description %></p>
-          </div>
-          <div class="col-md-3 dash-project-status">
-            <!-- PROJECT STATUS HERE -->
-            <h2 class="dash-pending-request">PENDING REQUESTS</h2>
-          </div>
-        </div>
+        <% end %>
       <% end %>
     </div>
   </div>
