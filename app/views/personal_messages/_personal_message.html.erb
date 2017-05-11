@@ -1,6 +1,17 @@
-<div class="msg-content">
-  <p class="body-msg"><%= emojify personal_message.body %></p>
-  <p class="body-sender">by <strong class="sender-name"><%= personal_message.user.full_name %></strong><%= distance_of_time_in_words(personal_message.created_at, Time.now) + " ago" %></p>
 
-  <hr>
+<div class="row">
+
+  <div class="col-md-12">
+    <div class="msg-content">
+      <p class="body-msg"><%= emojify personal_message.body %></p>
+      <ul class="list-inline msg-body-sender">
+        <li><%= cl_image_tag(personal_message.user.profile_picture, :width => 20, :height => 20, :crop=>"fill") %></li>
+        <li><p class="body-sender">  <strong class="sender-name"><%= personal_message.user.full_name %> </strong><%= distance_of_time_in_words(personal_message.created_at, Time.now) + " ago" %></p></li>
+      </ul>
+
+
+      <hr>
+    </div>
+  </div>
 </div>
+
