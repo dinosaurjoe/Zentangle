@@ -20,18 +20,18 @@
   line-height: 80px;
   padding-top: 50px;
   padding-bottom: 40px;
+  font-size: 3.5vw;
+  word-wrap: break-word;
+     -webkit-hyphens: auto;
+     -moz-hyphens: auto;
+     -ms-hyphens: auto;
+     -o-hyphens: auto;
+     hyphens: auto;
 }
 
 .home-bold {
   color: $sunset-orange;
 }
-
-// .banner-title {
-//   position: absolute;
-//   top: 50px;
-//   left: calc(50vw - (668px / 2));
-//   left: 60px;
-// }
 
 .banner p {
   font-size: 20px;
@@ -49,7 +49,7 @@
   text-transform: uppercase;
   letter-spacing: 3px;
   text-align: left;
-
+  font-size: 3.5vw;
   line-height: 30px;
   margin-left: 4px;
 }
