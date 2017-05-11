@@ -14,10 +14,10 @@
         <%= form_for @personal_message do |f| %>
         <%= hidden_field_tag 'receiver_id', @receiver.id %>
         <%= f.text_area :body, label:false, placeholder: "Write your message" %>
-      </div>
       <div class="send text-center">
         <%= f.submit "send", class: "send-msg-btn" %>
         <button class="btn conversation-back-button"><%= link_to "back", url_for(:back)%></button>
+      </div>
 
         <% end %>
       </div>
