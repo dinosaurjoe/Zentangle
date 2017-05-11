@@ -47,10 +47,18 @@
 
         </div>
         <div class="col-md-5 panel-side">
-          <div class="avatar" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.2) 0%, rgba(0,36,61,0.2) 50%), url( <%= @project.user.profile_picture %> );">avatar test</div>
-          <%= link_to user_path(@project.user.id) do %>
-          <h4><%= @project.user.first_name %> <%= @project.user.last_name %></h4>
-          <% end %>
+          <ul class="project-show-avatar list-inline">
+            <li>
+              <div class="avatar" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.2) 0%, rgba(0,36,61,0.2) 50%), url( <%= @project.user.profile_picture %> )">
+              </div>
+            </li>
+            <li>
+              <%= link_to user_path(@project.user.id) do %>
+                <h6><%= @project.user.first_name %> <%= @project.user.last_name %></h6>
+              <% end %>
+            </li>
+          </ul>
+
           <div class="project-info">
 
             <div class="project-title"><h3>About the Project</h3></div>
@@ -59,7 +67,7 @@
           </div>
 
           <div class="apply-ui">
-            <button class="btn btn-roles" id="check">Check out roles!</button>
+            <button class="btn btn-roles" id="check">See Roles</button>
             <div class="available-roles">
               <div class="roles-btns">
                 <% @available_roles.each do |role| %>

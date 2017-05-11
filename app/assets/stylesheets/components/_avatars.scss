@@ -1,12 +1,35 @@
 .avatar {
   width: 30px;
   height: 30px;
-  border-radius: 50%;
+  // border-radius: 50%;
 }
 .avatar-large {
   width: 50px;
   border-radius: 50%;
 }
+
+
+.project-show-avatar {
+  display: table;
+}
+.project-show-avatar li{
+  vertical-align: middle;
+  display: table-cell;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-size: 15px;
+  color: $payne-grey;
+}
+
+.project-show-avatar a {
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-size: 15px;
+  text-decoration: none;
+  color: $payne-grey;
+}
+
 .avatar-bordered {
   width: 30px;
   border-radius: 50%;
