@@ -59,8 +59,17 @@ a:hover {
 #project_category {
   border-radius: 0 !important;
   border-bottom: solid $new-blue 1px;
+  text-transform: uppercase;
+  font-family: $header-font;
+  font-weight: 100;
+  font-size: 32px;
+  letter-spacing: 3px;
+  opacity: 0.5;
+  width: 110px;
   // -webkit-appearance: none;
 }
+
+
 
 #project-title  {
   color: $sunset-orange;
@@ -101,6 +110,7 @@ a:hover {
    opacity: 0.5;
 }
 
+
 .invisible-search {
   .form-control:focus {
     box-shadow: none;
@@ -109,6 +119,7 @@ a:hover {
       background-color: transparent !important;
       border: 0px;
       outline: 0px;
+      border-radius: 0;
 
       select {
         border: 0px;
@@ -137,16 +148,19 @@ a:hover {
   }
 }
 
+
+
 // Algolia shit
 
 .aa-input-container {
   display: inline-block;
   position: relative; }
 .aa-input-search {
-  width: 300px;
+  width: 100px;
   border: 1px solid rgba(228, 228, 228, 0.6);
   padding: 12px 28px 12px 12px;
   box-sizing: border-box;
+
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none; }
@@ -157,6 +171,8 @@ a:hover {
   background-color: #fff;
   border: 1px solid rgba(228, 228, 228, 0.6);
   min-width: 336px;
+
+  border-radius: 0;
   margin-top: 10px;
   box-sizing: border-box; }
 .aa-suggestion {
