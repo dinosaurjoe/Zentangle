@@ -66,6 +66,7 @@
     <% end %>
 
     <% @requests.each do |request| %>
+      <%= link_to request_path(request) do  %>
       <div class="row my-projects-list">
         <hr>
         <div class="col-md-3 dash-project-picture">
@@ -88,6 +89,7 @@
 
       <% end %>
     </div>
+  <% end %>
 <!-- END OF MY REQUESTS -->
 
 
