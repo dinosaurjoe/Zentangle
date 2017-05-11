@@ -69,7 +69,9 @@
       <div class="dash-projects-title">
         <h2 class="dash-box-title">My Projects</h2>
       </div>
-
+      <% if @projects.first.nil? %>
+        <h5 class="no-requests">You have no projects. Create one now!!</h5>
+        <% else %>
       <% @projects.each do |project| %>
         <%= link_to project_path(project) do %>
           <div class="row my-projects-list">
@@ -92,6 +94,7 @@
         <% end %>
       <% end %>
     </div>
+    <% end %>
   </div>
 <!-- END OF MY PROJECTS -->
 
