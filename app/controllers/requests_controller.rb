@@ -48,8 +48,11 @@ class RequestsController < ApplicationController
 
   def accept
     authorize @request
+
     @request.user_confirm = true
     @request.owner_confirm = true
+    @request.save
+    redirect_to dashboard_path
   end
 
   def destroy
