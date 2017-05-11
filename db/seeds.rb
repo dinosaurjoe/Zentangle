@@ -39,7 +39,7 @@ subcategory = Project::CATEGORIES[category.to_sym].sample
 address = ["Spreekanal, 10179 Berlin", "Alexanderplatz, 10178 Berlin", "Kollwitzplatz, Kollwitzstraße 1, 10405 Berlin", "Zionskirchplatz, Zionskirchstraße, 10119 Berlin"]
 
 Project.create(
-    title: "Noches de teatro. A documentary short film.",
+    title: "Noches de teatro.",
     full_description: "Noches de teatro (or Theatre Nights) is a documentary short-film in production selected for the Identidad y Pertenencia contest at the Guanajuato International Film Festival. Our story is about Ivanna Tovar, a young transgender actress from Guanajuato, Mexico. We follow Ivanna as she directs and rehearses for Noches de Cabaret with her theatre group La Cabaretera Escénica. Center stage are her fears, her deepest feelings, the concerns of being different and the desire of being a spokeswoman for people whose voices are often misheard.
 ",
     category: "film",
@@ -68,7 +68,7 @@ Project.create(
   )
 
 Project.create(
-    title: "Legal Termination of a Warlock... and Other Tales",
+    title: "Legal Termination of a Warlock.",
     full_description: "It's a genre bender filtering urban fantasy, horror and detective fiction through a sardonic worldview.  The influences are The Night Stalker by way of Raymond Chandler, Dashiell Hammett and Art Buchwald.",
     category: "journalism",
     subcategory: "print",
@@ -82,7 +82,7 @@ Project.create(
   )
 
 Project.create(
-    title: "Molissa Fenley at the Florence Dance Festival",
+    title: "The Florence Dance Festival",
     full_description: "Molissa, assisted by Christiana Axelsen will be very busy while in Florence, as the week residency will require her to teach contemporary classes, set a new work on the dancers of Toscana Dance HUB, mentor dance musicians of Music HUB and student choreographers, plus rehearse and perform at the Florence Dance Festival.",
     category: "theater",
     subcategory: "dance",
@@ -97,7 +97,7 @@ Project.create(
 
 
 Project.create(
-    title: "Gravity: The Weighted Blanket for Sleep, Stress and Anxiety",
+    title: "Gravity: The Weighted Blanket",
     full_description: "Gravity is a premium-grade, therapeutic weighted blanket that harnesses the power of deep touch stimulation – a proven anxiety treatment – to gently distribute deep pressure across your body.",
     category: "design",
     subcategory: "product design",
@@ -111,7 +111,7 @@ Project.create(
   )
 
 Project.create(
-    title: "Johannes Voss - Magic: The Gathering Print Collection",
+    title: "Johannes Voss - Magic",
     full_description: "Hey there! My name's Johannes Voss and I'm an illustrator on Magic: The Gathering. You might have seen my work, my Patreon or my previous campaigns. And while I've been selling prints at conventions or GPs here and there, I've never made them available online. By popular demand, this changes today!",
     category: "art",
     subcategory: "illustration",
@@ -126,7 +126,7 @@ Project.create(
 
 
 Project.create(
-    title: "'The Conquest of Space: Curiosity' Poster",
+    title: "'The Conquest of Space",
     full_description: "Hi! We are Totem, a design studio based in Mexico. We are a team of creative people strongly influenced by videogame culture, movies, japanese animation, science fiction and comics with the necessity to create valuable content that is inspiring and educative for people around the world.",
     category: "art",
     subcategory: "illustration",
@@ -183,7 +183,7 @@ Project.create(
   )
 
 Project.create(
-    title: "VH-80: The World's First Bilateral Laser Distance Measurer",
+    title: "VH-80: The Laser Distance Measurer",
     full_description: "VH-80 shoots two pulses of laser light from two sources in opposite directions and measures the amount of time it takes for each pulse to bounce back to its accompanied sensors. Since light moves at a constant, VH-80 can calculate the distance between itself and the targets with high accuracy.",
     category: "technology",
     subcategory: "gadgets",
@@ -197,7 +197,7 @@ Project.create(
   )
 
 Project.create(
-    title: "Last of the Great White Bears with Paul Nicklen",
+    title: "Last Polar Bears",
     full_description: "I want to engage and inform those who can’t see the effects of climate change first-hand. We will use our visual story-telling to inspire and educate those who do not believe polar bears, or their environments, should be protected. Scientists expect polar bears will be extinct in the next 100 years. If we cannot save a species as charismatic as the polar bears, how can we save ourselves? We are all in this together.",
     category: "photography",
     subcategory: "animals",
@@ -212,7 +212,7 @@ Project.create(
 
 
 Project.create(
-    title: "Solo Piano Album Inspired By Neuroscience",
+    title: "Neuroscience Piano Album",
     full_description: "Howdy! I'm John C. O'Leary III, a jazz pianist and neuroscientist in the Tampa Bay area and I absolutely love making music.
 The purpose of this project is to make my first solo recording! I'm going to write all new original music for this recording inspired by scientific discoveries in neuroscience.
 Here are two pieces, which will be on the record, that I performed live at the Timucua Arts White House in Orlando, FL.",
@@ -229,7 +229,7 @@ Here are two pieces, which will be on the record, that I performed live at the T
 
 
 Project.create(
-    title: "Archive: Historical People, Places, and Events for RPGs",
+    title: "Archive: Historical People",
     full_description: "Archive is a collection of adventure sites, NPCs, and events ripped right out of history and perfect for your campaign. It’s a 265-page book with 80 subjects. All have everything you need to make them come alive at your table: sights, smells, history, local color, and even plot hooks and ideas to help you adapt them to your campaign setting.",
     category: "technology",
     subcategory: "game design",
@@ -243,7 +243,7 @@ Project.create(
   )
 
 Project.create(
-    title: "Hellpoint - A Dark Sci Fi RPG",
+    title: "Hellpoint - A Dark Sci Fi",
     full_description: "An occult sci fi RPG with split-screen multiplayer and real-time events. Try the free demo!",
     category: "technology",
     subcategory: "game design",
@@ -271,7 +271,7 @@ Project.create(
   )
 
 Project.create(
-    title: "The Steadfast Diamond Movement",
+    title: "Steadfast Diamond Movement",
     full_description: "Chicago is a place known for amazing art and architecture. From public art, to street art filled with rich vibrant colors we are one of the nations most known homes for art. While we continue to see amazing works of art created throughout the city, we also see art related programs rapidly dying in Chicago and its surrounding suburbs. When budgets are cut due to lack of funding usually art related programs are first to go. This is why your support to our campaign is vital. We understand the role art plays in the development of our children. Enhancing creativity gives our dancers an outlet to escape and be free.",
     category: "theater",
     subcategory: "dance",
@@ -285,7 +285,7 @@ Project.create(
   )
 
 Project.create(
-    title: "A Trip to the Moon Coloring Book",
+    title: "A Trip to the Moon",
     full_description: "This coloring book is twenty-three pages of illustrations inspired by the silent film A Trip to the Moon. As we launch this Kickstarter campaign, the creative work is 100% complete. All that’s needed is printing and shipping -- and that is where YOU come in!",
     category: "art",
     subcategory: "illustration",
@@ -299,7 +299,7 @@ Project.create(
   )
 
 Project.create(
-    title: "HOPE WHERE THERE WAS NONE by LOUD HARP",
+    title: "HOPE WHERE THERE WAS NONE",
     full_description: "A long time coming, HWTWN is a record born from a season of death, the new life that followed and the valley in between. When everything in us wanted to run away, to escape - we heard a still small voice saying there's no need to run. I'm with you - right here - in the middle of it all. Most of the songs on HWTWN are drenched in that theme - Immanuel, God with us.",
     category: "music",
     subcategory: "indie rock",
@@ -313,7 +313,7 @@ Project.create(
   )
 
 Project.create(
-    title: "SUPAY - a film about a love against all odds",
+    title: "SUPAY",
     full_description: "SUPAY is a short (23 min) and was filmed during six days in August 2016 on some of the most beautiful and iconic locations in Cuzco city and the surrounding Sacred Valley. But filming is just the first step.To finish the film we need funding for the post production. Color Grading, Sound Production, and Music Composition have to be completed in order to have a film that meets all the requirements to succeed at international film festivals. All cast and crew members worked on a provision contract, each of them being great talents and highly trained, committed professionals should be compensated for their skilled labor of love. We endeavor to contribute to the development of Cuzco's growing local film scene and want to offer each cast and crew member at least a minimum compensation for their effort. ",
     category: "film",
     subcategory: "drama",
@@ -327,7 +327,7 @@ Project.create(
   )
 
 Project.create(
-    title: "Robot Core - The Ultimate Raspberry Pi Robot Controller",
+    title: "Robot Core",
     full_description: "The Robot Core is a robot control board for the Raspberry Pi and Arduino that brings many different elements into one awesome package! You can now power your Raspberry Pi, control motors, servos and read sensors without needing five additional boards to hook up. The boards can even be daisy chained to add even more functionality.",
     category: "technology",
     subcategory: "robots",
@@ -355,7 +355,7 @@ Project.create(
   )
 
 Project.create(
-    title: "'Vacillation - Adolescence' Short Dance Film",
+    title: "Vacillation - Adolescence",
     full_description: "'Vacillation - Adolescence' is the second in a series of seven short dance films. The story is a snapshot of two teenagers in love and their surge of emotions and insecurities. Performed by two dancers, the story is portrayed through a classical ballet Pas de Deux with the London Thames path providing a wonderful backdrop.",
     category: "film",
     subcategory: "romance",
@@ -369,7 +369,7 @@ Project.create(
   )
 
 Project.create(
-    title: "THE DELTA ENDURING TAROT",
+    title: "DELTA ENDURING TAROT",
     full_description: "There is a savage beauty in the depths of the swamp. For each drop of blood spilled into those dark waters, the delta rises. She thrives. She continues to resist the encroaching gulf. So too is the way of her people, who despite endless struggle, continue to find love and wonder in the ruins of the natural world.",
     category: "art",
     subcategory: "illustration",
@@ -411,7 +411,7 @@ Project.create(
   )
 
 Project.create(
-    title: "Meant to be Broken - Feature Film",
+    title: "Meant to be Broken",
     full_description: "Harvey has led a cautious and conscientious life until he gets fired and finds out he has one month to live. Throwing caution to the wind, he finally steps into the bar he passes every day on the way to work. There he meets Luke and confesses he's never broken any rules. Luke responds 'Do you want to?,' and so the quest begins. Along the way they accidentally kidnap a woman who joins them on their adventure, but she might prove to be more trouble than they are looking for. 'Meant to be Broken' is a crazy journey of law breaking and discovery that culminates in Miami where competing forces catch up to the unlikely trio.",
     category: "film",
     subcategory: "comedy",
@@ -454,7 +454,7 @@ Project.create(
   )
 
 Project.create(
-    title: "PANS - a film about Found Girls and Lost Boys",
+    title: "PANS",
     full_description: "Set in a quiet beach town in grunge-saturated 1994, Pans puts a feminist twist on the classic, Peter Pan. Wynne Darling, 15, is physically broken, socially displaced, and emotionally torn between her newly separated parents.
       With nowhere to turn, Wynne hooks up with a new crowd led by bad boy skateboarder, Pete, and his riot grrrl sister, Belle. Surrounded by 'lost boys' and with the help of found friendship, Wynne learns what it means to grow up of her own free will...",
     category: "film",
@@ -469,7 +469,7 @@ Project.create(
   )
 
 Project.create(
-    title: "V - A Short Film commissioned by Film London",
+    title: "V",
     full_description: "V is a confrontational and challenging coming-of-age drama that uses vampire mythology and horror genre tropes to explore femininity and sexual abuse. Think: Fish Tank meets Let the Right One In. The film slowly reveals how Minnie, a punchy word-a-second teenage girl, became a vampire as a result of being groomed online. Her vampirism is a physical embodiment of the damage caused.",
     category: "film",
     subcategory: "short",
@@ -482,7 +482,7 @@ Project.create(
     total_budget: "$3,000"
   )
 Project.create(
-    title: "BETTER EATING | Targeted vegan educational videos",
+    title: "BETTER EATING",
     full_description: "Better Eating International is a 501(c)(3) nonprofit organization that is inspiring compassion and sparing animals from miserable lives and cruel deaths through smart, personalized educational videos. Our inclusive and empowering model will help create a future where animals are valued as unique individuals and no longer exploited for human gain. With a diverse and talented team armed with the latest technologies, we'll give people the knowledge and tools they’ll need to live more ethically.",
     category: "film",
     subcategory: "animation",
@@ -495,7 +495,7 @@ Project.create(
     total_budget: "$95,000"
   )
 Project.create(
-    title: "FOODIES short film",
+    title: "FOODIES",
     full_description: "Foodies is a gonzo and artful horror-comedy film about young love, killer Kombucha, and mind-expanding science. When awkward loser Avery can't get his on-again off-again lover Sarah to commit, he decides to bio-hack his way back onto the dating scene. With the help of some genetically-altered health drinks, he sets out to pursue his romantic fantasies, utilizing yolked jocks to act as shared-consciousness avatars to score babes. It isn't long though before he finds the meat market is much more terrifying than he remembered...",
     category: "film",
     subcategory: "horror",
@@ -507,21 +507,6 @@ Project.create(
     owner: User.all.sample,
     total_budget: "$1,475"
   )
-Project.create(
-    title: "",
-    full_description: "",
-    category: "film",
-    subcategory: "horror",
-    address: address.sample,
-    start_date: Faker::Date.backward(14).to_datetime,
-    finish_date: Faker::Date.forward(23).to_datetime,
-    short_description: "We are shooting a short horror-comedy film using vintage camera equipment and old-school DIY filmmaking techniques.",
-    remote_picture_url: "https://ksr-ugc.imgix.net/assets/016/435/830/8f6e2d4e566a01d85de1c0e5e1f92b60_original.JPG?w=680&fit=max&v=1493345613&auto=format&q=92&s=c1380c99f4b8ecb100125384d84e6ab3",
-    owner: User.all.sample,
-    total_budget: "$1,475"
-  )
-
-
 
 COMPENSATION = ["pizza", "20 dollars", "free coffee", "1,000 dollars"]
 
