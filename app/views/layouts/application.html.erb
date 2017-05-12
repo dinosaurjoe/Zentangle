@@ -52,24 +52,25 @@
       });
 
       var channel = pusher.subscribe('user-id');
-      channel.bind('status', function(data) {
-        if (data.message === "accepted"){
-          $('.accepted-request-notification').show();
-        }
-        if (data.message === "declined"){
-          $('.declined-request-notification').show();
-        }
-      });
 
-      channel.bind('message', function(data) {
-        // console.log(data.message === "message");
-        if (data.message === "message"){
-          $('.new-message-notification').show();
-        }
-      });
+      if !( document.URL.contains("/personal_messages/new") || document.URL.contains("conversations") ) {
+        channel.bind('status', function(data) {
+          console.log(data.message);
+          if (data.message === "accepted"){
+            $('.accepted-request-notification').show();
+          }
+          if (data.message === "declined"){
+            $('.declined-request-notification').show();
+          }
+        });
 
+        channel.bind('message', function(data) {
+          console.log(data.message === "message");
+          if (data.message === "message"){
+            $('.new-message-notification').show();
+          }
+        });
+      }
     </script>
-
-    <%= link_to "ACCEPT", accept_request_path(Request.all.first), method: :post%>
   </body>
 </html>
