@@ -19,6 +19,8 @@ gem "algoliasearch-rails"
 
 gem "pundit"
 
+gem "pusher"
+
 
 # gem 'turbolinks', '~> 5.0.0'
 gem 'emoji'

@@ -22,3 +22,19 @@
     </div>
   </div>
 </div>
+
+<%= content_for(:after_js) do %>
+  <script>
+
+    var pusher = new Pusher('b0de02a8f3fdb48196e8', {
+      cluster: 'eu',
+      encrypted: true
+    });
+
+    var channel = pusher.subscribe('user-id');
+    channel.bind('message', function(data) {
+      location.reload();
+    });
+
+  </script>
+<% end %>

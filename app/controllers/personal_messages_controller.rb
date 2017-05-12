@@ -10,12 +10,18 @@ class PersonalMessagesController < ApplicationController
     @personal_message.save!
 
     flash[:success] = "Your message was sent!"
+    Pusher.trigger("user-id", 'message', {
+      message: "message"
+    })
     redirect_to conversation_path(@conversation)
   end
 
   def new
     redirect_to conversation_path(@conversation) and return if @conversation
     @personal_message = current_user.personal_messages.build
+    Pusher.trigger("user-id", 'message', {
+      message: "message"
+    })
   end
 
   private

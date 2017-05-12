@@ -26,14 +26,57 @@
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
+    <%= render 'shared/pusher' %>
     <div style="min-height: 660px;">
       <%= yield %>
     </div>
     <%= render 'shared/footer' %>
 
-        <%= javascript_include_tag "https://maps.google.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
+    <%= javascript_include_tag "https://maps.google.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
     <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag "https://js.pusher.com/4.0/pusher.min.js" %>
 
     <%= yield(:after_js) %>
+
+    <script>
+      // Enable pusher logging - don't include this in production
+      Pusher.logToConsole = true;
+
+      var urlCheck = (((window.location.href.indexOf("/personal_messages/new") > -1) || (window.location.href.indexOf("conversations") > -1) ));
+
+      $(document).ready(function(){
+        console.log(urlCheck);
+        $('.pusher').children().hide();
+      })
+
+      var pusher = new Pusher('b0de02a8f3fdb48196e8', {
+        cluster: 'eu',
+        encrypted: true
+      });
+
+      if (!urlCheck) {
+        var channel = pusher.subscribe('user-id');
+          channel.bind('status', function(data) {
+
+            if (data.message === "accepted"){
+              console.log(data.message);
+              $('.accepted-request-notification').removeClass('hidden').addClass('shown');
+            }
+            if (data.message === "declined"){
+              $('.declined-request-notification').removeClass('hidden').addClass('shown');
+            }
+          });
+
+          channel.bind('message', function(data) {
+
+            if (data.message === "message"){
+              console.log(data.message === "message");
+              $('.new-message-notification').removeClass('hidden').addClass('shown');
+            }
+          });
+      }
+
+
+    </script>
   </body>
 </html>
