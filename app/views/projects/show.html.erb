@@ -104,7 +104,11 @@
           <h3>Budget</h3>
         </div>
         <div class="funding">
-          <%= @project.total_budget %>
+          <% if @project.total_budget.nil? %>
+            <%= @project.total_budget %>
+          <% else %>
+            <p>There is no budget for this project</p>
+          <% end %>
         </div>
       </div>
 
