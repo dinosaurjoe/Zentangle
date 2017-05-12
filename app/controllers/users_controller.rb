@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    p user_params
+    user_params
     @user = current_user
     @user.update(user_params)
     # @user.pieces.build
