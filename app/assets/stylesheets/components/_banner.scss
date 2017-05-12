@@ -9,6 +9,12 @@
   position: relative;
 }
 
+@media (max-width: 800px) {
+  .banner {
+    height: calc(110vh - 60px);
+  }
+}
+
 
 .banner h1 {
   text-transform: uppercase;
@@ -18,8 +24,8 @@
   font-style: italic;
   text-align: center;
   line-height: 80px;
-  padding-top: 50px;
-  padding-bottom: 40px;
+  // padding-top: 30px;
+  // padding-bottom: 40px;
 }
 
 .home-bold {
@@ -60,6 +66,16 @@
 
 .banner-home-content h1 {
   text-align: left;
+}
+
+.banner-title {
+  padding-top: 40px;
+}
+
+@media (max-width: 800px) {
+  .banner-home-content {
+    width: 600px;
+  }
 }
 
 

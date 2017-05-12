@@ -56,6 +56,13 @@ a:hover {
   border: solid 2px;
 }
 
+@media (max-width: 800px) {
+  .search-bar {
+    width: 600px;
+  }
+}
+
+
 #project_category {
   border-radius: 0 !important;
   border-bottom: solid $new-blue 1px;
@@ -156,7 +163,7 @@ a:hover {
   display: inline-block;
   position: relative; }
 .aa-input-search {
-  width: 100px;
+  width: auto;
   border: 1px solid rgba(228, 228, 228, 0.6);
   padding: 12px 28px 12px 12px;
   box-sizing: border-box;
@@ -205,10 +212,15 @@ select {
 #home-talent {
   font-size: 90px;
   margin-top: -30px;
-  padding-top: 0;
+  padding-top: 40px;
+  padding-bottom: 20px;
 }
 
 
 #home-card-title-fix {
   margin-top: 20px;
+}
+
+#role_input_roles {
+  vertical-align: middle !important;
 }
