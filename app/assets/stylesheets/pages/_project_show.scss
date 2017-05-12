@@ -17,7 +17,7 @@
 }
 
 .collaborators img {
-  height: 100px;
+  // height: 100px;
   margin-right: 6px;
   margin-bottom: 6px;
 }
@@ -235,6 +235,11 @@
 .project-show-picture {
   width: 100%;
   height: 400px;
+}
+
+.project-avatar {
+  height: 60px;
+  width: 60px;
 }
 
 .collaborator-img {

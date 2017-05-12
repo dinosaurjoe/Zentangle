@@ -96,7 +96,7 @@
         <% end %>
           <% @team.each do |member| %>
           <%= link_to user_path(member) do  %>
-          <%= cl_image_tag(member.profile_picture, :width => 60, :height => 60, :crop=>"fill")%>
+          <%= image_tag member.profile_picture, class: "project-avatar" %>
           <% end %>
           <% end %>
         </div>
