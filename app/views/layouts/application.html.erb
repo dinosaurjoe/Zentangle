@@ -38,26 +38,6 @@
 
     <%= yield(:after_js) %>
 
-    <% if @user %>
-    <script>
-      var pusher = new Pusher('b0de02a8f3fdb48196e8', {
-        cluster: 'eu',
-        encrypted: true
-      });
-
-
-      var channel = pusher.subscribe("user-<%= @user.id %>-<%= Rails.env %>");
-        channel.bind('status', function(data) {
-          if (data.message === "accept"){
-            console.log(data.message);
-            $('.accepted-request-notification').removeClass('hidden').addClass('shown');
-          }
-          if (data.message === "declined"){
-            $('.declined-request-notification').removeClass('hidden').addClass('shown');
-          }
-        });
-    </script>
-    <% end %>
   </body>
 </html>
 

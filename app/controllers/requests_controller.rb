@@ -53,7 +53,7 @@ class RequestsController < ApplicationController
   end
 
   def accept
-    Pusher.trigger("user-#{@user.id}-#{Rails.env}", 'status', {
+    Pusher.trigger("user-#{@request.user.id}-#{Rails.env}", 'status', {
       message: "accept"
     })
     authorize @request
