@@ -38,45 +38,26 @@
 
     <%= yield(:after_js) %>
 
+    <% if @user %>
     <script>
-      // Enable pusher logging - don't include this in production
-      Pusher.logToConsole = true;
-
-      var urlCheck = (((window.location.href.indexOf("/personal_messages/new") > -1) || (window.location.href.indexOf("conversations") > -1) ));
-
-      $(document).ready(function(){
-        console.log(urlCheck);
-        // $('.pusher').children().hide();
-      })
-
       var pusher = new Pusher('b0de02a8f3fdb48196e8', {
         cluster: 'eu',
         encrypted: true
       });
 
-      if (!urlCheck) {
-        var channel = pusher.subscribe('user-id');
-          channel.bind('status', function(data) {
 
-            if (data.message === "accepted"){
-              console.log(data.message);
-              $('.accepted-request-notification').removeClass('hidden').addClass('shown');
-            }
-            if (data.message === "declined"){
-              $('.declined-request-notification').removeClass('hidden').addClass('shown');
-            }
-          });
-
-          channel.bind('message', function(data) {
-
-            if (data.message === "message"){
-              console.log(data.message === "message");
-              $('.new-message-notification').removeClass('hidden').addClass('shown');
-            }
-          });
-      }
-
-
+      var channel = pusher.subscribe("user-<%= @user.id %>-<%= Rails.env %>");
+        channel.bind('status', function(data) {
+          if (data.message === "accept"){
+            console.log(data.message);
+            $('.accepted-request-notification').removeClass('hidden').addClass('shown');
+          }
+          if (data.message === "declined"){
+            $('.declined-request-notification').removeClass('hidden').addClass('shown');
+          }
+        });
     </script>
+    <% end %>
   </body>
 </html>
+

@@ -40,12 +40,12 @@ class RequestsController < ApplicationController
     authorize @request
     if current_user == @request.project.owner
       @request.owner_confirm == false
-      Pusher.trigger('requests', 'status', {
+      Pusher.trigger("user-#{@request.user.id}-#{Rails.env}", 'status', {
         message: "Your request to join #{@request.role.project.title} was declined :("
     })
     else
       @request.user_confirm == false
-      Pusher.trigger('requests', 'status', {
+      Pusher.trigger("user-#{@request.user.id}-#{Rails.env}", 'status', {
         message: "Your request to join #{@request.role.project.title} was declined :("
       })
     end
@@ -53,14 +53,9 @@ class RequestsController < ApplicationController
   end
 
   def accept
-    Pusher.trigger("user-id", 'status', {
+    Pusher.trigger("user-#{@user.id}-#{Rails.env}", 'status', {
       message: "accept"
     })
-
-
-    # Pusher.trigger("#{@request.user.id}", 'request', {
-    #   message: "accept"
-    # })
     authorize @request
 
     @request.user_confirm = true

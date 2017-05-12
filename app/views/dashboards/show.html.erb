@@ -1,4 +1,4 @@
-<div class="container">
+3<div class="container">
   <div class="row dashboard-total">
 
     <div class="profile-card col-md-3">
@@ -110,7 +110,7 @@
       encrypted: true
     });
 
-    var channel = pusher.subscribe('user-id');
+    var channel = pusher.subscribe("user-<%= @user.id %>-<%= Rails.env %>");
     channel.bind('status', function(data) {
       location.reload();
     });
