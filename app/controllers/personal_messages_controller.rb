@@ -7,21 +7,22 @@ class PersonalMessagesController < ApplicationController
                                           receiver_id: @receiver.id)
     @personal_message = current_user.personal_messages.build(personal_message_params)
     @personal_message.conversation_id = @conversation.id
-    @personal_message.save!
+    @personal_message.save
 
-    flash[:success] = "Your message was sent!"
-    Pusher.trigger("user-id", 'message', {
-      message: "message"
-    })
-    redirect_to conversation_path(@conversation)
+    if @conversation.personal_messages.size == 1
+      redirect_to conversation_path(@conversation)
+    else
+      new_message = render('personal_messages/_personal_message', locals: { personal_message: @personal_message }, layout: false)
+
+      Pusher.trigger("conversation-#{@conversation.id}-#{Rails.env}", 'message', {
+        message: new_message
+      })
+    end
   end
 
   def new
     redirect_to conversation_path(@conversation) and return if @conversation
     @personal_message = current_user.personal_messages.build
-    Pusher.trigger("user-id", 'message', {
-      message: "message"
-    })
   end
 
   private
@@ -33,11 +34,9 @@ class PersonalMessagesController < ApplicationController
   def find_conversation!
     if params[:receiver_id]
       @receiver = User.find_by(id: params[:receiver_id])
-      redirect_to(root_path) and return unless @receiver
       @conversation = Conversation.between(current_user.id, @receiver.id)[0]
     else
       @conversation = Conversation.find_by(id: params[:conversation_id])
-      redirect_to(root_path) and return unless @conversation && @conversation.participates?(current_user)
     end
   end
 end

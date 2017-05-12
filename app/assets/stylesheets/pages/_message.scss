@@ -43,6 +43,14 @@
 #conversation-body {
   color: $payne-grey;
   font-weight: 300;
+
+  .row {
+    transition: all 2s ease;
+    background-color: white;
+  }
+  .row.highlighted {
+    background-color: lightblue;
+  }
 }
 
 

@@ -110,7 +110,7 @@
       encrypted: true
     });
 
-    var channel = pusher.subscribe('user-id');
+    var channel = pusher.subscribe("user-<%= @user.id %>-<%= Rails.env %>");
     channel.bind('status', function(data) {
       location.reload();
     });
