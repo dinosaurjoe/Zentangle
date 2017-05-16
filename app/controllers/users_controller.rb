@@ -22,7 +22,12 @@ class UsersController < ApplicationController
     #     end
     #   end
     # end
-    redirect_to edit_user_path(@user)
+    if @user.save!
+      redirect_to dashboard_path(@user)
+    else
+      render 'new'
+    end
+    # redirect_to edit_user_path(@user)
   end
 
   def invite
