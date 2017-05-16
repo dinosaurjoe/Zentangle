@@ -20,9 +20,11 @@
         <h4>Portfolio</h4>
         <p><%= link_to "Behance", "http://#{@user.portfolio_url}" %></p>
       </div>
-      <p class="edit-profile-link text-center" id="edit">
-        <%= link_to "edit profile", edit_user_path(@user) %>
-      </p>
+      <!-- <p class="edit-profile-link text-center" id="edit"> -->
+        <%= link_to edit_user_path(@user) do %>
+          <p class="edit-profile-link text-center" id="edit">edit profile</p>
+        <% end %>
+      <!-- </p> -->
     </div>
 
   <div class="col-md-8 col-md-offset-1 ">
