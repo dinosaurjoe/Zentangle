@@ -210,9 +210,46 @@
 
 .project-show-request {
   border: solid 2px $new-blue;
-
+  padding: 10px;
 }
 
+.project-show-request h2 {
+  font-weight: 100;
+  text-transform: uppercase;
+  color: $new-blue;
+  letter-spacing: 1px;
+  font-size: 26px;
+  margin-top: 10px;
+  line-height: 32px;
+}
+
+.project-show-request a {
+  text-decoration: none;
+  color: $new-blue;
+}
+
+.owner-request-card-content h3 {
+  font-size: 20px;
+  color: $sunset-orange;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  margin-top: 10px;
+}
+
+.owner-request-card-content h5 {
+  color: $payne-grey;
+}
+
+.owner-request-card-content h6 {
+  color: $payne-grey;
+  font-size: 12px;
+}
+
+
+.request-bg:hover {
+  background-color: rgba(230,230,230,0.4);
+}
 .btn-roles {
   border-radius: 0;
   background-color: $sunset-orange;
