@@ -7,15 +7,13 @@
 
 <div class="container">
 <% if current_user == @project.owner %>
-  <div class="project-show-request">
-  <div class="row">
-    <div class="col-md-2">
+  <div class="row project-show-request">
+    <div class="col-xs-12 col-md-2">
       <h2>incoming requests</h2>
       </div>
-
       <div class="requests">
         <% @project.requests.each do |request| %>
-        <div class="col-xs-12 col-md-3">
+        <div class="col-xs-12 col-md-2 request-bg">
           <div class="owner-request-card">
             <%= link_to request_path(request) do %>
             <div class="owner-request-card-content">
@@ -30,7 +28,7 @@
         <% end %>
         <% end %>
     </div>
-  </div>
+
 
 
     </div>
@@ -110,6 +108,11 @@
             <p>There is no budget for this project</p>
           <% end %>
         </div>
+        <div class="delete-project">
+          <% if @project.owner == current_user %>
+          <%= link_to "Delete My Project", @project, data: { confirm: "Are you sure?" }, method: :delete%>
+          <% end %>
+        </div>
       </div>
 
     <div class="col-md-8 lower-right">
@@ -158,9 +161,7 @@
     </div>
   </div>
 </div>
-<% if @project.owner == current_user %>
-<%= link_to "Delete My Project", @project, data: { confirm: "Are you sure?" }, method: :delete%>
-<% end %>
+
 </div>
 
 
