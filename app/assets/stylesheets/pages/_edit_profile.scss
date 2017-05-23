@@ -1,0 +1,47 @@
+.profile-form-header {
+  padding: 0;
+}
+
+.profile-form-header h2 {
+  font-weight: 100;
+  text-transform: uppercase;
+  color: $sunset-orange;
+  font-style: italic;
+  text-align: center;
+  font-size: 65px;
+  letter-spacing: 1.5px;
+  margin-bottom: 30px;
+}
+
+.profile-form input {
+  border: solid $new-blue 2px;
+  color: $new-blue;
+  border-radius: 0;
+  padding: 5px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.profile-form .control-label {
+  margin-left: 10px;
+  color: $new-blue;
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 18px;
+  letter-spacing: 0.8px;
+}
+
+
+.profile-form .btn {
+  background-color: $sunset-orange;
+  color: white;
+  border: solid $sunset-orange 2px;
+  letter-spacing: 0.6px;
+
+}
+
+.profile-form .btn:hover {
+  background-color: white;
+  color: $sunset-orange;
+  border: solid $sunset-orange 2px;
+}
