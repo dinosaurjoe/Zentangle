@@ -110,6 +110,11 @@
             <p>There is no budget for this project</p>
           <% end %>
         </div>
+        <div class="delete-project">
+          <% if @project.owner == current_user %>
+          <%= link_to "Delete My Project", @project, data: { confirm: "Are you sure?" }, method: :delete%>
+          <% end %>
+        </div>
       </div>
 
     <div class="col-md-8 lower-right">
@@ -158,9 +163,7 @@
     </div>
   </div>
 </div>
-<% if @project.owner == current_user %>
-<%= link_to "Delete My Project", @project, data: { confirm: "Are you sure?" }, method: :delete%>
-<% end %>
+
 </div>
 
 
